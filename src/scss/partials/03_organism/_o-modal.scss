@@ -1,0 +1,123 @@
+.modal-dialog {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+.modal-content{
+    border-radius: $border-radius-primary;
+    border: 0;
+    top: 20vh;
+    margin-bottom: 20px;
+}
+.modal-header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+
+    .close{
+        margin: 0 0 0 auto;
+        height: 100%;
+        padding: 8px;
+        height: 34px;
+        width: 34px;
+        border: 2px solid $bg-dark;
+        border-radius: $border-radius-round;
+        transform: transition(0.3s ease all);
+
+        &:hover, &:active, &:focus{
+            transform: rotate(90deg);
+            border: 2px solid $bg-red;
+
+            .cross-icon::before, .cross-icon::after{
+                background: $bg-red;
+            }
+        }
+    }
+    .cross-icon {
+        height: 14px;
+        width: 14px;
+    }
+}
+.modal-header.post__image-container{
+    padding: 20px 20px 200px 20px;
+
+    .close{
+        background: $bg-white;
+        border-radius: $border-radius-round;
+        opacity: 1;
+
+        &:hover, &:active, &:focus{
+            background: $bg-light;
+        }
+    }
+}
+.modal-title{
+    font-size: 3rem;
+    font-weight: 400;
+    color: $text-primary;
+}
+.modal-body{
+    padding: 20px;
+    background: $bg-light;
+    
+    .cart-item-single{
+        border: 0;
+    }
+}
+.modal-footer{
+    display: block;
+    justify-content: flex-start;
+    padding: 20px;
+
+    & .btn:last-child{
+        margin-left: auto;
+        margin-right: 0;
+        float: right;
+    }
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 800px;
+    }
+    #modal-login .modal-dialog{
+        max-width: 600px;
+    }
+}
+@media (max-width: 575px){
+    .modal-header, .modal-body, .modal-footer{
+        padding:  10px;
+    }
+    .modal-title{
+        font-size: 2.4rem;
+    }
+    .modal-footer .btn{
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+
+@media (max-height: 575px){
+    .modal-dialog{
+        align-items: flex-start;
+    }
+}
+
+
+.modal-info__body{
+    text-align: center;
+}
+.modal-info__body p{
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+.modal-info__footer .btn:last-child{
+    margin-left: auto;
+    margin-right: auto;
+}

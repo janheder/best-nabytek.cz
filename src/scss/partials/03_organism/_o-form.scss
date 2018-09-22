@@ -1,0 +1,10 @@
+::placeholder{
+    @include f-16-medium-regular;
+}
+
+input{
+    @include f-16-primary-regular;
+    border: 0;
+    border-radius: $border-radius-primary;
+    padding: 0 2rem;
+}

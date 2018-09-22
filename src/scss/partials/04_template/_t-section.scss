@@ -1,0 +1,8 @@
+section{
+    padding: 6rem 0;
+}
+section h1{
+    @include f-36-primary-medium;
+    text-align: center;
+    margin-bottom: 2rem;
+}

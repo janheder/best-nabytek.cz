@@ -1,0 +1,14 @@
+body {
+    font-size: 1.5rem;
+    color: $text-primary;
+    background: $bg-white;
+    font-family: $font-family-primary, $font-family-system;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1920px;
+} 
+body.-noScroll{
+    overflow: hidden;
+}

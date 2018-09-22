@@ -1,0 +1,22 @@
+.alert{
+    background: $bg-primary;
+    padding: 2rem;
+    color: $text-white;
+    display: block;
+    margin-bottom: 3rem;
+    border-radius: $border-radius-primary;
+    border: 0;
+
+    &.-success{
+        background: $bg-green;
+    }
+    &.-info{
+        background: $bg-dark;
+    }
+    &.-warning{
+        background: $bg-yellow;
+    }
+    &.-danger{
+        background: $bg-red;
+    }
+}

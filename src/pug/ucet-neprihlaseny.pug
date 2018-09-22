@@ -1,0 +1,41 @@
+doctype html
+include partials/_variables.pug  
+html(lang=lang)
+    include partials/_header.pug  
+    body
+        include partials/_nav.pug
+        section.page-heading.post__image-container
+            .container
+                h1.page-heading__title Uživatelský účet
+            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-user-thumb-large.jpg" data-src=URLbase+"img/user-thumb-large.jpg" alt="#" title="#")
+                
+        include partials/_breadcrumb.pug
+        main
+            .container
+                .print-area
+                    article.page
+                        .page-message
+                            h3.page-message__title Přihlásit se k existujícímu účtu
+                            
+
+                            form(method="post" action="" class="login-form page-message__login-form" name="login_form")
+                                .alert.alert-danger Zadali jste špatné údaje
+                                .form-group
+                                    label(for="login_form_username") Uživatelské jméno
+                                    input.form-control(type="text" name="login_form_username" id="login_form_username" required autocomplete="username")
+
+                                .form-group
+                                    label(for="login_form_password") Heslo
+                                    input.form-control(type="password" name="login_form_password" id="login_form_password" required autocomplete="password")
+
+                                .form-group
+                                    button.form-control.btn(type="submit" name="login_form_submit" id="login_form_submit") Přihlásit se
+                                    
+                                a.form-link__forgotten-pass(href="#") Zapomenuté heslo?
+
+
+
+
+        include partials/_footer.pug
+
+        include partials/_js-include.pug

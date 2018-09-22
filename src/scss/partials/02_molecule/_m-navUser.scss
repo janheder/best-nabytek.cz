@@ -1,0 +1,43 @@
+.m-navUser{
+    background: $bg-primary;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem;
+    transition: 0.2s ease all;
+
+    &:hover, &:active, &:focus{
+        background: $bg-dark;
+        text-decoration: none;
+    }
+}
+.m-navUser__icon{
+    height: 22px;
+    width: 22px;
+}
+.m-navUser__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 15px;
+    height: 100%;
+}
+.m-navUser__text{
+    @include f-14-white-regular;
+}
+.m-navUser__title{
+    @include f-16-white-medium;
+}
+
+@media screen and (max-width:991px){
+    .m-navUser{
+        width: 56px;
+        padding: 0;
+    }
+    .m-navUser__info{
+        display: none;
+    }
+}

@@ -1,0 +1,32 @@
+doctype html
+include partials/_variables.pug  
+html(lang=lang)
+    include partials/_header.pug  
+    body
+        include partials/_nav.pug
+        section.page-heading.post__image-container
+            .container
+                h1.page-heading__title Zapomenuté heslo
+            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-user-thumb-large.jpg" data-src=URLbase+"img/user-thumb-large.jpg" alt="#" title="#")
+                
+        include partials/_breadcrumb.pug
+        main
+            .container
+                .print-area
+                    article.page
+                        .forgotten-password
+                            form(method="post" action="" class="register-form" name="password_form")
+                                p.forgotten-password_text Pokud jste zapomněli své heslo, pošleme Vám nové na email, který jste uvedli při registraci.
+                                .form-group
+                                    label(for="password_form-email") Emailová adresa
+                                    input.form-control(type="email" name="password_form_email" id="password_form_email" required autocomplete="email")
+
+                                .form-group
+                                    button.form-control.btn(type="submit" name="password_form_submit" id="password_form_submit") Poslat nové heslo
+
+
+
+
+        include partials/_footer.pug
+
+        include partials/_js-include.pug

@@ -1,0 +1,139 @@
+footer{
+    background: $bg-primary
+}
+
+/* ========================================================================== */
+/* FOOTER CONTACTS */
+/* ========================================================================== */
+
+.o-footerContacts{
+    padding: 0;
+}
+.o-footerContacts__col:first-child{
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.m-emailSubscribe{
+    padding: 6rem 4rem 6rem 0;
+}
+.m-emailSubscribe__title{
+    @include f-30-white-medium;
+}
+.m-emailSubscribe__text{
+    @include f-16-white-regular;
+    margin-bottom: 3rem;
+}
+.m-emailSubscribe__inputWrap{
+    position: relative;
+}
+.m-emailSubscribe__input{
+    height: 5.4rem;
+    width: 100%;
+}
+.m-emailSubscribe__btn{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    min-height: 5rem;
+    height: auto;
+}
+.m-emailSubscribe__agree{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+.m-emailSubscribe__inlineText{
+    @include f-14-white-regular;
+    margin-left: 1rem;
+
+    a{
+    color: $text-white;
+    }
+}
+.m-emailSubscribe__check{
+    opacity: 0;
+    position: absolute;
+}
+.m-emailSubscribe__checkbox{
+    display: block;
+    height: 14px;
+    width: 14px;
+    background: $bg-white;
+    border-radius: $border-radius-primary;
+    position: relative;
+}
+.m-emailSubscribe__check:checked + .m-emailSubscribe__checkbox{
+    background: $bg-brand-secondary;
+
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        bottom: 0;
+        left: 5px;
+        width: 4px;
+        height: 8px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}
+
+.m-questionsContact{
+    padding: 6rem 0 6rem 4rem;
+}
+.m-questionsContact__title{
+    @include f-30-white-medium;
+    margin-bottom: 2rem;
+}
+.m-questionsContact__contactWrap{
+    display: block;
+}
+.m-questionsContact__contact{
+    @include f-24-white-medium;
+    background: rgba(0,0,0,0.1);
+    border-radius: $border-radius-primary;
+    padding: 1rem 2rem;
+    display: inline-block;
+}
+
+/* ========================================================================== */
+/* FOOTER MAIN */
+/* ========================================================================== */
+
+.o-footerMain{
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.o-footerMain__title{
+    font-size: 2rem;
+    font-weight: 500;
+    color: $text-white;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+.o-footerMain__link{
+    color: $text-white;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 3.6rem;
+    opacity: 0.7;
+
+    &:hover, &:active, &:focus{
+        color: $text-white;
+        text-decoration: underline;
+        opacity: 1;
+    }
+}
+.o-footerMain__text{
+    color: $text-white;
+    display: block;
+    font-size: 1.5rem; 
+}

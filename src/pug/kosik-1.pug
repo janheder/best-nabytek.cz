@@ -1,0 +1,208 @@
+doctype html
+include partials/_variables.pug  
+html(lang=lang)
+    include partials/_header.pug  
+    body
+        include partials/_nav.pug
+        section.page-heading.page-heading--cart
+            .container.page-heading--cart__container
+                .page-heading--cart__wrap
+                    a.page-heading--cart__single.active(href="#")
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 1] Nákupní košík
+                    a.page-heading--cart__single(href="#")
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 2] Osobní údaje
+                    a.page-heading--cart__single(href="#")
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 3] Souhrn objednávky
+                    a.page-heading--cart__single(href="#")
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 4] Dokončení objednávky
+
+        section.page-heading.page-heading--cart-responsive
+            a.page-heading--cart__control(href="#")
+                span.caret-icon.left.disabled
+            p.page-heading--cart__title 1/4 Nákupní košík
+            a.page-heading--cart__control(onclick="$('#delivery-form-submit').trigger('click');")
+                span.caret-icon.right
+        .page-heading--cart-responsive-push
+
+        main
+            .container
+                form(method="post" action="" name="cart_form")
+                    .row.cart-item-top
+                        .cart-item-top__col-1
+                            .cart-item-top__img
+                                p.cart-item-top__heading Produkt
+                        .cart-item-top__col-2
+                            .cart-item-top__name
+                            .cart-item-top__inner
+                                .cart-item-top__qty
+                                    p.cart-item-top__heading Počet kusů
+                                .cart-item-top__price
+                                    p.cart-item-top__heading Cena za kus
+                                .cart-item-top__sum
+                                    p.cart-item-top__heading Cena celkem
+                                .cart-item-top__delete
+
+
+                    .row.cart-item-single
+                        .cart-item-single__col-1  
+                            .cart-item-single__thumb-wrap
+                                .cart-item-single__thumb
+                                    img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+
+
+                        .cart-item-single__col-2   
+                            .cart-item-single__name-wrap
+                                a.cart-item-single__name(href="#") #{ProductName}
+                                p.cart-item-single__stock Dostupné skladem   
+
+                            .cart-item-single__inner    
+                                .cart-item-single__qty-wrap 
+                                    .cart-item-single__qty
+                                        .number-stepper.number-stepper--small
+                                            input.number-stepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
+                                            .number-stepper__btn-up
+                                                span.number-stepper__icon-up
+                                            .number-stepper__btn-down
+                                                span.number-stepper__icon-down
+
+                                .cart-item-single__price-wrap
+                                    span.cart-item-single__price-old 14 290 Kč
+                                    p.cart-item-single__price 8 489 Kč
+                                .cart-item-single__sum-wrap
+                                    p.cart-item-single__sum #[span 2,33] Kč
+                                .cart-item-single__delete-wrap
+                                    a.cart-item-single__delete(href="#")
+                                        span.cross-icon.cart-item-single__delete-icon
+
+
+                    .row.cart-item-single
+                        .cart-item-single__col-1  
+                            .cart-item-single__thumb-wrap
+                                .cart-item-single__thumb
+                                    img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+
+                        .cart-item-single__col-2   
+                            .cart-item-single__name-wrap
+                                a.cart-item-single__name(href="#") #{ProductName}
+                                p.cart-item-single__stock Dostupné skladem   
+
+                            .cart-item-single__inner    
+                                .cart-item-single__qty-wrap 
+                                    .cart-item-single__qty
+                                        .number-stepper.number-stepper--small
+                                            input.number-stepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
+                                            .number-stepper__btn-up
+                                                span.number-stepper__icon-up
+                                            .number-stepper__btn-down
+                                                span.number-stepper__icon-down
+
+                                .cart-item-single__price-wrap
+                                    span.cart-item-single__price-old 14 290 Kč
+                                    p.cart-item-single__price 8489 Kč
+                                .cart-item-single__sum-wrap
+                                    p.cart-item-single__sum #[span 2,66] Kč
+                                .cart-item-single__delete-wrap
+                                    a.cart-item-single__delete(href="#")
+                                        span.cross-icon.cart-item-single__delete-icon
+
+                    .cart-shipping-coupon-wrap
+                        .cart-free-shipping
+                            .cart-free-shipping__img
+                                span.delivery-icon.white
+                            p.cart-free-shipping__text Při nákupu nad 1 500 Kč doprava zdarma
+
+                    .cart-price-overview
+                        .cart-price-overview__wrap
+                            p.cart-price-overview__text Celková cena s DPH:
+                            h3.cart-price-overview__price #[span.cart-price-overview__number 4,99] Kč
+
+                    .form-group.cart-shipping-option
+                        h3.cart-user-note__title Zvolte způsob dopravy
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="posta" required)
+                                | Česká pošta
+                                span.form-check__price 115 Kč
+                                span.form-check__description Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.
+                                span.form-check__box.radio
+
+
+                        .form-check
+                            label.form-check__label(onclick="navigateToUrl('https://www.pplbalik.cz/Main3.aspx?cls=KTMMap&CountryCode=CZ&KTMAddress=73801,Podpuklí 288&ReturnUrl=https%3A%2F%2Fwww.gramofony-desky.cz%2Fkosik.html%3Fsessid%3D2t617d17oqqlam0vrup08bone7%26KTMID%3D%7B0%7D%26KTMaddress%3D%7B1%7D%26KTMname%3D%7B2%7D');")
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl3" required)
+                                | PPL 
+                                span.form-check__price 99 Kč
+                                span.form-check__description Přepravní služba
+                                span.form-check__box.radio
+
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="osobni" required)
+                                | Osobní odběr v naší prodejně
+                                span.form-check__price 0 Kč
+                                span.form-check__description Platba kartou nebo hotově.
+                                span.form-check__box.radio
+
+
+                    .form-group.cart-payment-option
+                        h3.cart-user-note__title Zvolte způsob platby
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_payment" id="prevod" required)
+                                | Převodem předem na náš účet
+                                span.form-check__price 0 Kč
+                                span.form-check__description 123456/123 vedený u Komerční banky. Var. symbol je ČÍSLO OBJEDNÁVKY.
+                                span.form-check__box.radio
+                            
+                        .form-check
+                            label.form-check__label.disabled
+                                input.form-check__input(type="radio" name="cart_form_payment" id="dobirka" required disabled)
+                                | Dobírka
+                                span.form-check__price 20 Kč
+                                span.form-check__description Celkovou částku za zboží a přepravu uhradíte dovozci nebo na odběrném místě
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_payment" id="osobne" required)
+                                | Hotově při převzetí
+                                span.form-check__price 0 Kč
+                                span.form-check__description Platba kartou nebo hotově.
+                                span.form-check__box.radio
+
+
+
+                    .cart-user-note
+                        h3.cart-user-note__title Poznámka k objednávce
+                        .row
+                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
+                                .form-group
+                                    textarea.form-control(name="cart-form-note" rows="5")
+                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
+                                p Chcete nám sdělit ještě nějakou důležitou zprávu k vaší objednávce? Využijte prosím, tohoto formuláře.
+                                p Napsat do něj můžete také upřesňující informace o místě, kam máme Vaše zboží doručit (nejbližší orientační bod apod.)
+
+                    .cart-bottom-btns
+                        a.btn.btn-ghost(href="#") #[span.btn__icon.arrow-icon.left] Zpět do obchodu
+                        a.btn.btn-dark(href="#") #[span.btn__icon.cross-icon.white] Vyprázdnit košík
+                        button.btn(type="submit" id="delivery-form-submit") Osobní údaje #[span.btn__icon.arrow-icon.white]      
+                               
+
+            .cart-price-overview-responsive
+                .cart-price-overview-responsive__price-wrap
+                    p.cart-price-overview-responsive__text Celková cena s DPH
+                    h3.cart-price-overview-responsive__price #[span 4,99] Kč
+
+                .cart-price-overview-responsive__btn-wrap
+                    button.btn.cart-price-overview-responsive__btn(onclick="$('#delivery-form-submit').trigger('click');") Osobní údaje #[span.btn__icon.arrow-icon.white]  
+
+
+        include partials/_footer.pug 
+
+        include partials/_js-include.pug

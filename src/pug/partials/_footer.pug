@@ -1,0 +1,72 @@
+a.scrollTop(href="#anchor-navbar-top")
+    span.caret-icon.top
+
+include _modal-contact.pug
+
+
+footer
+
+    section.o-footerContacts
+        .container.o-footerContacts__container
+            .row.o-footerContacts__row
+                .col-12.col-md-6.o-footerContacts__col
+                    .m-emailSubscribe
+                        h4.m-emailSubscribe__title Nenechte si ujít žádnou slevu
+                        p.m-emailSubscribe__text Odebírejte aktuální informace, oznámení o slevách a novinky na Váš email.
+                        form.m-emailSubscribe__form(method="post" action="")
+                            .m-emailSubscribe__inputWrap
+                                input.m-emailSubscribe__input(type="email" id="sub-email" name="sub-email" required placeholder="Zadejte Vaši emailovou adresu" autocomplete="email")
+                                button.btn.m-emailSubscribe__btn(type="submit" id="sub-button" name="sub-button") Odebírat
+                            label.m-emailSubscribe__agree
+                                input.m-emailSubscribe__check(type="checkbox" name="sub-check" required)
+                                span.m-emailSubscribe__checkbox
+                                span.m-emailSubscribe__inlineText Odesláním formuláře souhlasím se #[a(href="#") zpracovaním osobních údajů]
+
+                .col-12.col-md-6.o-footerContacts__col
+                    .m-questionsContact
+                        h4.m-questionsContact__title Nějaké dotazy? Kontaktujte nás na
+                        .m-questionsContact__contactWrap
+                            p.m-questionsContact__contact info@best-nabytek.cz
+                        .m-questionsContact__contactWrap
+                            p.m-questionsContact__contact 606 311 796
+            
+            
+    section.o-footerMain
+        .container.o-footerMain__container
+            .row.o-footerMain__row
+                .col-12.col-sm-6.col-lg-3
+                    h5.o-footerMain__title O nákupu
+                    a.o-footerMain__link(href="#") Obchodní podmínky
+                    a.o-footerMain__link(href="#") Reklamační řád
+                    a.o-footerMain__link(href="#") Jak nakupovat
+                    a.o-footerMain__link(href="#") Osobní odběry
+                    a.o-footerMain__link(href="#") Možnosti platby
+
+                .col-12.col-sm-6.col-lg-3
+                    h5.o-footerMain__title Uživatelský účet
+                    a.o-footerMain__link(href="#") Přihlášení
+                    a.o-footerMain__link(href="#") Vytvořit účet
+                    a.o-footerMain__link(href="#") Zapomenuté údaje
+
+                .col-12.col-sm-6.col-lg-3
+                    h5.o-footerMain__title Další odkazy
+                    a.o-footerMain__link(href="#") Výhody nákupu
+                    a.o-footerMain__link(href="#") Doprava zdarma
+                    a.o-footerMain__link(href="#") Ochrana osobních údajů
+                    a.o-footerMain__link(href="#") Zásady používání cookie
+
+                .col-12.col-sm-6.col-lg-3
+                    h5.o-footerMain__title Kontaktní informace
+                    p.o-footerMain__text AC ENERGO  s.r.o.
+                    p.o-footerMain__text Hlučínská 41
+                    p.o-footerMain__text 747 22 Dolní Benešov
+                    br
+                    p.o-footerMain__text info@acenergo.cz
+                    p.o-footerMain__text +420 553 881 668
+                    
+
+section.o-copyright
+    .container.o-copyright__container
+        .o-copyright__wrap
+            h5.o-copyright__h5 Copyright © 2018 #[a.o-copyright__link(href=metaURL) #{metaSitename}]
+            h5.o-copyright__pull Vytvořeno v #[a.o-copyright__link(href=metaAuthorURL) #{metaAuthor}]

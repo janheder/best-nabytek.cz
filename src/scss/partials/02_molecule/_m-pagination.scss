@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    PAGINATION
+\*------------------------------------*/
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 4rem 0;
+}
+.page-item{
+    padding: 5px;
+}
+.page-item.active .page-link{
+    background: $brand-primary;
+    color: $text-white;
+}
+.page-link{
+    padding: 10px 15px;
+    color: $text-primary;
+    border: 0;
+    background: $bg-white;
+    border-radius: $border-radius-primary;
+    box-shadow: 0px, 2px, 3px, rgba(0,0,0,0.05);
+
+    &:hover, &:active, &:focus{
+        background: $bg-dark;
+        color: $text-white;
+    }
+}
+.page-dots{
+    height: 100%;
+    position: relative;
+    padding: 0 7px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

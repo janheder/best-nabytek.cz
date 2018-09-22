@@ -1,0 +1,141 @@
+.o-hero{
+    padding: 5px 10px;
+    background: $bg-light;
+}
+.o-hero__row{
+    height: 100%;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.o-hero__col{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &.-noPadding{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+
+
+/* ========================================================================== */
+/* CAROUSEL */
+/* ========================================================================== */
+
+.m-heroCarousel{
+    height: 580px;
+    background: $bg-primary;
+}
+.m-heroCarousel__content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.m-heroCarousel__wrap{
+    
+}
+.m-heroCarousel__slide{
+    display: flex;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+.m-heroCarousel__link{
+    display: block;
+}
+.m-heroCarousel__figure{
+    margin: 0;
+}
+.m-heroCarousel__img{
+    z-index: -1;
+}
+.m-heroCarousel__preloader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50%;
+    margin-left: 0;
+    margin-top: 0;
+    z-index: 5;
+    animation: none;
+    overflow: hidden;
+
+    &::after{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: 50%;
+    }
+    &.-light{
+        background: $bg-white;
+    }
+}
+.m-heroCarousel__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0,0,0,0.1);
+}
+.m-heroCarousel__title{
+    @include f-36-white-medium;
+}
+.m-heroCarousel__description{
+    @include f-18-white-regular;
+}
+
+.m-heroCarousel__pagination{
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+
+    .swiper-pagination-bullet{
+        height: 12px;
+        width: 12px;
+        margin: 4px;
+    }
+    .swiper-pagination-bullet-active{
+        background: $bg-brand;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .m-heroCarousel{
+        height: 300px;
+    }
+}
+
+
+/* ========================================================================== */
+/* HERO CELL */
+/* ========================================================================== */
+
+.m-heroCell{
+    height: 100%;
+    background: $bg-primary;
+}
+.m-heroCell__link{
+
+}
+.m-heroCell__caption{
+
+}
+.m-heroCell__description{
+    @include f-18-white-medium;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1.5rem 2rem;
+    margin: 0;
+}

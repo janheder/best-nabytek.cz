@@ -1,0 +1,64 @@
+include _modal-login.pug
+
+header.o-nav
+	nav.o-navMain
+
+		.o-navMain__navToggler.m-navToggler(id="js-navToggler")
+			.a-icon.-hamburger.m-navToggler__icon
+
+		.o-navMain__logo.m-navLogo
+			a.m-navLogo__link(href="#")
+				img.m-navLogo__img(src=URLbase+"img/logo.svg" alt="" title="")
+
+		.o-navMain__search.m-navSeach
+			form.m-navSeach__form(method="POST" id="search-form")
+				input.m-navSeach__input(type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required)
+				button.m-navSeach__button #[span.a-icon.-search.m-navSeach__icon]
+
+		a.o-navMain__user.m-navUser(href="#")
+			.a-icon.-user.-white.m-navUser__icon
+			.m-navUser__info
+				span.m-navUser__text Přihlášen jako
+				span.m-navUser__title Petr Novák
+
+		a.o-navMain__cart.m-navCart(href="#")
+			.m-navCart__iconWrap
+				.a-icon.-cart.-white.m-navCart__icon
+					.m-navCart__icoNumber 2
+			.m-navCart__info
+				span.m-navCart__text Nákupní košík
+				span.m-navCart__title 859 Kč
+
+	nav.o-navProducts(id="js-navProducts")
+		.o-navProducts__item
+			.dropdown.o-navProducts__dropdown
+				a.dropdown-toggle.o-navProducts__dropdownToggle(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Produkty 
+				.dropdown-menu.o-navProducts__dropdownMenu.m-dropdownMenu(aria-labelledby="navDropdown1")
+					p test
+		.o-navProducts__item
+			.dropdown.o-navProducts__dropdown
+				a.dropdown-toggle.o-navProducts__dropdownToggle(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Produkty 
+				.dropdown-menu.o-navProducts__dropdownMenu.m-dropdownMenu(aria-labelledby="navDropdown1")
+					p test
+		.o-navProducts__item
+			.dropdown.o-navProducts__dropdown
+				a.dropdown-toggle.o-navProducts__dropdownToggle(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Produkty 
+				.dropdown-menu.o-navProducts__dropdownMenu.m-dropdownMenu(aria-labelledby="navDropdown1")
+					p test
+		.o-navProducts__item
+			.dropdown.o-navProducts__dropdown
+				a.dropdown-toggle.o-navProducts__dropdownToggle(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Produkty 
+				.dropdown-menu.o-navProducts__dropdownMenu.m-dropdownMenu(aria-labelledby="navDropdown1")
+					p test
+		.o-navProducts__item
+			.dropdown.o-navProducts__dropdown
+				a.dropdown-toggle.o-navProducts__dropdownToggle(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Produkty 
+				.dropdown-menu.o-navProducts__dropdownMenu.m-dropdownMenu(aria-labelledby="navDropdown1")
+					p test
+		.o-navProducts__item
+			.dropdown.o-navProducts__dropdown
+				a.dropdown-toggle.o-navProducts__dropdownToggle(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Produkty 
+				.dropdown-menu.o-navProducts__dropdownMenu.m-dropdownMenu(aria-labelledby="navDropdown1")
+					p test
+
+.a-darkOverlay(id="js-darkOverlay")

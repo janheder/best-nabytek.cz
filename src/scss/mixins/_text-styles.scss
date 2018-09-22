@@ -1,0 +1,503 @@
+/* ========================================================================== */
+/*  48 px */
+/* ========================================================================== */
+
+@mixin f-48-primary-regular() {
+  font-size: 4.8rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-48-primary-medium() {
+  font-size: 4.8rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-48-dark-regular() {
+  font-size: 4.8rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-48-dark-medium() {
+  font-size: 4.8rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-48-medium-regular() {
+  font-size: 4.8rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-48-medium-medium() {
+  font-size: 4.8rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-48-white-regular() {
+  font-size: 4.8rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-48-white-medium() {
+  font-size: 4.8rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  36 px */
+/* ========================================================================== */
+
+@mixin f-36-primary-regular() {
+  font-size: 3.6rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-36-primary-medium() {
+  font-size: 3.6rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-36-dark-regular() {
+  font-size: 3.6rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-36-dark-medium() {
+  font-size: 3.6rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-36-medium-regular() {
+  font-size: 3.6rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-36-medium-medium() {
+  font-size: 3.6rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-36-white-regular() {
+  font-size: 3.6rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-36-white-medium() {
+  font-size: 3.6rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  30 px */
+/* ========================================================================== */
+
+@mixin f-30-primary-regular() {
+  font-size: 3rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-30-primary-medium() {
+  font-size: 3rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-30-dark-regular() {
+  font-size: 3rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-30-dark-medium() {
+  font-size: 3rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-30-medium-regular() {
+  font-size: 3rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-30-medium-medium() {
+  font-size: 3rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-30-white-regular() {
+  font-size: 3rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-30-white-medium() {
+  font-size: 3rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  24 px */
+/* ========================================================================== */
+
+@mixin f-24-primary-regular() {
+  font-size: 2.4rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-24-primary-medium() {
+  font-size: 2.4rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-24-dark-regular() {
+  font-size: 2.4rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-24-dark-medium() {
+  font-size: 2.4rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-24-medium-regular() {
+  font-size: 2.4rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-24-medium-medium() {
+  font-size: 2.4rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-24-white-regular() {
+  font-size: 2.4rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-24-white-medium() {
+  font-size: 2.4rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  24 px */
+/* ========================================================================== */
+
+@mixin f-20-primary-regular() {
+  font-size: 2rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-20-primary-medium() {
+  font-size: 2rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-20-dark-regular() {
+  font-size: 2rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-20-dark-medium() {
+  font-size: 2rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-20-medium-regular() {
+  font-size: 2rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-20-medium-medium() {
+  font-size: 2rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-20-white-regular() {
+  font-size: 2rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-20-white-medium() {
+  font-size: 2rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  16 px */
+/* ========================================================================== */
+
+@mixin f-18-primary-regular() {
+  font-size: 1.8rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-18-primary-medium() {
+  font-size: 1.8rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-18-dark-regular() {
+  font-size: 1.8rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-18-dark-medium() {
+  font-size: 1.8rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-18-medium-regular() {
+  font-size: 1.8rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-18-medium-medium() {
+  font-size: 1.8rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-18-white-regular() {
+  font-size: 1.8rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-18-white-medium() {
+  font-size: 1.8rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/*  16 px */
+/* ========================================================================== */
+
+@mixin f-16-primary-regular() {
+  font-size: 1.6rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-16-primary-medium() {
+  font-size: 1.6rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-16-dark-regular() {
+  font-size: 1.6rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-16-dark-medium() {
+  font-size: 1.6rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-16-medium-regular() {
+  font-size: 1.6rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-16-medium-medium() {
+  font-size: 1.6rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-16-white-regular() {
+  font-size: 1.6rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-16-white-medium() {
+  font-size: 1.6rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/* 14 px */
+/* ========================================================================== */
+
+@mixin f-14-primary-regular() {
+  font-size: 1.4rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-14-primary-medium() {
+  font-size: 1.4rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-14-dark-regular() {
+  font-size: 1.4rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-14-dark-medium() {
+  font-size: 1.4rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-14-medium-regular() {
+  font-size: 1.4rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-14-medium-medium() {
+  font-size: 1.4rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-14-white-regular() {
+  font-size: 1.4rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-14-white-medium() {
+  font-size: 1.4rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================================================== */
+/* 12 px */
+/* ========================================================================== */
+
+@mixin f-12-primary-regular() {
+  font-size: 1.2rem;
+  color: $text-primary;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-12-primary-medium() {
+  font-size: 1.2rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-12-dark-regular() {
+  font-size: 1.2rem;
+  color: $text-dark;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-12-dark-medium() {
+  font-size: 1.2rem;
+  color: $text-dark;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-12-medium-regular() {
+  font-size: 1.2rem;
+  color: $text-medium;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-12-medium-medium() {
+  font-size: 1.2rem;
+  color: $text-medium;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@mixin f-12-white-regular() {
+  font-size: 1.2rem;
+  color: $text-white;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin f-12-white-medium() {
+  font-size: 1.2rem;
+  color: $text-white;
+  font-weight: 500;
+  line-height: 1.5;
+}

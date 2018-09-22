@@ -1,0 +1,68 @@
+doctype html
+include partials/_variables.pug  
+html(lang=lang)
+    include partials/_header.pug  
+    body
+        include partials/_nav.pug
+        section.page-heading.post__image-container
+            .container
+                h1.page-heading__title Kontakty
+            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-page-contact-thumb-large.jpg" data-src=URLbase+"img/page-contact-thumb-large.jpg" alt="#" title="#")
+
+        include partials/_modal-info.pug
+        include partials/_breadcrumb.pug
+
+        main 
+            .container
+                .print-area
+                    article
+                        .page-contact
+                            .row
+                                .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+                                    .page-contact__col
+                                        h3 O společnosti
+                                        strong AC ENERGO  s.r.o.
+                                        p Hlučínská 41
+                                        p 747 22 Dolní Benešov
+
+                                .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+                                    .page-contact__col
+                                        h3 Kontakty
+                                        p +420 553 881 668
+                                        p +420 553 881 669 
+
+                                        strong info@acenergo.cz
+                                        strong www.acenergo.cz
+
+                                .col-12
+                                    .page-contact__col
+                                        h3 Pracovníci zastřešující jednotlivé oblasti činností
+
+                                        table.table.table-bordered
+                                            tr
+                                                td MaR 
+                                                td Ing. Mojmír Tomáš
+                                                td +420 736 627 192
+                                                td tomas@acenergo.cz
+                                            tr
+                                                td Software 
+                                                td Ing. Milan Peterek
+                                                td +420 736 627 190
+                                                td peterek@acenergo.cz                 
+                                            tr
+                                                td Hardware
+                                                td Ing. Jan Jindra
+                                                td +420 736 627 191
+                                                td jindra@acenergo.cz
+
+
+ 
+                            .page-contact__map
+                                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2568.929481311064!2d18.117002515897177!3d49.91889843340268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47115ff8bcb3fc29%3A0xa8da6742800f01ee!2sAC+Energo+S.r.o.!5e0!3m2!1scs!2scz!4v1533737471476" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen)
+
+      
+
+
+        include partials/_footer.pug
+
+        include partials/_js-include.pug

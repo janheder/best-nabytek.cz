@@ -1,0 +1,44 @@
+.m-tabsNav{
+    background: $bg-white;
+}
+.m-tabsNav__nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+.m-tabsNav__link{
+    background: transparent;
+    border: 0;
+    min-height: 5.4rem;
+    padding: 0 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include f-16-medium-medium;
+
+    &:hover, &:active, &:focus{
+        text-decoration: none;
+        background: $bg-light;
+    }
+}
+.m-tabsNav__link.active{
+    background: $bg-light;
+    color: $text-primary;
+}
+
+
+
+
+
+.m-tabsContent{
+    background: $bg-light;
+    padding: 4rem 0;
+}
+.m-tabsContent__btnWrap{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}

@@ -1,0 +1,16 @@
+.m-categoryCell{
+    background: $bg-white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.m-categoryCell__img{
+    height: 60px;
+}
+.m-categoryCell__title{
+    @include f-16-primary-medium;
+    margin: 0;
+    margin-left: 1rem;
+}

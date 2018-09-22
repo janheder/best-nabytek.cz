@@ -1,0 +1,99 @@
+/* ========================================================================== */
+/* BUTTONS */
+/* ========================================================================== */
+
+.btn{
+    @include f-16-white-medium;
+    min-height: 5.4rem;
+    height: 100%;
+    padding: 0rem 2.5rem 0rem 2.5rem;
+    background: $bg-brand;
+    border-radius: $border-radius-primary;
+    position: relative;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    white-space: normal;
+
+
+    .a-btnIcon{
+        background: rgba(0,0,0,0.1);
+        min-height: 5.4rem;
+        height: 100%;
+        width: 5.4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2.5rem;
+        margin-right: -2.5rem;
+    }
+    .a-icon{
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+    }
+    &:hover, &:active, &:focus{
+        color: $text-white;
+        box-shadow: none;
+        background: $brand-primary--dark;
+    }
+}
+@media screen and (max-width: 600px){
+    .btn{
+        padding: 0 2rem;
+    }
+}
+@media screen and (max-width: 400px){
+    .btn{
+        padding: 0 1rem;
+    }
+}
+
+.btn.-small{
+    min-height: 4.8rem;
+    @include f-14-white-medium;
+
+    .a-btnIcon{
+        min-height: 4.8rem;
+    }
+}
+
+.btn.-light{
+    background: transparent;
+    color: $text-primary;
+
+    &::after{
+        content: "";
+        @include absolute-position(0,0,0,0);
+        background: $bg-primary;
+        opacity: 0.15;
+        border-radius: $border-radius-primary;
+    }
+    &:hover, &:active, &:focus {
+        &::after{
+            opacity: 0.25;
+        }    
+    }
+}
+
+/* ========================================================================== */
+/* BTN COLOR VARIATIONS */
+/* ========================================================================== */
+
+.btn.-secondary{
+    background: $bg-brand-secondary;
+
+    &.-light{
+        background: transparent;
+        color: $text-brand-secondary;
+
+        &::after{
+            background: $bg-brand-secondary;
+        }
+    }
+}

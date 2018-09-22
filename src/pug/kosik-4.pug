@@ -1,0 +1,22 @@
+doctype html
+include partials/_variables.pug  
+html(lang=lang)
+    include partials/_header.pug  
+    body
+        include partials/_nav.pug
+        main
+            .container
+                .cart-empty.cart-empty--success
+                    .cart-empty__wrap
+                        span.cart-icon-alt.cart-empty__icon
+                        span.fas.fa-check.cart-empty__icon-small
+                    h2.cart-empty__title Objednávka byla úspěšně odeslána
+                    strong.cart-empty__strong Rekapitulace objednávky a platební pokyny byly odeslány na Váš email.
+                    p.cart-empty__text Pokud máte problém s objednávkou, kontaktujte nás na email@email.cz nebo na telefonním čísle 111 222 333
+                    a.btn.cart-empty__btn(href="#") Zpět do obchodu
+
+
+
+        include partials/_footer.pug
+
+        include partials/_js-include.pug

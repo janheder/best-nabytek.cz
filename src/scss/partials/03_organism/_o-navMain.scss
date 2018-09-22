@@ -1,0 +1,13 @@
+.o-navMain{
+    background: $bg-primary;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 76px;
+}
+@media screen and (max-width:991px){
+    .o-navMain{
+        height: 56px;
+    }
+}

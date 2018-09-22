@@ -1,0 +1,37 @@
+doctype html
+include partials/_variables.pug  
+html(lang=lang)
+    include partials/_header.pug  
+    body
+        include partials/_nav.pug
+        include partials/_breadcrumb.pug
+
+        section.page-heading.page-heading--category
+            .container
+                h1.page-heading--category__title Výsledky vyhledávání: Lorem ipsum
+                p.page-heading--category__subtitle-excerpt Nalezeno 8 výsledků
+
+        main
+            .container
+
+                include partials/_pagination.pug
+
+                .product-grid
+                    include partials/_single-product-cell.pug
+                    include partials/_single-product-cell.pug
+                    include partials/_single-product-cell.pug
+
+                    include partials/_single-product-cell.pug
+                    include partials/_single-product-cell.pug
+                    include partials/_single-product-cell.pug
+
+                    include partials/_single-product-cell.pug
+                    include partials/_single-product-cell.pug
+                    include partials/_single-product-cell.pug
+
+                include partials/_pagination.pug
+
+
+        include partials/_footer.pug
+
+        include partials/_js-include.pug
