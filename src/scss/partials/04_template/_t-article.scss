@@ -4,15 +4,15 @@
 
 main article{
     margin: 0 auto;
-    padding: 4rem;
+    padding: 2rem 0;
     display: block;
-    background: $bg-white;
+    background: $bg-light;
     font-size: 1.6rem;
 }
 @media screen and (max-width:575px){
     main article{
-        padding: 4rem 1rem;
-        background: $white;
+        padding: 2rem 0;
+        background: $bg-light;
     }
 }
 
@@ -34,6 +34,9 @@ article{
     }
     & p:last-child{
         margin-bottom: 0rem;
+    }
+    & a{
+        font-weight: 500;
     }
 }
 

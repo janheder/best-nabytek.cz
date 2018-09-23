@@ -4,42 +4,20 @@ html(lang=lang)
     include partials/_header.pug  
     body
         include partials/_nav.pug
-        section.page-heading.post__image-container
-            .container
-                h1.page-heading__title Nejnovější aktuality
-            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-news-archive-thumb-large.jpg" data-src=URLbase+"img/news-archive-thumb-large.jpg" alt="#" title="#")
+        section.o-pageHeading.b-bgCover__wrap
+            include partials/_breadcrumb-transparent.pug
+            .container.o-pageHeading__container
+                h1.o-pageHeading__title Aktuality
+            img.lazy.o-pageHeading__img.b-bgCover__img(src=URLbase+"img/lazy/lazy-news-archive-thumb-large.jpg" data-src=URLbase+"img/news-archive-thumb-large.jpg" alt="#" title="#")
 
-        include partials/_breadcrumb.pug
 
         main
             .container
-                .row
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug
+                .row                                       
+                    - for (var i=0; i<10; i++)
+                        .col-12.col-sm-12.col-md-6
+                            include partials/_news-single.pug
 
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug
-
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug
-
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug   
-
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug
-
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug
-
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug
-
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug  
-                        
-                    .col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4
-                        include partials/_news-single.pug  
 
                 include partials/_pagination.pug
 

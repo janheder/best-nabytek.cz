@@ -1,8 +1,8 @@
-.bgCover__wrap{
+.b-bgCover__wrap{
     position: relative;
     z-index: 1;
 }
-.bgCover__img{
+.b-bgCover__img{
     object-fit: cover;
     @include absolute-position(0px, 0px, 0px, 0px);
     height: 100%;

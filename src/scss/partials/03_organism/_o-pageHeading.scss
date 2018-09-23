@@ -1,0 +1,23 @@
+.o-pageHeading{
+    background: $bg-primary;
+    padding: 10rem 0;
+
+    &::after{
+        content: "";
+        @include absolute-position(0,0,0,0);
+        background: rgba(0,0,0,0.2);
+    }
+}
+.o-pageHeading__container{
+    position: relative;
+    z-index: 2;
+}
+.o-pageHeading__title{
+    @include f-48-white-medium;
+    margin: 0;
+}
+.o-pageHeading__text{
+    @include f-16-white-regular;
+    margin: 0;
+    text-align: center;
+}

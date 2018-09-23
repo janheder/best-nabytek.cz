@@ -35,9 +35,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
     <link rel="manifest" href="images/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#141E30">
+    <meta name="msapplication-TileColor" content="#24272D">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#141E30">
+    <meta name="theme-color" content="#24272D">
     <!-- Bootstrap-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" onerror="loadBootstrap()" id="loadBootstrap">
     <script>
@@ -91,14 +91,17 @@
     <header class="o-nav">
       <nav class="o-navMain">
         <div class="o-navMain__navToggler m-navToggler" id="js-navToggler">
-          <div class="a-icon -hamburger m-navToggler__icon"></div>
+          <div class="a-icon -hamburger -white m-navToggler__icon"></div>
         </div>
         <div class="o-navMain__logo m-navLogo"><a class="m-navLogo__link" href="#"><img class="m-navLogo__img" src="img/logo.svg" alt="" title=""></a></div>
-        <div class="o-navMain__search m-navSeach">
-          <form class="m-navSeach__form" method="POST" id="search-form">
-            <input class="m-navSeach__input" type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required>
-            <button class="m-navSeach__button"><span class="a-icon -search m-navSeach__icon"></span></button>
+        <div class="o-navMain__search m-navSearch" id="js-navSearch">
+          <form class="m-navSearch__form" method="POST" id="search-form">
+            <input class="m-navSearch__input" type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required>
+            <button class="m-navSearch__button"><span class="a-icon -search m-navSearch__icon"></span></button>
           </form>
+        </div>
+        <div class="o-navMain__navSearchToggler m-navSearchToggler" id="js-navSearchToggler">
+          <div class="a-icon -search -white m-navSearchToggler__icon"></div>
         </div><a class="o-navMain__user m-navUser" href="#">
           <div class="a-icon -user -white m-navUser__icon"></div>
           <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a><a class="o-navMain__cart m-navCart" href="#">
@@ -155,6 +158,7 @@
       </nav>
     </header>
     <div class="a-darkOverlay" id="js-darkOverlay"></div>
+    <div class="a-navPush"></div>
     <div class="modal fade" id="modal-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="modal-add-to-cart-heading" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -190,31 +194,6 @@
           </div>
           <div class="modal-footer">
             <button class="btn btn-dark" type="button" data-dismiss="modal"><span class="btn__icon arrow-icon left white"></span> Zpět do obchodu</button><a class="btn" href="#">Pokračovat do košíku <span class="btn__icon arrow-icon white"></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modal-recommend" tabindex="-1" role="dialog" aria-labelledby="modal-recommend" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-recommend-heading">Doporučit produkt známému</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
-          </div>
-          <div class="modal-body">
-            <form method="post" action="" name="recommend_form">
-              <div class="form-group">
-                <label for="recommend_form_name">Vaše jméno</label>
-                <input class="form-control" type="text" name="recommend_form_name" id="recommend_form_name" required autocomplete="given-name">
-              </div>
-              <div class="form-group">
-                <label for="recommend_form_email">Email známého</label>
-                <input class="form-control" type="email" name="recommend_form_email" id="recommend_form_email" required autocomplete="email">
-              </div>
-              <div class="form-group">
-                <button class="form-control btn" type="submit" name="recommend_form_submit" id="recommend_form_submit">Odeslat zprávu</button>
-              </div>
-            </form>
           </div>
         </div>
       </div>
@@ -255,764 +234,708 @@
         </div>
       </div>
     </div>
-    <nav class="breadcrumb">
-      <div class="container breadcrumb__container"><a class="breadcrumb__item" href="#">Lorem ipsum</a><a class="breadcrumb__item" href="#">Dolor sit amet</a><a class="breadcrumb__item" href="#">Lorem ipsum</a><a class="breadcrumb__item" href="#">Dolor sit amet</a><span class="breadcrumb__item active">Lorem ipsum</span></div>
+    <nav class="m-breadcrumb">
+      <div class="container m-breadcrumb__container"><a class="m-breadcrumb__item" href="#">Lorem ipsum</a><a class="m-breadcrumb__item" href="#">Dolor sit amet</a><a class="m-breadcrumb__item" href="#">Lorem ipsum</a><a class="m-breadcrumb__item" href="#">Dolor sit amet</a><span class="m-breadcrumb__item active">Lorem ipsum</span></div>
     </nav>
-    <main>
-      <div class="product-detail">
-        <div class="container">
-          <div class="row product-detail__row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 product-detail__column">
-              <div class="product-detail__name">
-                <h1 class="product-detail__title">Postel Angelika 160/200 cm masiv borovice</h1>
-                <div class="product-detail__under-title">
-                  <p class="product-detail__brand">Kat. číslo: 3282779206280</p>
+    <section class="o-productDetail">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-5 o-productDetail__col">
+            <div class="o-productDetail__carousel m-productDetailCarousel">
+              <div class="m-productDetailCarousel__tags">
+                <div class="m-productDetailCarousel__tagSingle">
+                  <div class="a-tag -sale">Akce</div>
+                </div>
+                <div class="m-productDetailCarousel__tagSingle">   
+                  <div class="a-tag -new">Novinka</div>
+                </div>
+                <div class="m-productDetailCarousel__tagSingle"> 
+                  <div class="a-tag -recommended">Doporučené</div>
+                </div>
+                <div class="m-productDetailCarousel__tagSingle"> 
+                  <div class="a-tag -top">Top</div>
+                </div>
+              </div>
+              <div class="m-productDetailCarousel__gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                <div class="swiper-container-horizontal m-productDetailCarousel__content">
+                  <div class="swiper-wrapper m-productDetailCarousel__wrap">
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                    <div class="swiper-slide m-productDetailCarousel__slide">
+                      <div class="m-productDetailCarousel__paddingWrap">
+                        <figure class="m-productDetailCarousel__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="m-productDetailCarousel__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy m-productDetailCarousel__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                            <div class="swiper-lazy-preloader m-productDetailCarousel__preloader"></div>
+                            <figcaption class="m-productDetailCarousel__figcaption" itemprop="caption description">Popis obrázku 1</figcaption></a></figure>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination swiper-pagination-white m-productDetailCarousel__swiperNav"></div>
+                  <div class="swiper-button-prev m-productDetailCarousel__swiperButton -prev"></div>
+                  <div class="swiper-button-next m-productDetailCarousel__swiperButton -next"></div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 product-detail__column">
-              <div class="product-detail__images">
-                <div class="product-tags product-tags--detail">
-                  <div class="product-tags__single">
-                    <div class="product-tags__text sale">Akce</div>
-                  </div>
-                  <div class="product-tags__single">
-                    <div class="product-tags__text new">Novinka</div>
-                  </div>
-                  <div class="product-tags__single">
-                    <div class="product-tags__text top">Nejprodávanější</div>
-                  </div>
-                  <div class="product-tags__single">
-                    <div class="product-tags__text recommended">Doporučené</div>
-                  </div>
-                  <div class="product-tags__single">
-                    <div class="product-tags__text free-shipping">Doprava zdarma</div>
-                  </div>
-                </div>
-                <div class="product-tags--right product-tags--right-detail">
-                  <div class="product-tags__single">
-                    <div class="product-tags__text sale circle">-30%</div>
-                  </div>
-                </div>
-                <div class="product-detail-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                  <div class="product-detail-gallery__container">
-                    <div class="swiper-wrapper product-detail-gallery__wrapper">
-                      <div class="swiper-slide product-detail-gallery__slide">
-                        <div class="product-detail-gallery__zoom-container">
-                          <figure class="product-detail-gallery__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy product-detail-gallery__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide product-detail-gallery__slide">
-                        <div class="product-detail-gallery__zoom-container">
-                          <figure class="product-detail-gallery__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy product-detail-gallery__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide product-detail-gallery__slide">
-                        <div class="product-detail-gallery__zoom-container">
-                          <figure class="product-detail-gallery__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy product-detail-gallery__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide product-detail-gallery__slide">
-                        <div class="product-detail-gallery__zoom-container">
-                          <figure class="product-detail-gallery__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy product-detail-gallery__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide product-detail-gallery__slide">
-                        <div class="product-detail-gallery__zoom-container">
-                          <figure class="product-detail-gallery__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy product-detail-gallery__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide product-detail-gallery__slide">
-                        <div class="product-detail-gallery__zoom-container">
-                          <figure class="product-detail-gallery__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="swiper-lazy product-detail-gallery__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-white swiper-pagination--product"> </div>
-                    <div class="swiper-button-prev swiper-button-prev--product"> </div>
-                    <div class="swiper-button-next swiper-button-next--product"></div>
-                  </div>
-                  <div class="product-detail-gallery-responsive-thumbs">
-                    <div class="product-detail-gallery-responsive-thumbs__container">                                     
-                      <div class="swiper-wrapper product-detail-gallery-responsive-thumbs__wrapper">
-                        <div class="swiper-slide product-detail-gallery-responsive-thumbs__slide swiper-slide-active">
-                          <div class="product-detail-gallery-responsive-thumbs__slide-single"><img class="lazy product-detail-gallery-responsive-thumbs__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg" alt="#"></div>
-                        </div>
-                        <div class="swiper-slide product-detail-gallery-responsive-thumbs__slide swiper-slide-active">
-                          <div class="product-detail-gallery-responsive-thumbs__slide-single"><img class="lazy product-detail-gallery-responsive-thumbs__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg" alt="#"></div>
-                        </div>
-                        <div class="swiper-slide product-detail-gallery-responsive-thumbs__slide swiper-slide-active">
-                          <div class="product-detail-gallery-responsive-thumbs__slide-single"><img class="lazy product-detail-gallery-responsive-thumbs__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg" alt="#"></div>
-                        </div>
-                        <div class="swiper-slide product-detail-gallery-responsive-thumbs__slide swiper-slide-active">
-                          <div class="product-detail-gallery-responsive-thumbs__slide-single"><img class="lazy product-detail-gallery-responsive-thumbs__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg" alt="#"></div>
-                        </div>
-                        <div class="swiper-slide product-detail-gallery-responsive-thumbs__slide swiper-slide-active">
-                          <div class="product-detail-gallery-responsive-thumbs__slide-single"><img class="lazy product-detail-gallery-responsive-thumbs__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg" alt="#"></div>
-                        </div>
-                        <div class="swiper-slide product-detail-gallery-responsive-thumbs__slide swiper-slide-active">
-                          <div class="product-detail-gallery-responsive-thumbs__slide-single"><img class="lazy product-detail-gallery-responsive-thumbs__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg" alt="#"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="product-detail-gallery-thumbs" itemscope itemtype="http://schema.org/ImageGallery">
-                  <div class="product-detail-gallery-thumbs__container">
-                    <div class="product-detail-gallery-thumbs__single">
-                      <figure class="product-detail-gallery-thumbs__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery-thumbs__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="product-detail-gallery-thumbs__img" src="img/product-thumb-small.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                        <figcaption class="product-detail-gallery-thumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+            <div class="o-productDetail__thumbs m-productDetailThumbs">
+              <div class="swiper-container-horizontal m-productDetailThumbs__content">                                 
+                <div class="swiper-wrapper m-productDetailThumbs__wrap">
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
                       </figure>
                     </div>
-                    <div class="product-detail-gallery-thumbs__single">
-                      <figure class="product-detail-gallery-thumbs__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery-thumbs__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="product-detail-gallery-thumbs__img" src="img/product-thumb-small.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                        <figcaption class="product-detail-gallery-thumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
                       </figure>
                     </div>
-                    <div class="product-detail-gallery-thumbs__single">
-                      <figure class="product-detail-gallery-thumbs__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery-thumbs__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="product-detail-gallery-thumbs__img" src="img/product-thumb-small.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                        <figcaption class="product-detail-gallery-thumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
                       </figure>
                     </div>
-                    <div class="product-detail-gallery-thumbs__single">
-                      <figure class="product-detail-gallery-thumbs__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery-thumbs__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="product-detail-gallery-thumbs__img" src="img/product-thumb-small.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                        <figcaption class="product-detail-gallery-thumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
                       </figure>
                     </div>
-                    <div class="product-detail-gallery-thumbs__single">
-                      <button class="product-detail-gallery-thumbs__toggle" type="button" data-toggle="collapse" data-target="#product-thumbs-toggle" aria-expanded="false" aria-controls="collapseExample">Zobrazit další 4 fotky    </button>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                      </figure>
                     </div>
-                    <div class="collapse product-detail-gallery-thumbs__collapse" id="product-thumbs-toggle">
-                      <div class="product-detail-gallery-thumbs__collapse-wrap">
-                        <div class="product-detail-gallery-thumbs__single">
-                          <figure class="product-detail-gallery-thumbs__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery-thumbs__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="product-detail-gallery-thumbs__img" src="img/product-thumb-small.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery-thumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                        </div>
-                        <div class="product-detail-gallery-thumbs__single">
-                          <figure class="product-detail-gallery-thumbs__figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a class="product-detail-gallery-thumbs__link" href="img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920"><img class="product-detail-gallery-thumbs__img" src="img/product-thumb-small.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></a>
-                            <figcaption class="product-detail-gallery-thumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
-                          </figure>
-                        </div>
-                      </div>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="swiper-slide m-productDetailThumbs__slide">
+                    <div class="m-productDetailThumbs__paddingWrap">
+                      <figure class="m-productDetailThumbs__figure"><img class="swiper-lazy m-productDetailThumbs__img" data-src="img/product-thumb-small.jpg" alt="#">
+                        <div class="swiper-lazy-preloader m-productDetailThumbs__preloader"></div>
+                        <figcaption class="m-productDetailThumbs__figcaption" itemprop="caption description">Popis obrázku 1</figcaption>
+                      </figure>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 product-detail__column">
-              <div class="product-detail-main">
-                <div class="product-detail-main__description">
-                  <p class="product-detail-main__description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. <a href="#anchor-product-detail-description">Celý popis produktu <span class="fa fa-angle-down"></span></a></p>
-                </div>
-                <div class="product-detail-main__price-wrap">
-                  <div class="product-detail-main__price-old"><small class="product-detail-main__price-old-percentage">-20%</small>
-                    <p class="product-detail-main__price-old-text"><span class="product-detail-main__price-old-span">535 Kč</span> (ušetříte 136 Kč)</p>
-                  </div>
-                  <div class="product-detail-main__price">
-                    <h2 class="product-detail-main__price-title">399 Kč</h2>
-                  </div>
-                  <div class="product-detail-main__price-dph">
-                    <p class="product-detail-main__price-dph-text">310 Kč bez DPH   </p>
-                  </div>
-                </div>
-                <div class="product-detail-main__stock">
-                  <p class="product-detail-main__stock-text"><span class="fas fa-check-circle"></span> Zboží je skladem</p>
-                </div>
-                <form method="post" name="product_detail_form" id="product_detail_form">
-                  <div class="product-detail-main__cta">
-                    <div class="product-detail-main__cta-number-stepper">
-                      <div class="number-stepper">
-                        <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty">
-                        <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
-                        <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
-                      </div>
-                    </div>
-                    <div class="product-detail-main__cta-button-wrap">
-                      <button class="btn product-detail-main__cta-button" type="submit" name="buy-button"><span class="btn__icon cart-icon product-detail-main__btn-icon"></span> Přidat do košíku</button>
-                    </div>
-                  </div>
-                </form>
-                <div class="product-detail-main__btns">
-                  <div class="product-detail-main__btns-single" data-toggle="modal" data-target="#modal-question"><span class="product-detail-main__btns-icon"><span class="fas fa-question"></span></span> Dotaz k produktu</div>
-                </div>
-              </div>
+            <div class="o-productDetail__info m-productDetailInfo">
+              <h5 class="m-productDetailInfo__title">Máte dotaz ohledně tohoto produktu?</h5>
             </div>
           </div>
-        </div>
-        <div class="product-detail-responsive">
-          <div class="product-detail-responsive__name">
-            <p class="product-detail-responsive__title">Postel Angelika 160/200 cm masiv borovice</p>
-            <h3 class="product-detail-responsive__price"><span>16 989</span> Kč</h3>
-          </div>
-          <div class="product-detail-responsive__btn-wrap"><a class="btn product-detail-responsive__btn" onclick="$('#product_detail_form').submit();">Do košíku</a></div>
-        </div>
-      </div>
-      <div class="product-description">
-        <div class="product-description__inner" id="anchor-product-detail-description">
-          <ul class="nav nav-tabs product-description__nav" role="tablist">
-            <li class="nav-item product-description__tab"><a class="nav-link product-description__tab-link active" data-toggle="tab" href="#product-description-1" role="tab">Popis produktu</a></li>
-            <li class="nav-item product-description__tab"><a class="nav-link product-description__tab-link" data-toggle="tab" href="#product-description-3" role="tab">Přílohy produktu</a></li>
-          </ul>
-          <div class="tab-content product-description__wrap">
-            <div class="tab-pane product-description__tab-content active" id="product-description-1" role="tabpanel" aria-expanded="true"><a class="product-description__collapse" data-toggle="collapse" href="#product-description-c-1" aria-controls="product-description-c-1" aria-expanded="true">Popis produktu</a>
-              <div class="panel-collapse collapse show product-description__collapse-wrap" id="product-description-c-1">
-                <div class="container">
-                  <div class="product-description__content">
-                    <div class="row">
-                      <div class="col-12 col-md-8">
-                        <div class="product-description__text"><strong>Popis</strong>
-                          <p>Hydrance Optimale Riche je výživný hydratační krém, který je určen pro suchou až velmi suchou dehydratovanou citlivou pleť. Přináší okamžitou a intenzivní hydrataci pleti, která má dlouhotrvající účinek. Krém má vláčnou texturu, která dodává pleti pocit pohodlí. Díky unikátnímu složení se snižuje možnost vzniku alergií. Krém je vhodný jako podklad pod make-up.</p><strong>Dávkování a způsob užití</strong>
-                          <p>Aplikujte krém ráno, anebo večer na dokonale čistou a osušenou pleť.</p><strong>Složení</strong>
-                          <p>Přípravek obsahuje termální vodu Avene, bambucké máslo, meiboserin, lipomucin.</p>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-4">
-                        <div class="product-description__parameters">
-                          <table class="table table-striped">
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                            <tr>
-                              <td>Název údaje</td>
-                              <td>Hodnota údaje</td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
+          <div class="col-12 col-lg-7 o-productDetail__col">
+            <div class="o-productDetail__main m-productDetailMain">
+              <h1 class="m-productDetailMain__title">Postel Angelika 160/200 cm masiv borovice</h1>
+              <div class="m-productDetailMain__misc">
+                <div class="m-productDetailMain__rating m-rating">
+                  <div class="m-rating__stars"><span class="a-icon -star m-rating__icon"></span><span class="a-icon -star m-rating__icon"></span><span class="a-icon -star m-rating__icon"></span><span class="a-icon -star m-rating__icon"></span><span class="a-icon -star -empty m-rating__icon"></span></div>
+                  <div class="m-rating__text">70x hodnoceno</div>
+                </div>
+                <div class="m-productDetailMain__social m-socialShare">
+                  <div class="m-socialShare__title">Sdílet:</div><a class="m-socialShare__link" href="https://www.facebook.com/share.php?u=[URL]&amp;title=[TITLE]" target="_blank"><span class="a-icon -facebook m-socialShare__icon"></span></a><a class="m-socialShare__link" href="http://twitter.com/home?status=[TITLE]+[URL]" target="_blank"><span class="a-icon -twitter m-socialShare__icon"></span></a><a class="m-socialShare__link" href="https://plus.google.com/share?url=[URL]" target="_blank"><span class="a-icon -googlePlus m-socialShare__icon"></span></a>
+                </div>
+              </div>
+              <div class="m-productDetailMain__tags"><span class="m-productDetailMain__tagSingle">Výrobce: Visby</span><span class="m-productDetailMain__tagSingle">Záruka: 24 měsíců</span></div>
+              <p class="m-productDetailMain__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. <a href="#anchor-product-detail-description">Celý popis produktu</a></p>
+              <form class="m-productDetailMain__form" method="post" name="product_detail_form" id="product_detail_form">
+                <div class="m-productDetailMain__sizes"></div>
+                <div class="m-productDetailMain__variations">
+                  <div class="m-productVariation">
+                    <input class="m-productVariation__input" type="radio" name="productVariation" id="1">
+                    <div class="m-productVariation__paddingWrap">
+                      <figure class="m-productVariation__figure"><img class="m-productVariation__img" src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></figure>
                     </div>
+                    <div class="m-productVariation__title">grey flex</div>
+                    <div class="m-productVariation__cta">Zvolit variantu</div>
+                    <div class="m-productVariation__ctaActive">Vybráno</div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="tab-pane product-description__tab-content" id="product-description-3" role="tabpanel" aria-expanded="false"><a class="product-description__collapse collapsed" data-toggle="collapse" href="#product-description-c-3" aria-controls="product-description-c-3" aria-expanded="false">Přílohy produktu</a>
-              <div class="panel-collapse collapse product-description__collapse-wrap" id="product-description-c-3">
-                <div class="container">
-                  <div class="product-description__content"><a class="product-description__file" href="#"><span class="fas fa-download"></span> [PDF] Příloha pro produkt (23KB)</a><a class="product-description__file" href="#"><span class="fas fa-download"></span> [PDF] Příloha pro produkt (23KB)</a><a class="product-description__file" href="#"><span class="fas fa-download"></span> [PDF] Příloha pro produkt (23KB)</a><a class="product-description__file" href="#"><span class="fas fa-download"></span> [PDF] Příloha pro produkt (23KB)</a></div>
+                <div class="m-productDetailMain__cta">
+                  <div class="m-productDetailMain__priceWrap"><span class="m-productDetailMain__priceOld">22 999 Kč</span>
+                    <h2 class="m-productDetailMain__priceMain">18 546 Kč</h2><span class="m-productDetailMain__priceDPH">16 800 Kč bez DPH</span>
+                  </div>
+                  <div class="m-productDetailMain__qty">
+                    <div class="m-numberStepper">
+                      <input class="m-numberStepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty">
+                      <div class="m-numberStepper__btnUp"><span class="m-numberStepper__iconUp"></span></div>
+                      <div class="m-numberStepper__btnDown"><span class="m-numberStepper__iconDown"></span></div>
+                    </div>
+                  </div>
+                  <button class="btn m-productDetailMain__button" type="submit" name="buy-button"><span class="a-icon -cart -white m-productDetailMain__icon"></span> Do košíku</button>
                 </div>
-              </div>
+                <div class="m-productDetailMain__info">
+                  <div class="m-productDetailMain__stock"> <span class="a-icon -checkCircle -green m-productDetailMain__stockIcon"></span><span class="m-productDetailMain__stockText">Dostupné skladem</span></div><span class="m-productDetailMain__id">Katalogové číslo: Angeli160</span>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <div class="product-similar">
-      <div class="container product-similar__container">
-        <h2 class="product-similar__heading">Příslušenství</h2>
-        <div class="product-grid">
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
+    </section>
+    <div class="product-detail-responsive">
+      <div class="product-detail-responsive__name">
+        <p class="product-detail-responsive__title">Postel Angelika 160/200 cm masiv borovice</p>
+        <h3 class="product-detail-responsive__price"><span>16 989</span> Kč</h3>
+      </div>
+      <div class="product-detail-responsive__btn-wrap"><a class="btn product-detail-responsive__btn" onclick="$('#product_detail_form').submit();">Do košíku</a></div>
+    </div>
+    <section class="o-productDescription o-tabs" id="anchor-product-detail-description">
+      <nav class="o-tabs__nav m-tabsNav">
+        <div class="container"> 
+          <div class="nav nav-tabs m-tabsNav__nav" role="tablist"><a class="m-tabsNav__link active" id="product-1-tab" data-toggle="tab" href="#product-1" role="tab" aria-controls="product-1" aria-selected="true">Popis produktu</a><a class="m-tabsNav__link" id="product-2-tab" data-toggle="tab" href="#product-2" role="tab" aria-controls="product-2" aria-selected="false">Parametry</a><a class="m-tabsNav__link" id="product-3-tab" data-toggle="tab" href="#product-3" role="tab" aria-controls="product-3" aria-selected="false">Příslušenství</a></div>
         </div>
-        <h2 class="product-similar__heading">Obdobné produkty</h2>
-        <div class="product-grid">
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
+      </nav>
+      <div class="tab-content o-tabs__content m-tabsContent">
+        <div class="tab-pane fade m-tabsContent__pane show active" id="product-1" role="tabpanel" aria-labelledby="product-1-tab"> 
+          <div class="container"> <strong>Popis</strong>
+            <p>Hydrance Optimale Riche je výživný hydratační krém, který je určen pro suchou až velmi suchou dehydratovanou citlivou pleť. Přináší okamžitou a intenzivní hydrataci pleti, která má dlouhotrvající účinek. Krém má vláčnou texturu, která dodává pleti pocit pohodlí. Díky unikátnímu složení se snižuje možnost vzniku alergií. Krém je vhodný jako podklad pod make-up.</p><strong>Dávkování a způsob užití</strong>
+            <p>Aplikujte krém ráno, anebo večer na dokonale čistou a osušenou pleť.</p><strong>Složení</strong>
+            <p>Přípravek obsahuje termální vodu Avene, bambucké máslo, meiboserin, lipomucin.</p>
+          </div>
+        </div>
+        <div class="tab-pane fade m-tabsContent__pane" id="product-2" role="tabpanel" aria-labelledby="product-2-tab">   
+          <div class="container"> 
+            <div class="o-productGrid">
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
                     </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                  </div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
                   </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
                   </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
                   </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade m-tabsContent__pane" id="product-3" role="tabpanel" aria-labelledby="product-3-tab">   
+          <div class="container"> 
+            <div class="o-productGrid">
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
                   </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
-                    </div>
-                  </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
-                  </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
-                  </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
-          <div class="m-productCell"><a class="m-productCell__link" href="#">
-              <div class="m-productCell__top">    
-                <div class="m-productCell__thumb">
-                  <div class="m-productCell__tags">
-                    <div class="m-productCell__tagSingle">
-                      <div class="a-tag -sale">Akce</div>
-                    </div>
-                    <div class="m-productCell__tagSingle">   
-                      <div class="a-tag -new">Novinka</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -recommended">Doporučené</div>
-                    </div>
-                    <div class="m-productCell__tagSingle"> 
-                      <div class="a-tag -top">Top</div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
-                </div>
-                <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
-              </div>
-              <div class="m-productCell__bottom">
-                <div class="m-productCell__priceWrap">
-                  <div class="m-productCell__price">
-                    <div class="m-productCell__priceOld">999 Kč</div>
-                    <div class="m-productCell__priceMain">899 Kč</div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
                   </div>
-                  <div class="m-productCell__delivery">
-                    <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="m-productCell__hover">
-                <p class="m-productCell__text">Výrobce: Visby</p>
-                <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
-              </div></a></div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                  </div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+              <div class="m-productCell"><a class="m-productCell__link" href="#">
+                  <div class="m-productCell__top">    
+                    <div class="m-productCell__thumb">
+                      <div class="m-productCell__tags">
+                        <div class="m-productCell__tagSingle">
+                          <div class="a-tag -sale">Akce</div>
+                        </div>
+                        <div class="m-productCell__tagSingle">   
+                          <div class="a-tag -new">Novinka</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -recommended">Doporučené</div>
+                        </div>
+                        <div class="m-productCell__tagSingle"> 
+                          <div class="a-tag -top">Top</div>
+                        </div>
+                      </div>
+                      <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                    </div>
+                    <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                  </div>
+                  <div class="m-productCell__bottom">
+                    <div class="m-productCell__priceWrap">
+                      <div class="m-productCell__price">
+                        <div class="m-productCell__priceOld">999 Kč</div>
+                        <div class="m-productCell__priceMain">899 Kč</div>
+                      </div>
+                      <div class="m-productCell__delivery">
+                        <p class="m-productCell__deliveryText">Dostupné skladem</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-productCell__hover">
+                    <p class="m-productCell__text">Výrobce: Visby</p>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                  </div></a></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div><a class="scrollTop" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>
+    </section>
+    <section class="o-sectionSimilar">
+      <div class="container">
+        <h1 class="o-sectionSimilar__title">Podobné produkty</h1>
+        <div class="o-sectionSimilar m-productCarousel" id="product_swiper">
+          <div class="m-productCarousel__content">
+            <div class="swiper-wrapper m-productCarousel__wrap">
+              <div class="swiper-slide m-productCarousel__slide">
+                <div class="m-productCell -small"><a class="m-productCell__link" href="#">
+                    <div class="m-productCell__top">    
+                      <div class="m-productCell__thumb">
+                        <div class="m-productCell__tags">
+                          <div class="m-productCell__tagSingle">
+                            <div class="a-tag -sale">Akce</div>
+                          </div>
+                          <div class="m-productCell__tagSingle">   
+                            <div class="a-tag -new">Novinka</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -recommended">Doporučené</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -top">Top</div>
+                          </div>
+                        </div>
+                        <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                      </div>
+                      <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                    </div>
+                    <div class="m-productCell__bottom">
+                      <div class="m-productCell__priceWrap">
+                        <div class="m-productCell__price">
+                          <div class="m-productCell__priceOld">999 Kč</div>
+                          <div class="m-productCell__priceMain">899 Kč</div>
+                        </div>
+                      </div>
+                    </div></a></div>
+              </div>
+              <div class="swiper-slide m-productCarousel__slide">
+                <div class="m-productCell -small"><a class="m-productCell__link" href="#">
+                    <div class="m-productCell__top">    
+                      <div class="m-productCell__thumb">
+                        <div class="m-productCell__tags">
+                          <div class="m-productCell__tagSingle">
+                            <div class="a-tag -sale">Akce</div>
+                          </div>
+                          <div class="m-productCell__tagSingle">   
+                            <div class="a-tag -new">Novinka</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -recommended">Doporučené</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -top">Top</div>
+                          </div>
+                        </div>
+                        <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                      </div>
+                      <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                    </div>
+                    <div class="m-productCell__bottom">
+                      <div class="m-productCell__priceWrap">
+                        <div class="m-productCell__price">
+                          <div class="m-productCell__priceOld">999 Kč</div>
+                          <div class="m-productCell__priceMain">899 Kč</div>
+                        </div>
+                      </div>
+                    </div></a></div>
+              </div>
+              <div class="swiper-slide m-productCarousel__slide">
+                <div class="m-productCell -small"><a class="m-productCell__link" href="#">
+                    <div class="m-productCell__top">    
+                      <div class="m-productCell__thumb">
+                        <div class="m-productCell__tags">
+                          <div class="m-productCell__tagSingle">
+                            <div class="a-tag -sale">Akce</div>
+                          </div>
+                          <div class="m-productCell__tagSingle">   
+                            <div class="a-tag -new">Novinka</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -recommended">Doporučené</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -top">Top</div>
+                          </div>
+                        </div>
+                        <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                      </div>
+                      <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                    </div>
+                    <div class="m-productCell__bottom">
+                      <div class="m-productCell__priceWrap">
+                        <div class="m-productCell__price">
+                          <div class="m-productCell__priceOld">999 Kč</div>
+                          <div class="m-productCell__priceMain">899 Kč</div>
+                        </div>
+                      </div>
+                    </div></a></div>
+              </div>
+              <div class="swiper-slide m-productCarousel__slide">
+                <div class="m-productCell -small"><a class="m-productCell__link" href="#">
+                    <div class="m-productCell__top">    
+                      <div class="m-productCell__thumb">
+                        <div class="m-productCell__tags">
+                          <div class="m-productCell__tagSingle">
+                            <div class="a-tag -sale">Akce</div>
+                          </div>
+                          <div class="m-productCell__tagSingle">   
+                            <div class="a-tag -new">Novinka</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -recommended">Doporučené</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -top">Top</div>
+                          </div>
+                        </div>
+                        <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                      </div>
+                      <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                    </div>
+                    <div class="m-productCell__bottom">
+                      <div class="m-productCell__priceWrap">
+                        <div class="m-productCell__price">
+                          <div class="m-productCell__priceOld">999 Kč</div>
+                          <div class="m-productCell__priceMain">899 Kč</div>
+                        </div>
+                      </div>
+                    </div></a></div>
+              </div>
+              <div class="swiper-slide m-productCarousel__slide">
+                <div class="m-productCell -small"><a class="m-productCell__link" href="#">
+                    <div class="m-productCell__top">    
+                      <div class="m-productCell__thumb">
+                        <div class="m-productCell__tags">
+                          <div class="m-productCell__tagSingle">
+                            <div class="a-tag -sale">Akce</div>
+                          </div>
+                          <div class="m-productCell__tagSingle">   
+                            <div class="a-tag -new">Novinka</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -recommended">Doporučené</div>
+                          </div>
+                          <div class="m-productCell__tagSingle"> 
+                            <div class="a-tag -top">Top</div>
+                          </div>
+                        </div>
+                        <div class="m-productCell__imgWrap"><img class="lazy m-productCell__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy m-productCell__preloader"></span></div>
+                      </div>
+                      <h4 class="m-productCell__title">Postel Angelika 160/200 cm masiv borovice</h4>
+                    </div>
+                    <div class="m-productCell__bottom">
+                      <div class="m-productCell__priceWrap">
+                        <div class="m-productCell__price">
+                          <div class="m-productCell__priceOld">999 Kč</div>
+                          <div class="m-productCell__priceMain">899 Kč</div>
+                        </div>
+                      </div>
+                    </div></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev m-productCarousel__swiperButton -prev"></div>
+          <div class="swiper-button-next m-productCarousel__swiperButton -next"></div>
+        </div>
+      </div>
+    </section><a class="scrollTop" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>
     <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -1096,11 +1019,9 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
               <h5 class="o-footerMain__title">Kontaktní informace</h5>
-              <p class="o-footerMain__text">AC ENERGO  s.r.o.</p>
-              <p class="o-footerMain__text">Hlučínská 41</p>
-              <p class="o-footerMain__text">747 22 Dolní Benešov</p><br>
-              <p class="o-footerMain__text">info@acenergo.cz</p>
-              <p class="o-footerMain__text">+420 553 881 668</p>
+              <p class="o-footerMain__text">Ondera Aleš</p>
+              <p class="o-footerMain__text">J.Čapka 3097</p>
+              <p class="o-footerMain__text">Frýdek-Místek, 738 01</p><a class="o-footerMain__link" href="#">Více kontaktů</a>
             </div>
           </div>
         </div>
@@ -1115,7 +1036,7 @@
       </div>
     </section>
     <!-- Popper for Bootstrap support-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script>
       if(typeof(Popper) === 'undefined') {
       document.write('<script src="js/popper.min.js">\x3C/script>')}
@@ -1137,7 +1058,7 @@
     <script src="js/plugins/photoswipe-ui-default.min.js"></script>
     <script src="js/plugins/swiper.min.js"></script>
     <script src="js/scripts.min.js"></script>
-    <!-- Seach autocomplete test-->
+    <!-- Search autocomplete test-->
     <script>
       var options = {
       	data: ["blue", "green", "pink", "red", "yellow"]
@@ -1182,43 +1103,42 @@
     </div>
     <script>
       //SWIPER PRODUCT
-      var carousel_product = new Swiper('.product-detail-gallery__container', {
-        lazy: true,
-        spaceBetween: 0,
-        grabCursor: true,
-        zoom: false,
-        loop: false,
-        pagination: {
-          el: '.swiper-pagination--product',
-          clickable: true,
-        },
-      navigation: {
-          nextEl: '.swiper-button-next--product',
-          prevEl: '.swiper-button-prev--product',
+      var carousel_product = new Swiper('.m-productDetailCarousel__content', {
+          lazy: true,
+          spaceBetween: 0,
+          grabCursor: true,
+          zoom: false,
+          loop: false,
+          pagination: {
+              el: '.m-productDetailCarousel__swiperNav',
+              clickable: true,
+          },
+          navigation: {
+              nextEl: '.m-productDetailCarousel__swiperButton.-next',
+              prevEl: '.m-productDetailCarousel__swiperButton.-prev',
           }
       });
-      var galleryThumbs = new Swiper('.product-detail-gallery-responsive-thumbs__container', {
-        spaceBetween: 10,
-        centeredSlides: true,
-        slidesPerView: '4',
-        touchRatio: 0.2,
-        slideToClickedSlide: true,
+      
+      var galleryThumbs = new Swiper('.m-productDetailThumbs__content', {
+          spaceBetween: 10,
+          lazy: true,
+          centeredSlides: true,
+          slidesPerView: '5',
+          touchRatio: 0.2,
+          slideToClickedSlide: true,
       });
       carousel_product.controller.control = galleryThumbs;
       galleryThumbs.controller.control = carousel_product;
-      
           
-    </script>
-    <script>
-      initPhotoSwipeFromDOM('.product-detail-gallery');
-      initPhotoSwipeFromDOM2('.product-detail-gallery-thumbs');
+      
+      initPhotoSwipeFromDOM('.m-productDetailCarousel__gallery');
       
        
       $( ".pswp__button--arrow--left" ).click(function() {
-          $( ".product-detail-images .swiper-button-prev" ).click();
+          $( ".m-productDetailCarousel__swiperButton.-prev" ).click();
       });
       $( ".pswp__button--arrow--right" ).click(function() {
-          $( ".product-detail-images .swiper-button-next" ).click();
+          $( ".m-productDetailCarousel__swiperButton.-next" ).click();
       });
     </script>
   </body>

@@ -5,6 +5,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: 0.3s ease all;
+
+    &:hover, &:active, &:focus{
+        text-decoration: none;
+        box-shadow: $box-shadow-primary;
+    }
 }
 .m-categoryCell__img{
     height: 60px;

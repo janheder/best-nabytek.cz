@@ -1,0 +1,107 @@
+.m-productDetailMain{
+
+}
+.m-productDetailMain__title{
+    text-align: left;
+    line-height: 1.25;
+}
+.m-productDetailMain__misc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.m-productDetailMain__rating{
+
+}
+.m-productDetailMain__social{
+
+}
+.m-productDetailMain__tags{
+    display: flex;
+    flex-direction: row;
+    padding-top: 4rem;
+}
+.m-productDetailMain__tagSingle{
+    background: $bg-light;
+    @include f-14-dark-medium;
+    min-height: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    margin-right: 20px;
+
+    &:last-child{
+        margin: 0;
+    }
+}
+
+.m-productDetailMain__description{
+    padding-top: 2rem;
+    @include f-14-dark-regular;
+    margin: 0;
+}
+
+
+
+.m-productDetailMain__cta{
+    background: $bg-light;
+    border-radius: $border-radius-primary;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.m-productDetailMain__priceWrap{
+    flex-grow: 1;
+}
+.m-productDetailMain__priceOld{
+    @include f-14-dark-medium;
+    text-decoration: line-through;
+}
+.m-productDetailMain__priceMain{
+    @include f-30-dark-medium;
+    color: $text-red;
+    margin: 0;
+    line-height: 1;
+}
+.m-productDetailMain__priceDPH{
+    @include f-14-dark-regular;
+    font-size: 1.3rem;
+}
+.m-productDetailMain__qty{
+    padding-right: 2rem;
+}
+.m-productDetailMain__button{
+    padding: 0 4rem;
+    
+    .m-productDetailMain__icon{
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+}
+
+.m-productDetailMain__info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: $bg-light;
+    margin-top: 1px;
+    padding: 2rem;
+}
+.m-productDetailMain__stock{
+    display: flex;
+    flex-direction: row;
+}
+.m-productDetailMain__stockText{
+    @include f-16-dark-medium;
+    color: $text-green;
+    margin-left: 5px;
+}
+.m-productDetailMain__id{
+    @include f-14-dark-regular;
+}

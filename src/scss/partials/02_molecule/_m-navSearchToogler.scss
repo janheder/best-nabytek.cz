@@ -1,0 +1,22 @@
+.m-navSearchToggler{
+    height: 100%;
+    width: 56px;
+    cursor: pointer;
+    display: none;
+    position: relative;
+}
+.m-navSearchToggler.-active{
+
+}
+.m-navSearchToggler__icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@media screen and (max-width:991px){
+    .m-navSearchToggler{
+        display: block;
+    }
+}

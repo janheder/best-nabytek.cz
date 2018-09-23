@@ -4,16 +4,22 @@ header.o-nav
 	nav.o-navMain
 
 		.o-navMain__navToggler.m-navToggler(id="js-navToggler")
-			.a-icon.-hamburger.m-navToggler__icon
+			.a-icon.-hamburger.-white.m-navToggler__icon
+
 
 		.o-navMain__logo.m-navLogo
 			a.m-navLogo__link(href="#")
 				img.m-navLogo__img(src=URLbase+"img/logo.svg" alt="" title="")
 
-		.o-navMain__search.m-navSeach
-			form.m-navSeach__form(method="POST" id="search-form")
-				input.m-navSeach__input(type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required)
-				button.m-navSeach__button #[span.a-icon.-search.m-navSeach__icon]
+
+		.o-navMain__search.m-navSearch(id="js-navSearch")
+			form.m-navSearch__form(method="POST" id="search-form")
+				input.m-navSearch__input(type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required)
+				button.m-navSearch__button #[span.a-icon.-search.m-navSearch__icon]
+			
+		.o-navMain__navSearchToggler.m-navSearchToggler(id="js-navSearchToggler")
+			.a-icon.-search.-white.m-navSearchToggler__icon
+
 
 		a.o-navMain__user.m-navUser(href="#")
 			.a-icon.-user.-white.m-navUser__icon
@@ -62,3 +68,5 @@ header.o-nav
 					p test
 
 .a-darkOverlay(id="js-darkOverlay")
+
+.a-navPush

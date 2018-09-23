@@ -1,22 +1,22 @@
 
-.m-navSeach{
+.m-navSearch{
     flex-grow: 1;
     padding: 0 6vw;
 }
-.m-navSeach__form{
+.m-navSearch__form{
     position: relative;
 }
 .easy-autocomplete{
     width: auto !important;
 }
-.m-navSeach__input{
+.m-navSearch__input{
     border: 0;
     border-radius: $border-radius-primary;
     height: 50px;
     padding: 0 20px;
     width: 100%;
 }
-.m-navSeach__button{
+.m-navSearch__button{
     position: absolute;
     right: 0;
     top: 0;
@@ -51,17 +51,17 @@
     }
 }
 @media screen and (max-width:1200px){
-    .m-navSeach{
+    .m-navSearch{
         flex-grow: 1;
         padding: 0 20px;
     }
 }
 
 @media screen and (max-width:991px){
-    .m-navSeach{
+    .m-navSearch{
         padding: 0;
     }
-    .m-navSeach__form{
+    .m-navSearch__form{
         display: none;
     }
 }

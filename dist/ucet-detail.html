@@ -35,9 +35,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
     <link rel="manifest" href="images/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#141E30">
+    <meta name="msapplication-TileColor" content="#24272D">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#141E30">
+    <meta name="theme-color" content="#24272D">
     <!-- Bootstrap-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" onerror="loadBootstrap()" id="loadBootstrap">
     <script>
@@ -91,14 +91,17 @@
     <header class="o-nav">
       <nav class="o-navMain">
         <div class="o-navMain__navToggler m-navToggler" id="js-navToggler">
-          <div class="a-icon -hamburger m-navToggler__icon"></div>
+          <div class="a-icon -hamburger -white m-navToggler__icon"></div>
         </div>
         <div class="o-navMain__logo m-navLogo"><a class="m-navLogo__link" href="#"><img class="m-navLogo__img" src="img/logo.svg" alt="" title=""></a></div>
-        <div class="o-navMain__search m-navSeach">
-          <form class="m-navSeach__form" method="POST" id="search-form">
-            <input class="m-navSeach__input" type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required>
-            <button class="m-navSeach__button"><span class="a-icon -search m-navSeach__icon"></span></button>
+        <div class="o-navMain__search m-navSearch" id="js-navSearch">
+          <form class="m-navSearch__form" method="POST" id="search-form">
+            <input class="m-navSearch__input" type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required>
+            <button class="m-navSearch__button"><span class="a-icon -search m-navSearch__icon"></span></button>
           </form>
+        </div>
+        <div class="o-navMain__navSearchToggler m-navSearchToggler" id="js-navSearchToggler">
+          <div class="a-icon -search -white m-navSearchToggler__icon"></div>
         </div><a class="o-navMain__user m-navUser" href="#">
           <div class="a-icon -user -white m-navUser__icon"></div>
           <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a><a class="o-navMain__cart m-navCart" href="#">
@@ -155,13 +158,14 @@
       </nav>
     </header>
     <div class="a-darkOverlay" id="js-darkOverlay"></div>
+    <div class="a-navPush"></div>
     <section class="page-heading post__image-container">
       <div class="container">
         <h1 class="page-heading__title">Uživatelský účet</h1>
       </div><img class="lazy post__featured-image" src="img/lazy/lazy-user-thumb-large.jpg" data-src="img/user-thumb-large.jpg" alt="#" title="#">
     </section>
-    <nav class="breadcrumb">
-      <div class="container breadcrumb__container"><a class="breadcrumb__item" href="#">Lorem ipsum</a><a class="breadcrumb__item" href="#">Dolor sit amet</a><a class="breadcrumb__item" href="#">Lorem ipsum</a><a class="breadcrumb__item" href="#">Dolor sit amet</a><span class="breadcrumb__item active">Lorem ipsum</span></div>
+    <nav class="m-breadcrumb">
+      <div class="container m-breadcrumb__container"><a class="m-breadcrumb__item" href="#">Lorem ipsum</a><a class="m-breadcrumb__item" href="#">Dolor sit amet</a><a class="m-breadcrumb__item" href="#">Lorem ipsum</a><a class="m-breadcrumb__item" href="#">Dolor sit amet</a><span class="m-breadcrumb__item active">Lorem ipsum</span></div>
     </nav>
     <main>
       <div class="container">
@@ -479,11 +483,9 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
               <h5 class="o-footerMain__title">Kontaktní informace</h5>
-              <p class="o-footerMain__text">AC ENERGO  s.r.o.</p>
-              <p class="o-footerMain__text">Hlučínská 41</p>
-              <p class="o-footerMain__text">747 22 Dolní Benešov</p><br>
-              <p class="o-footerMain__text">info@acenergo.cz</p>
-              <p class="o-footerMain__text">+420 553 881 668</p>
+              <p class="o-footerMain__text">Ondera Aleš</p>
+              <p class="o-footerMain__text">J.Čapka 3097</p>
+              <p class="o-footerMain__text">Frýdek-Místek, 738 01</p><a class="o-footerMain__link" href="#">Více kontaktů</a>
             </div>
           </div>
         </div>
@@ -498,7 +500,7 @@
       </div>
     </section>
     <!-- Popper for Bootstrap support-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script>
       if(typeof(Popper) === 'undefined') {
       document.write('<script src="js/popper.min.js">\x3C/script>')}
@@ -520,7 +522,7 @@
     <script src="js/plugins/photoswipe-ui-default.min.js"></script>
     <script src="js/plugins/swiper.min.js"></script>
     <script src="js/scripts.min.js"></script>
-    <!-- Seach autocomplete test-->
+    <!-- Search autocomplete test-->
     <script>
       var options = {
       	data: ["blue", "green", "pink", "red", "yellow"]

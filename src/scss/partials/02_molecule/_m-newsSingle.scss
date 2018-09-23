@@ -1,9 +1,5 @@
-/*------------------------------------*\
-    NEWS SINGLE
-\*------------------------------------*/
-
 .m-newsSingle{
-    background: $bg-white;
+    background: transparent;
     color: $text-primary;
     overflow: hidden;
     margin: 10px 0;
@@ -15,7 +11,7 @@
         text-decoration: none;
 
         .m-newsSingle__img{
-            transform: scale(1.05);
+           opacity: 0.8;
         }
     }
 }

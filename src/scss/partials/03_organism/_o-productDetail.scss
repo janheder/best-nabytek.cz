@@ -1,0 +1,11 @@
+.o-productDetail{
+    background: $bg-white;
+}
+.o-productDetail__main{
+    padding-left: 40px;
+}
+@media screen and (max-width:991px){
+    .o-productDetail__main{
+        padding-left: 0px;
+    }
+}
