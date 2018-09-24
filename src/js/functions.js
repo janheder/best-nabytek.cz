@@ -273,6 +273,16 @@ $(function () {
   $("[data-toggle='tooltip']").tooltip()
 })
 
+// =============================================================================
+// SELECTBOX
+// =============================================================================
+
+$(".m-selectBox .m-selectBox__input").click(function () {   
+    var value = $(this).siblings(".m-selectBox__content").find(".m-selectBox__name").text();
+    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
+});
+  
+
 
 // =============================================================================
 // MODAL AUTO DISPLAY

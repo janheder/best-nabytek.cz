@@ -1,0 +1,69 @@
+
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
+      </div>
+      <div class="modal-body">
+        <form class="login-form page-message__login-form" method="post" action="" name="login_form">
+          <div class="form-group">
+            <label for="modal-login_form_username">Uživatelské jméno</label>
+            <input class="form-control" type="text" name="modal-login_form_username" id="modal-login_form_username" required="required" autocomplete="username"/>
+          </div>
+          <div class="form-group">
+            <label for="modal-login_form_password">Heslo</label>
+            <input class="form-control" type="password" name="modal-login_form_password" id="modal-login_form_password" required="required" autocomplete="password"/>
+          </div>
+          <div class="form-group">
+            <button class="form-control btn" type="submit" name="modal-login_form_submit" id="modal-login_form_submit">Přihlásit se</button>
+          </div>
+          <div class="form-group"><a class="form-control btn btn-ghost" href="#">Vytvořit nový účet</a></div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<header class="o-nav">
+  <nav class="o-navMain">
+    <div class="o-navMain__navToggler m-navToggler" id="js-navToggler">
+      <div class="a-icon -hamburger -white m-navToggler__icon"></div>
+    </div>
+    <div class="o-navMain__logo m-navLogo"><a class="m-navLogo__link" href="#"><img class="m-navLogo__img" src="undefinedimg/logo.svg" alt="" title=""/></a></div>
+    <div class="o-navMain__search m-navSearch" id="js-navSearch">
+      <form class="m-navSearch__form" method="POST" id="search-form">
+        <input class="m-navSearch__input" type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required="required"/>
+        <button class="m-navSearch__button"><span class="a-icon -search m-navSearch__icon"></span></button>
+      </form>
+    </div>
+    <div class="o-navMain__navSearchToggler m-navSearchToggler" id="js-navSearchToggler">
+      <div class="a-icon -search -white m-navSearchToggler__icon"></div>
+    </div>
+    <!--
+    a.o-navMain__user.m-navUser(href="#")
+    	.a-icon.-user.-white.m-navUser__icon
+    	.m-navUser__info
+    		span.m-navUser__title Můj účet
+    
+    --><a class="o-navMain__user m-navUser" href="#">
+      <div class="a-icon -user -white m-navUser__icon"></div>
+      <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a>
+    <!--
+    a.o-navMain__cart.m-navCart(href="#")
+    	.m-navCart__iconWrap
+    		.a-icon.-cart.-white.m-navCart__icon
+    	.m-navCart__info
+    		span.m-navCart__title Nákupní košík
+    
+    --><a class="o-navMain__cart m-navCart -active" href="#">
+      <div class="m-navCart__iconWrap">
+        <div class="a-icon -cart -white m-navCart__icon">
+          <div class="m-navCart__icoNumber">2</div>
+        </div>
+      </div>
+      <div class="m-navCart__info"><span class="m-navCart__text">Nákupní košík</span><span class="m-navCart__title">859 Kč</span></div></a>
+  </nav>
+</header>
+<div class="a-darkOverlay" id="js-darkOverlay"></div>
+<div class="a-navPush"></div>

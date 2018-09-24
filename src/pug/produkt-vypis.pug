@@ -3,96 +3,42 @@ include partials/_variables.pug
 html(lang=lang)
     include partials/_header.pug  
     body
-        include partials/_nav.pug
-        include partials/_breadcrumb.pug
+        include partials/_navMain.pug
+        include partials/_navProducts.pug
 
-        section.page-heading.page-heading--category
+        section.o-pageHeading.b-bgCover__wrap
+            include partials/_breadcrumb-transparent.pug
+            .container.o-pageHeading__container
+                h1.o-pageHeading__title Postele
+                .row
+                    - for (var i=0; i<5; i++)
+                        .col.o-pageHeading__col
+                            a.o-pageHeading__categories.m-categoryCell(href="#")
+                                img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
+                                p.m-categoryCell__title Postele
+
+                    .w-100
+
+                    - for (var i=0; i<5; i++)
+                        .col.o-pageHeading__col
+                            a.o-pageHeading__categories.m-categoryCell(href="#")
+                                img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
+                                p.m-categoryCell__title Postele
+
+            img.lazy.o-pageHeading__img.b-bgCover__img(src=URLbase+"img/lazy/lazy-news-archive-thumb-large.jpg" data-src=URLbase+"img/news-archive-thumb-large.jpg" alt="#" title="#")
+
+
+        section.o-filter
             .container
-                h1.page-heading--category__title Lorem ipsum dolor sit amet
-                p.page-heading--category__subtitle-excerpt #[span.page-heading--category__toggle(data-toggle="collapse" href="#product-category-description" aria-expanded="false" aria-controls="product-category-description") Popis kategorie]
-                .collapse(id="product-category-description")
-                    p.page-heading--category__subtitle sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-
 
         main
-            .container
-                .subcategories-grid
-                    .row
-                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
-                            a.subcategories-grid__single(href="#") #[span.caret-icon.right.subcategories-grid__icon] Lorem ipsum
-                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
-                            a.subcategories-grid__single(href="#") #[span.caret-icon.right.subcategories-grid__icon] Dolor sit amet
-                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
-                            a.subcategories-grid__single(href="#") #[span.caret-icon.right.subcategories-grid__icon] Lorem ipsum dolor
-                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
-                            a.subcategories-grid__single(href="#") #[span.caret-icon.right.subcategories-grid__icon] Sit amet
-                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
-                            a.subcategories-grid__single(href="#") #[span.caret-icon.right.subcategories-grid__icon] Ipsum dolor
-
-            .top-products
-                .container
-                    .top-products__title-wrap
-                        h2.top-products__title Nejprodávanější produkty
-                    .swiper-container-5-products-wrap
-                        .swiper-container-5-products 
-                            .swiper-wrapper
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                                .swiper-slide
-                                    include partials/_single-product-cell-top.pug
-                        .swiper-button-prev.swiper-button-prev--5
-                        .swiper-button-next.swiper-button-next--5
-            
-            .filter-main
-                .container
-                    a.filter-main__collapse(data-toggle="collapse" href="#product-filter" aria-expanded="false" aria-controls="product-filter") Filtr produktů
-                    .panel-collapse.collapse.filter-main__collapse-wrap(id="product-filter")   
-                        form.filter-main__form(method="post" action="")
-                            .filter-main__tag
-                                h2.filter-main__heading.filter-main__heading--tag Filtrovat produkty
-                                .form-group.filter-main__single
-                                    label.form-check__label.filter-main__label
-                                        input.form-check__input(type="checkbox" name="filter-novinka") 
-                                        | Novinka
-                                        span.form-check__box.checkbox
-                                .form-group.filter-main__single
-                                    label.form-check__label.filter-main__label
-                                        input.form-check__input(type="checkbox" name="filter-akce") 
-                                        | Akční zboží
-                                        span.form-check__box.checkbox
-                                .form-group.filter-main__single
-                                    label.form-check__label.filter-main__label
-                                        input.form-check__input(type="checkbox" name="filter-doporucene") 
-                                        | Doporučujeme
-                                        span.form-check__box.checkbox
-                                        
-                            button.btn.filter-main__button(type="submit") Filtrovat produkty
-           
-
-
-
-
-
-
 
             .container
-                .filter-badges
-                    .filter-badges__single 
-                        p.filter-badges__title Filtr prvek
-                        .filter-badges__remove-wrap
-                            span.cross-icon.white.filter-badges__remove 
+                .m-filterBadges
+                    .m-filterBadges__single 
+                        .m-filterBadges__title Filtr prvek
+                        .m-filterBadges__remove
+                            span.a-icon.white.m-filterBadges__Icon 
 
                 include partials/_pagination.pug
 

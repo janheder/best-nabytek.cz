@@ -1,0 +1,34 @@
+nav.o-navProducts(id="js-navProducts")
+	.o-navProducts__user.m-navUserMenu
+		.m-navUserMenu__heading(data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser")
+			span.a-icon.-user.-white.m-navUserMenu__img
+			.m-navUserMenu__username Petr Novák
+			span.a-icon.-cheveron.-white.m-navUserMenu__cheveron 
+
+		.collapse.m-navUserMenu__content(id="collapseUser")
+			a.m-navUserMenu__link(href="#") #[span.a-icon.-personalInfo.m-navUserMenu__icon] Změna osobních údajů
+			a.m-navUserMenu__link(href="#") #[span.a-icon.-calendar.m-navUserMenu__icon] Historie objednávek
+			a.m-navUserMenu__link(href="#") #[span.a-icon.-logOut.m-navUserMenu__icon] Odhlásit
+
+	.accordion.o-navProducts__accordion(id="accordionExample")
+
+		.o-navProducts__item
+			.o-navProducts__link(id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne") Produkty 
+			.collapse.o-navProducts__collapse(id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample")
+
+				.o-navProducts__subCategoryWrap
+					- for (var i=0; i<12; i++)
+						a.o-navProducts__subCategory(href="#")
+							img.o-navProducts__subCategoryImg(src=URLbase+"img/product-thumb-small.jpg")
+							span.o-navProducts__subCategoryText(href="#") Postele
+
+
+		.o-navProducts__item
+			.o-navProducts__link(id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo") Produkty 
+			.collapse.o-navProducts__collapse(id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample")
+
+				.o-navProducts__subCategoryWrap
+					- for (var i=0; i<8; i++)
+						a.o-navProducts__subCategory(href="#")
+							img.o-navProducts__subCategoryImg(src=URLbase+"img/product-thumb-small.jpg")
+							span.o-navProducts__subCategoryText(href="#") Postele

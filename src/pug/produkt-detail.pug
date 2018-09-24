@@ -3,7 +3,8 @@ include partials/_variables.pug
 html(lang=lang)
     include partials/_header.pug  
     body
-        include partials/_nav.pug
+        include partials/_navMain.pug
+        include partials/_navProducts.pug
         include partials/_modal-add-to-cart.pug
         include partials/_modal-question.pug
         include partials/_breadcrumb.pug
@@ -61,6 +62,9 @@ html(lang=lang)
 
                         .o-productDetail__info.m-productDetailInfo
                             h5.m-productDetailInfo__title Máte dotaz ohledně tohoto produktu?
+                            .m-productDetailInfo__wrap
+                                button.btn.-light.m-productDetailInfo__btn(data-toggle="modal" data-target="#modal-contact") #[span.a-icon.-envelope.m-productDetailInfo__btnIcon] Otevřít formulář
+                                .m-productDetailInfo__phone #[span.a-icon.-phone.m-productDetailInfo__phoneIcon] 606 311 796
 
 
                     .col-12.col-lg-7.o-productDetail__col
@@ -92,17 +96,43 @@ html(lang=lang)
                             
                             form.m-productDetailMain__form(method="post" name="product_detail_form" id="product_detail_form")
 
-                                .m-productDetailMain__sizes
+                                .dropdown.m-productDetailMain__sizes.m-selectBox
+                                    input.m-selectBox__honeypot(type="radio" name="productSize" id="productSizeId" required)
+                                    .dropdown-toggle.m-selectBox__dropdown(id="productSizeDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
+                                        .m-selectBox__dropdownText Výběr rozměru
+                                        span.a-icon.-cheveron.m-selectBox__icon
+                                    .dropdown-menu.m-selectBox__dropdownMenu(aria-labelledby="productSizeDrop")
+                                        - for (var i=0; i<8; i++)
+                                            
+                                            label.m-selectBox__label
+                                                input.m-selectBox__input(type="radio" name="productSize" id="productSizeId" required)
+                                                .m-selectBox__content
+                                                    .m-selectBox__name largo
+                                                    .m-selectBox__price 5541 Kč
+                                                    .m-selectBox__stock 21 dnů
 
-                                .m-productDetailMain__variations
-                                    .m-productVariation
-                                        input.m-productVariation__input(type="radio" name="productVariation" id="1")
-                                        .m-productVariation__paddingWrap
-                                            figure.m-productVariation__figure
-                                                img.m-productVariation__img(src=URLbase+"img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1")
-                                        .m-productVariation__title grey flex
-                                        .m-productVariation__cta Zvolit variantu
-                                        .m-productVariation__ctaActive Vybráno
+
+
+
+                                .m-productDetailMain__variations.m-productVariation
+                                    .swiper-container-horizontal.m-productVariation__content
+                                        .swiper-wrapper.m-productVariation__wrap
+
+                                            - for (var i=0; i<8; i++)
+                                                .swiper-slide.m-productVariation__slide
+                                                    label.m-productVariation__label
+                                                        input.m-productVariation__input(type="radio" name="productVariation" id="productVariationId" required)
+                                                        .m-productVariation__paddingWrap
+                                                            figure.m-productVariation__figure
+                                                                img.swiper-lazy.m-productVariation__img(data-src=URLbase+"img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1")
+                                                                .swiper-lazy-preloader.m-productVariation__preloader
+                                                        .m-productVariation__title grey flex
+                                                        .m-productVariation__cta Zvolit variantu
+                                                        .m-productVariation__ctaActive Vybráno
+
+                                        .swiper-button-prev.m-productVariation__swiperButton.-prev
+                                        .swiper-button-next.m-productVariation__swiperButton.-next
+
 
 
                                 .m-productDetailMain__cta
@@ -214,6 +244,20 @@ html(lang=lang)
         include partials/_js-include.pug
 
         script.
+            $(function(){
+                $(".m-numberStepper__btnUp").click(function(){
+                    var SpinnerInput = $(this).closest('.m-numberStepper').find('.m-numberStepper__input');
+                    if ($(SpinnerInput).val() < 99){
+                        $(SpinnerInput).val( Number($(SpinnerInput).val()) + 1 );
+                    }
+                });
+                $(".m-numberStepper__btnDown").click(function(){
+                    var SpinnerInput = $(this).closest('.m-numberStepper').find('.m-numberStepper__input');
+                    if ($(SpinnerInput).val() > 1){
+                        $(SpinnerInput).val( Number($(SpinnerInput).val()) - 1 );
+                    }
+                });
+            }); 
             //SWIPER PRODUCT
             var carousel_product = new Swiper('.m-productDetailCarousel__content', {
                 lazy: true,
@@ -242,6 +286,24 @@ html(lang=lang)
             carousel_product.controller.control = galleryThumbs;
             galleryThumbs.controller.control = carousel_product;
                 
+            var carousel_variation = new Swiper('.m-productVariation__content', {
+                lazy: true,
+                spaceBetween: 10,
+                grabCursor: false,
+                slidesPerView: '4.5',
+                zoom: false,
+                loop: false,
+                navigation: {
+                    nextEl: '.m-productVariation__swiperButton.-next',
+                    prevEl: '.m-productVariation__swiperButton.-prev',
+                },
+                breakpointsInverse: true,
+                breakpoints: {
+                    991: {
+                    touchRatio: 0 
+                }
+                }
+            });
 
             initPhotoSwipeFromDOM('.m-productDetailCarousel__gallery');
          

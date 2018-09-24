@@ -43,7 +43,16 @@
     margin: 0;
 }
 
+.m-productDetailMain__sizes{
+    margin-top: 4rem;
+}
 
+.m-productDetailMain__variations{
+    background: $bg-light;
+    padding: 20px;
+    border-radius: $border-radius-primary;
+    margin-top: 1rem;
+}
 
 .m-productDetailMain__cta{
     background: $bg-light;

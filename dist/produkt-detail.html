@@ -102,9 +102,24 @@
         </div>
         <div class="o-navMain__navSearchToggler m-navSearchToggler" id="js-navSearchToggler">
           <div class="a-icon -search -white m-navSearchToggler__icon"></div>
-        </div><a class="o-navMain__user m-navUser" href="#">
+        </div>
+        <!--
+        a.o-navMain__user.m-navUser(href="#")
+        	.a-icon.-user.-white.m-navUser__icon
+        	.m-navUser__info
+        		span.m-navUser__title Můj účet
+        
+        --><a class="o-navMain__user m-navUser" href="#">
           <div class="a-icon -user -white m-navUser__icon"></div>
-          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a><a class="o-navMain__cart m-navCart" href="#">
+          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a>
+        <!--
+        a.o-navMain__cart.m-navCart(href="#")
+        	.m-navCart__iconWrap
+        		.a-icon.-cart.-white.m-navCart__icon
+        	.m-navCart__info
+        		span.m-navCart__title Nákupní košík
+        
+        --><a class="o-navMain__cart m-navCart -active" href="#">
           <div class="m-navCart__iconWrap">
             <div class="a-icon -cart -white m-navCart__icon">
               <div class="m-navCart__icoNumber">2</div>
@@ -112,53 +127,33 @@
           </div>
           <div class="m-navCart__info"><span class="m-navCart__text">Nákupní košík</span><span class="m-navCart__title">859 Kč</span></div></a>
       </nav>
-      <nav class="o-navProducts" id="js-navProducts">
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-      </nav>
     </header>
     <div class="a-darkOverlay" id="js-darkOverlay"></div>
     <div class="a-navPush"></div>
+    <nav class="o-navProducts" id="js-navProducts">
+      <div class="o-navProducts__user m-navUserMenu">
+        <div class="m-navUserMenu__heading" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser"><span class="a-icon -user -white m-navUserMenu__img"></span>
+          <div class="m-navUserMenu__username">Petr Novák</div><span class="a-icon -cheveron -white m-navUserMenu__cheveron"> </span>
+        </div>
+        <div class="collapse m-navUserMenu__content" id="collapseUser"><a class="m-navUserMenu__link" href="#"><span class="a-icon -personalInfo m-navUserMenu__icon"></span> Změna osobních údajů</a><a class="m-navUserMenu__link" href="#"><span class="a-icon -calendar m-navUserMenu__icon"></span> Historie objednávek</a><a class="m-navUserMenu__link" href="#"><span class="a-icon -logOut m-navUserMenu__icon"></span> Odhlásit</a></div>
+      </div>
+      <div class="accordion o-navProducts__accordion" id="accordionExample">
+        <div class="o-navProducts__item">
+          <div class="o-navProducts__link" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Produkty </div>
+          <div class="collapse o-navProducts__collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="o-navProducts__subCategoryWrap"><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="o-navProducts__item">
+          <div class="o-navProducts__link" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Produkty </div>
+          <div class="collapse o-navProducts__collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="o-navProducts__subCategoryWrap"><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="modal fade" id="modal-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="modal-add-to-cart-heading" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -394,6 +389,10 @@
             </div>
             <div class="o-productDetail__info m-productDetailInfo">
               <h5 class="m-productDetailInfo__title">Máte dotaz ohledně tohoto produktu?</h5>
+              <div class="m-productDetailInfo__wrap">
+                <button class="btn -light m-productDetailInfo__btn" data-toggle="modal" data-target="#modal-contact"><span class="a-icon -envelope m-productDetailInfo__btnIcon"></span> Otevřít formulář</button>
+                <div class="m-productDetailInfo__phone"><span class="a-icon -phone m-productDetailInfo__phoneIcon"></span> 606 311 796</div>
+              </div>
             </div>
           </div>
           <div class="col-12 col-lg-7 o-productDetail__col">
@@ -411,16 +410,188 @@
               <div class="m-productDetailMain__tags"><span class="m-productDetailMain__tagSingle">Výrobce: Visby</span><span class="m-productDetailMain__tagSingle">Záruka: 24 měsíců</span></div>
               <p class="m-productDetailMain__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. <a href="#anchor-product-detail-description">Celý popis produktu</a></p>
               <form class="m-productDetailMain__form" method="post" name="product_detail_form" id="product_detail_form">
-                <div class="m-productDetailMain__sizes"></div>
-                <div class="m-productDetailMain__variations">
-                  <div class="m-productVariation">
-                    <input class="m-productVariation__input" type="radio" name="productVariation" id="1">
-                    <div class="m-productVariation__paddingWrap">
-                      <figure class="m-productVariation__figure"><img class="m-productVariation__img" src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1"></figure>
+                <div class="dropdown m-productDetailMain__sizes m-selectBox">
+                  <input class="m-selectBox__honeypot" type="radio" name="productSize" id="productSizeId" required>
+                  <div class="dropdown-toggle m-selectBox__dropdown" id="productSizeDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                    <div class="m-selectBox__dropdownText">Výběr rozměru</div><span class="a-icon -cheveron m-selectBox__icon"></span>
+                  </div>
+                  <div class="dropdown-menu m-selectBox__dropdownMenu" aria-labelledby="productSizeDrop">
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                    <label class="m-selectBox__label">
+                      <input class="m-selectBox__input" type="radio" name="productSize" id="productSizeId" required>
+                      <div class="m-selectBox__content">
+                        <div class="m-selectBox__name">largo</div>
+                        <div class="m-selectBox__price">5541 Kč</div>
+                        <div class="m-selectBox__stock">21 dnů</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="m-productDetailMain__variations m-productVariation">
+                  <div class="swiper-container-horizontal m-productVariation__content">
+                    <div class="swiper-wrapper m-productVariation__wrap">
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
+                      <div class="swiper-slide m-productVariation__slide">
+                        <label class="m-productVariation__label">
+                          <input class="m-productVariation__input" type="radio" name="productVariation" id="productVariationId" required>
+                          <div class="m-productVariation__paddingWrap">
+                            <figure class="m-productVariation__figure"><img class="swiper-lazy m-productVariation__img" data-src="img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1">
+                              <div class="swiper-lazy-preloader m-productVariation__preloader"></div>
+                            </figure>
+                          </div>
+                          <div class="m-productVariation__title">grey flex</div>
+                          <div class="m-productVariation__cta">Zvolit variantu</div>
+                          <div class="m-productVariation__ctaActive">Vybráno</div>
+                        </label>
+                      </div>
                     </div>
-                    <div class="m-productVariation__title">grey flex</div>
-                    <div class="m-productVariation__cta">Zvolit variantu</div>
-                    <div class="m-productVariation__ctaActive">Vybráno</div>
+                    <div class="swiper-button-prev m-productVariation__swiperButton -prev"></div>
+                    <div class="swiper-button-next m-productVariation__swiperButton -next"></div>
                   </div>
                 </div>
                 <div class="m-productDetailMain__cta">
@@ -503,7 +674,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
               <div class="m-productCell"><a class="m-productCell__link" href="#">
                   <div class="m-productCell__top">    
@@ -539,7 +710,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
               <div class="m-productCell"><a class="m-productCell__link" href="#">
                   <div class="m-productCell__top">    
@@ -575,7 +746,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
               <div class="m-productCell"><a class="m-productCell__link" href="#">
                   <div class="m-productCell__top">    
@@ -611,7 +782,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
             </div>
           </div>
@@ -653,7 +824,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
               <div class="m-productCell"><a class="m-productCell__link" href="#">
                   <div class="m-productCell__top">    
@@ -689,7 +860,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
               <div class="m-productCell"><a class="m-productCell__link" href="#">
                   <div class="m-productCell__top">    
@@ -725,7 +896,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
               <div class="m-productCell"><a class="m-productCell__link" href="#">
                   <div class="m-productCell__top">    
@@ -761,7 +932,7 @@
                   </div>
                   <div class="m-productCell__hover">
                     <p class="m-productCell__text">Výrobce: Visby</p>
-                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -light m-productCell__btn">Zobrazit produkt</span>
+                    <p class="m-productCell__text">Záruka: 24 měsíců</p><span class="btn -small -secondary -transparent m-productCell__btn">Zobrazit produkt</span>
                   </div></a></div>
             </div>
           </div>
@@ -1102,6 +1273,20 @@
       </div>
     </div>
     <script>
+      $(function(){
+          $(".m-numberStepper__btnUp").click(function(){
+              var SpinnerInput = $(this).closest('.m-numberStepper').find('.m-numberStepper__input');
+              if ($(SpinnerInput).val() < 99){
+                  $(SpinnerInput).val( Number($(SpinnerInput).val()) + 1 );
+              }
+          });
+          $(".m-numberStepper__btnDown").click(function(){
+              var SpinnerInput = $(this).closest('.m-numberStepper').find('.m-numberStepper__input');
+              if ($(SpinnerInput).val() > 1){
+                  $(SpinnerInput).val( Number($(SpinnerInput).val()) - 1 );
+              }
+          });
+      }); 
       //SWIPER PRODUCT
       var carousel_product = new Swiper('.m-productDetailCarousel__content', {
           lazy: true,
@@ -1130,6 +1315,24 @@
       carousel_product.controller.control = galleryThumbs;
       galleryThumbs.controller.control = carousel_product;
           
+      var carousel_variation = new Swiper('.m-productVariation__content', {
+          lazy: true,
+          spaceBetween: 10,
+          grabCursor: false,
+          slidesPerView: '4.5',
+          zoom: false,
+          loop: false,
+          navigation: {
+              nextEl: '.m-productVariation__swiperButton.-next',
+              prevEl: '.m-productVariation__swiperButton.-prev',
+          },
+          breakpointsInverse: true,
+          breakpoints: {
+              991: {
+              touchRatio: 0 
+          }
+          }
+      });
       
       initPhotoSwipeFromDOM('.m-productDetailCarousel__gallery');
       

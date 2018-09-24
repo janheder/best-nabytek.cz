@@ -20,6 +20,8 @@
     color: $text-primary;
     text-align: left;
     transition: 0.3s ease all;
+    height: 100%;
+    border-radius: $border-radius-primary;
 
     &:hover, &:active, &:focus{
         z-index: 3;

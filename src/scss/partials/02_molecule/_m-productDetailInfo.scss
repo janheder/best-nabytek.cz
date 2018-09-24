@@ -1,6 +1,29 @@
 .m-productDetailInfo{
-
+    margin-top: 4rem;
 }
 .m-productDetailInfo__title{
     @include f-16-primary-medium;
+    margin-bottom: 2rem;
+}
+.m-productDetailInfo__wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.m-productDetailInfo__btn .m-productDetailInfo__btnIcon{
+    height: 14px;
+    width: 18px;
+    margin-right: 10px;
+}
+.m-productDetailInfo__phone{
+    @include f-24-primary-medium;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4rem;
+}
+.m-productDetailInfo__phoneIcon{
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
 }

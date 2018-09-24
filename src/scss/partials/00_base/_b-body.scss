@@ -9,6 +9,8 @@ body {
     margin: 0 auto;
     max-width: 1920px;
 } 
-body.-noScroll{
-    overflow: hidden;
+@media screen and (max-width: 991px){
+    body.-noScroll{
+        overflow: hidden;
+    }
 }

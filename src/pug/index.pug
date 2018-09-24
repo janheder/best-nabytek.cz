@@ -3,7 +3,8 @@ include partials/_variables.pug
 html(lang=lang)
     include partials/_header.pug  
     body
-        include partials/_nav.pug
+        include partials/_navMain.pug
+        include partials/_navProducts.pug
         section.o-hero
             .row.o-hero__row
                 .col-12.col-md-6.o-hero__col
@@ -134,31 +135,19 @@ html(lang=lang)
                 h1.o-sectionCategories__title Vybrané kategorie
                 .row
 
-                    .col.o-sectionCategories__col
-                        a.o-sectionCategories__single.m-categoryCell(href="#")
-                            img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
-                            p.m-categoryCell__title Postele
+                    - for (var i=0; i<5; i++)
+                        .col.o-sectionCategories__col
+                            a.o-sectionCategories__single.m-categoryCell(href="#")
+                                img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
+                                p.m-categoryCell__title Postele
 
-                    .col.o-sectionCategories__col
-                        a.o-sectionCategories__single.m-categoryCell(href="#")
-                            img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
-                            p.m-categoryCell__title Postele
+                    .w-100
 
-                    .col.o-sectionCategories__col
-                        a.o-sectionCategories__single.m-categoryCell(href="#")
-                            img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
-                            p.m-categoryCell__title Postele
-
-                    .col.o-sectionCategories__col
-                        a.o-sectionCategories__single.m-categoryCell(href="#")
-                            img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
-                            p.m-categoryCell__title Postele
-
-                    .col.o-sectionCategories__col
-                        a.o-sectionCategories__single.m-categoryCell(href="#")
-                            img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
-                            p.m-categoryCell__title Postele
-
+                    - for (var i=0; i<5; i++)
+                        .col.o-sectionCategories__col
+                            a.o-sectionCategories__single.m-categoryCell(href="#")
+                                img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
+                                p.m-categoryCell__title Postele
 
         section.o-sectionSale
             .container

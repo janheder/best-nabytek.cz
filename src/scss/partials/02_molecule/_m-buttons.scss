@@ -19,7 +19,6 @@
     z-index: 1;
     white-space: normal;
 
-
     .a-btnIcon{
         background: rgba(0,0,0,0.1);
         min-height: 5.4rem;
@@ -31,6 +30,7 @@
         align-items: center;
         margin-left: 2.5rem;
         margin-right: -2.5rem;
+        flex-shrink: 0;
     }
     .a-icon{
         display: inline-block;
@@ -46,11 +46,23 @@
 @media screen and (max-width: 600px){
     .btn{
         padding: 0 2rem;
+
+        .a-btnIcon{
+            margin-left: 2rem;
+            margin-right: -2rem;
+            width: 4rem;
+        }
     }
 }
 @media screen and (max-width: 400px){
     .btn{
         padding: 0 1rem;
+
+        .a-btnIcon{
+            margin-left: 1rem;
+            margin-right: -1rem;
+            width: 3rem;
+        }
     }
 }
 
@@ -64,20 +76,27 @@
 }
 
 .btn.-light{
-    background: transparent;
+    background: $bg-light;
     color: $text-primary;
+
+    &:hover, &:active, &:focus {
+        opacity: 0.8;
+    }
+}
+.btn.-transparent{
+    background: transparent;
+    overflow: hidden;
 
     &::after{
         content: "";
         @include absolute-position(0,0,0,0);
-        background: $bg-primary;
         opacity: 0.15;
-        border-radius: $border-radius-primary;
+        transition: 0.3s ease all;
     }
     &:hover, &:active, &:focus {
         &::after{
-            opacity: 0.25;
-        }    
+            opacity: 0.25;  
+        }
     }
 }
 
@@ -88,12 +107,43 @@
 .btn.-secondary{
     background: $bg-brand-secondary;
 
-    &.-light{
+
+    &:hover, &:active, &:focus{
+        background: $bg-brand-secondary-dark;
+    }
+    &.-transparent{
         background: transparent;
         color: $text-brand-secondary;
 
         &::after{
             background: $bg-brand-secondary;
+
+        }
+    }
+}
+
+.btn.-dark{
+    background: $bg-dark;
+
+    &.-transparent{
+        background: transparent;
+        color: $text-dark;
+
+        &::after{
+            background: $bg-dark;
+        }
+    }  
+}
+
+.btn.-remove{
+    background: $bg-red;
+
+    &.-transparent{
+        background: transparent;
+        color: $text-red;
+
+        &::after{
+            background: $bg-red;
         }
     }
 }

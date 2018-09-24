@@ -4,7 +4,7 @@
     border-radius: $border-radius-primary;
     background: $bg-white;
     color: $text-dark;
-    min-width: 140px;
+    max-width: 100%;
 }
 .m-numberStepper__input{
         border: 0;
@@ -14,12 +14,14 @@
         text-align: center;
         background: transparent;
         font-weight: 500;
+        width: 140px;
+        max-width: 100%;
 }
 .m-numberStepper__btnUp, .m-numberStepper__btnDown{
     position: absolute;
     top: 0;
     left: 0;
-    width: 38px;
+    width: 46px;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -54,50 +56,20 @@
 }
 
 
-.m-numberStepper.-small{
+.m-numberStepper.-dark{
     background: $bg-light;
 }
 
 
-.number-stepper--small{
+.m-numberStepper.-small{
+    min-width: 100px;
 
-    .number-stepper__input{
+    .m-numberStepper__input{
         border: 0;
         width: 100%;
         height: 42px;
         font-size: 1.4rem;
         text-align: center;
         background: transparent;
-    }
-    & .number-stepper__btn-up, & .number-stepper__btn-down{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $border-primary;
-        z-index: 2;
-        cursor: pointer;
-    }
-    & .number-stepper__icon-up, & .number-stepper__icon-down{
-        width: 8px;
-        height: 2px;
-        background: $bg-dark;
-        @include center(both);
-    }
-    .number-stepper__btn-up{
-        right: 0;
-        left: auto;
-    }
-    .number-stepper__icon-up::after{
-        content: "";
-        width: 2px;
-        height: 8px;
-        background: $bg-dark;
-        @include center(both);
     }
 }

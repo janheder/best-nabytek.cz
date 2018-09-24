@@ -102,9 +102,24 @@
         </div>
         <div class="o-navMain__navSearchToggler m-navSearchToggler" id="js-navSearchToggler">
           <div class="a-icon -search -white m-navSearchToggler__icon"></div>
-        </div><a class="o-navMain__user m-navUser" href="#">
+        </div>
+        <!--
+        a.o-navMain__user.m-navUser(href="#")
+        	.a-icon.-user.-white.m-navUser__icon
+        	.m-navUser__info
+        		span.m-navUser__title Můj účet
+        
+        --><a class="o-navMain__user m-navUser" href="#">
           <div class="a-icon -user -white m-navUser__icon"></div>
-          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a><a class="o-navMain__cart m-navCart" href="#">
+          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a>
+        <!--
+        a.o-navMain__cart.m-navCart(href="#")
+        	.m-navCart__iconWrap
+        		.a-icon.-cart.-white.m-navCart__icon
+        	.m-navCart__info
+        		span.m-navCart__title Nákupní košík
+        
+        --><a class="o-navMain__cart m-navCart -active" href="#">
           <div class="m-navCart__iconWrap">
             <div class="a-icon -cart -white m-navCart__icon">
               <div class="m-navCart__icoNumber">2</div>
@@ -112,53 +127,33 @@
           </div>
           <div class="m-navCart__info"><span class="m-navCart__text">Nákupní košík</span><span class="m-navCart__title">859 Kč</span></div></a>
       </nav>
-      <nav class="o-navProducts" id="js-navProducts">
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-      </nav>
     </header>
     <div class="a-darkOverlay" id="js-darkOverlay"></div>
     <div class="a-navPush"></div>
+    <nav class="o-navProducts" id="js-navProducts">
+      <div class="o-navProducts__user m-navUserMenu">
+        <div class="m-navUserMenu__heading" data-toggle="collapse" data-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser"><span class="a-icon -user -white m-navUserMenu__img"></span>
+          <div class="m-navUserMenu__username">Petr Novák</div><span class="a-icon -cheveron -white m-navUserMenu__cheveron"> </span>
+        </div>
+        <div class="collapse m-navUserMenu__content" id="collapseUser"><a class="m-navUserMenu__link" href="#"><span class="a-icon -personalInfo m-navUserMenu__icon"></span> Změna osobních údajů</a><a class="m-navUserMenu__link" href="#"><span class="a-icon -calendar m-navUserMenu__icon"></span> Historie objednávek</a><a class="m-navUserMenu__link" href="#"><span class="a-icon -logOut m-navUserMenu__icon"></span> Odhlásit</a></div>
+      </div>
+      <div class="accordion o-navProducts__accordion" id="accordionExample">
+        <div class="o-navProducts__item">
+          <div class="o-navProducts__link" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Produkty </div>
+          <div class="collapse o-navProducts__collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="o-navProducts__subCategoryWrap"><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="o-navProducts__item">
+          <div class="o-navProducts__link" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Produkty </div>
+          <div class="collapse o-navProducts__collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="o-navProducts__subCategoryWrap"><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a><a class="o-navProducts__subCategory" href="#"><img class="o-navProducts__subCategoryImg" src="img/product-thumb-small.jpg"><span class="o-navProducts__subCategoryText" href="#">Postele</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <section class="page-heading post__image-container">
       <div class="container">
         <h1 class="page-heading__title">Uživatelský účet</h1>

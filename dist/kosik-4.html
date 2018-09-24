@@ -102,9 +102,24 @@
         </div>
         <div class="o-navMain__navSearchToggler m-navSearchToggler" id="js-navSearchToggler">
           <div class="a-icon -search -white m-navSearchToggler__icon"></div>
-        </div><a class="o-navMain__user m-navUser" href="#">
+        </div>
+        <!--
+        a.o-navMain__user.m-navUser(href="#")
+        	.a-icon.-user.-white.m-navUser__icon
+        	.m-navUser__info
+        		span.m-navUser__title Můj účet
+        
+        --><a class="o-navMain__user m-navUser" href="#">
           <div class="a-icon -user -white m-navUser__icon"></div>
-          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a><a class="o-navMain__cart m-navCart" href="#">
+          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a>
+        <!--
+        a.o-navMain__cart.m-navCart(href="#")
+        	.m-navCart__iconWrap
+        		.a-icon.-cart.-white.m-navCart__icon
+        	.m-navCart__info
+        		span.m-navCart__title Nákupní košík
+        
+        --><a class="o-navMain__cart m-navCart -active" href="#">
           <div class="m-navCart__iconWrap">
             <div class="a-icon -cart -white m-navCart__icon">
               <div class="m-navCart__icoNumber">2</div>
@@ -112,60 +127,180 @@
           </div>
           <div class="m-navCart__info"><span class="m-navCart__text">Nákupní košík</span><span class="m-navCart__title">859 Kč</span></div></a>
       </nav>
-      <nav class="o-navProducts" id="js-navProducts">
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-navProducts__item">
-          <div class="dropdown o-navProducts__dropdown"><a class="dropdown-toggle o-navProducts__dropdownToggle" id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produkty </a>
-            <div class="dropdown-menu o-navProducts__dropdownMenu m-dropdownMenu" aria-labelledby="navDropdown1">
-              <p>test</p>
-            </div>
-          </div>
-        </div>
-      </nav>
     </header>
     <div class="a-darkOverlay" id="js-darkOverlay"></div>
     <div class="a-navPush"></div>
+    <section class="o-cartNav">
+      <div class="container o-cartNav__container">
+        <div class="o-cartNav__single -complete">
+          <div class="o-cartNav__title">Nákupní košík</div>
+          <div class="o-cartNav__number">1</div>
+        </div>
+        <div class="o-cartNav__single -complete">
+          <div class="o-cartNav__title">Doprava a platba</div>
+          <div class="o-cartNav__number">2</div>
+        </div>
+        <div class="o-cartNav__single -active">
+          <div class="o-cartNav__title">Osobní údaje</div>
+          <div class="o-cartNav__number">3</div>
+        </div>
+        <div class="o-cartNav__single">
+          <div class="o-cartNav__title">Shrnutí objednávky</div>
+          <div class="o-cartNav__number">4</div>
+        </div>
+      </div>
+    </section>
+    <section class="page-heading page-heading--cart-responsive"><a class="page-heading--cart__control" href="/kosik.html?krok=2"><span class="caret-icon left"></span></a>
+      <p class="page-heading--cart__title">3/4 Souhrn objednávky</p><a class="page-heading--cart__control" onclick="$('#cart_3_submit').click();"><span class="caret-icon right"></span></a>
+    </section>
+    <div class="page-heading--cart-responsive-push"></div>
     <main>
       <div class="container">
-        <div class="cart-empty cart-empty--success">
-          <div class="cart-empty__wrap"><span class="cart-icon-alt cart-empty__icon"></span><span class="fas fa-check cart-empty__icon-small"></span></div>
-          <h2 class="cart-empty__title">Objednávka byla úspěšně odeslána</h2><strong class="cart-empty__strong">Rekapitulace objednávky a platební pokyny byly odeslány na Váš email.</strong>
-          <p class="cart-empty__text">Pokud máte problém s objednávkou, kontaktujte nás na email@email.cz nebo na telefonním čísle 111 222 333</p><a class="btn cart-empty__btn" href="#">Zpět do obchodu</a>
+        <form method="post" action="" name="cart_form">
+          <div class="row cart-item-top">
+            <div class="cart-item-top__col-1">
+              <div class="cart-item-top__img">
+                <p class="cart-item-top__heading">Produkt</p>
+              </div>
+            </div>
+            <div class="cart-item-top__col-2">
+              <div class="cart-item-top__name"></div>
+              <div class="cart-item-top__inner">
+                <div class="cart-item-top__qty">
+                  <p class="cart-item-top__heading">Počet kusů</p>
+                </div>
+                <div class="cart-item-top__price">
+                  <p class="cart-item-top__heading">Cena za kus</p>
+                </div>
+                <div class="cart-item-top__sum">
+                  <p class="cart-item-top__heading">Cena celkem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row cart-item-single">
+            <div class="cart-item-single__col-1"> 
+              <div class="cart-item-single__thumb-wrap">
+                <div class="cart-item-single__thumb"><img class="cart-item-single__img lazy" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg"></div>
+              </div>
+            </div>
+            <div class="cart-item-single__col-2">  
+              <div class="cart-item-single__name-wrap">
+                <p class="cart-item-single__name">Postel Angelika 160/200 cm masiv borovice</p>
+                <p class="cart-item-single__stock">Dostupné skladem   </p>
+              </div>
+              <div class="cart-item-single__inner">   
+                <div class="cart-item-single__qty-wrap"> 
+                  <p class="cart-item-single__qty-text">1 kus/ů</p>
+                </div>
+                <div class="cart-item-single__price-wrap"><span class="cart-item-single__price-old">14 290 Kč</span>
+                  <p class="cart-item-single__price">8 489 Kč</p>
+                </div>
+                <div class="cart-item-single__sum-wrap text-right">
+                  <p class="cart-item-single__sum"><span>8 489</span> Kč</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row cart-item-single">
+            <div class="cart-item-single__col-1"> 
+              <div class="cart-item-single__thumb-wrap">
+                <div class="cart-item-single__thumb"><img class="cart-item-single__img lazy" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg"></div>
+              </div>
+            </div>
+            <div class="cart-item-single__col-2">  
+              <div class="cart-item-single__name-wrap">
+                <p class="cart-item-single__name">Postel Angelika 160/200 cm masiv borovice</p>
+                <p class="cart-item-single__stock">Dostupné skladem   </p>
+              </div>
+              <div class="cart-item-single__inner">   
+                <div class="cart-item-single__qty-wrap"> 
+                  <p class="cart-item-single__qty-text">1 kus/ů</p>
+                </div>
+                <div class="cart-item-single__price-wrap"><span class="cart-item-single__price-old">14 290 Kč</span>
+                  <p class="cart-item-single__price">8 489 Kč</p>
+                </div>
+                <div class="cart-item-single__sum-wrap text-right">
+                  <p class="cart-item-single__sum"><span>8 489</span> Kč</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-shipping-payment-overview">
+            <h4 class="cart-shipping-payment-overview__title">Způsob dopravy</h4>
+            <div class="cart-shipping-payment-overview__single">
+              <p class="cart-shipping-payment-overview__name">ČP, Benefit-plus program, balík do ruky:</p><span class="cart-shipping-payment-overview__price">129 Kč</span>
+            </div>
+          </div>
+          <div class="cart-shipping-payment-overview">
+            <h4 class="cart-shipping-payment-overview__title">Způsob dopravy a platby</h4>
+            <div class="cart-shipping-payment-overview__single">
+              <p class="cart-shipping-payment-overview__name">Převod na účet</p><span class="cart-shipping-payment-overview__price">0 Kč</span>
+            </div>
+          </div>
+          <div class="cart-price-overview">
+            <div class="cart-price-overview__wrap">
+              <p class="cart-price-overview__text">Celková cena s DPH:</p>
+              <h3 class="cart-price-overview__price"><span class="cart-price-overview__number">16 989</span> Kč</h3>
+            </div>
+          </div>
+          <div class="cart-user-info-overview">
+            <div class="row">
+              <div class="cart-user-info-overview__single">
+                <h3 class="cart-user-info-overview__title"><span class="cart-user-info-overview__title-number">1.</span> Osobní údaje</h3>
+                <div class="cart-user-info-overview__single-content">
+                  <p class="cart-user-info-overview__text">Jméno a příjmení: <span class="cart-user-info-overview__strong">Petr Novák</span></p>
+                  <p class="cart-user-info-overview__text">Emailová adresa: <span class="cart-user-info-overview__strong">petr@novak.cz</span></p>
+                  <p class="cart-user-info-overview__text">Telefonní číslo: <span class="cart-user-info-overview__strong">605 598 989</span></p>
+                  <p class="cart-user-info-overview__text">Ulice: <span class="cart-user-info-overview__strong">Petra Bezruče</span></p>
+                  <p class="cart-user-info-overview__text">Číslo ulice: <span class="cart-user-info-overview__strong">18</span></p>
+                  <p class="cart-user-info-overview__text">Město: <span class="cart-user-info-overview__strong">Praha</span></p>
+                  <p class="cart-user-info-overview__text">Kraj: <span class="cart-user-info-overview__strong">Praha</span></p>
+                  <p class="cart-user-info-overview__text">PSČ: <span class="cart-user-info-overview__strong">898 89</span></p>
+                  <p class="cart-user-info-overview__text">Stát: <span class="cart-user-info-overview__strong">Česko</span></p>
+                </div>
+              </div>
+              <div class="cart-user-info-overview__single">
+                <h3 class="cart-user-info-overview__title"><span class="cart-user-info-overview__title-number">2.</span> Fakturační adresa</h3>
+                <div class="cart-user-info-overview__single-content">
+                  <p class="cart-user-info-overview__text">Stejná jako u osobních ůdajů</p>
+                </div>
+              </div>
+              <div class="cart-user-info-overview__single">
+                <h3 class="cart-user-info-overview__title"><span class="cart-user-info-overview__title-number">3.</span> Dodací adresa</h3>
+                <div class="cart-user-info-overview__single-content">
+                  <p class="cart-user-info-overview__text">Stejná jako u osobních ůdajů</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-terms-checkbox">
+            <div class="form-group">
+              <div class="form-check">
+                <label class="form-check__label">
+                  <input class="form-check__input" type="checkbox" name="cart-form-heureka"><span class="form-check__box checkbox"></span><span class="form-check__inline">Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <label class="form-check__label">
+                  <input class="form-check__input" type="checkbox" name="cart-form-terms" required><span class="form-check__box checkbox"></span><span class="form-check__inline">Souhlasím s <a class="form-check__link" href="#">obchodními podmínkami</a></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="cart-bottom-btns"><a class="btn btn-dark" href="#"><span class="btn__icon arrow-icon left white"></span> Krok zpět</a>
+            <button class="btn" type="submit" id="cart_3_submit">Dokončit objednávku <span class="btn__icon arrow-icon white"></span></button>
+          </div>
+        </form>
+      </div>
+      <div class="cart-price-overview-responsive">
+        <div class="cart-price-overview-responsive__price-wrap">
+          <p class="cart-price-overview-responsive__text">Celková cena s DPH</p>
+          <h3 class="cart-price-overview-responsive__price"><span>16 989</span> Kč</h3>
         </div>
+        <div class="cart-price-overview-responsive__btn-wrap"><a class="btn cart-price-overview-responsive__btn" onclick="$('#cart_3_submit').click();">Dokončit objednávku <span class="btn__icon arrow-icon white"></span></a></div>
       </div>
     </main><a class="scrollTop" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>
     <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact" aria-hidden="true">

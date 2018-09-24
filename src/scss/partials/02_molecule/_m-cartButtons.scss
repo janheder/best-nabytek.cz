@@ -1,0 +1,15 @@
+.m-cartButtons{
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 0 0 0;
+
+    .btn{
+		margin-right: 10px;
+
+		&:last-child{
+			margin-left: auto;
+			margin-right: 0;
+			order: 2;
+		}
+	}
+}

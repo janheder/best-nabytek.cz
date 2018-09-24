@@ -48,6 +48,7 @@
     justify-content: center;
     align-items: center;
     transform: translateX(50%) translateY(30%);
+    transition: 0.2s ease all;
 }
 .m-navCart__info{
     display: flex;

@@ -15,3 +15,127 @@ input{
     border-radius: $border-radius-primary;
     padding: 0 2rem;
 }
+
+.o-form{
+    background: $bg-white;
+    padding: 20px;
+}
+.o-form__collapseToggler{
+
+}
+.o-form__collapse{
+
+}
+.o-form__title{
+    @include f-24-primary-medium;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.o-form__divider{
+
+}
+
+
+.m-formDivider{
+    @include f-14-dark-regular;
+    border-bottom: 1px solid $border-grey;
+    margin-bottom: 20px;
+}
+
+.m-formGroup{
+    padding: 0;
+    position: relative;
+    margin-bottom: 20px;
+}
+.m-formGroup__label{
+    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    transition: 0.2s ease all;
+    opacity: 0.8;
+    pointer-events: none;
+    margin: 0;
+    line-height: 1;
+}
+.m-formGroup__input::placeholder{
+    font-size: 0;
+}
+.m-formGroup__input{
+    height: 5.4rem;
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    font-weight: 500;
+    border: 0;
+    background: $bg-light;
+    border-radius: $border-radius-primary;
+    width: 100%;
+}
+.m-formGroup__error{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 5px 1rem;
+    @include f-12-white-regular;
+    background: $bg-red;
+    border-bottom-right-radius: $border-radius-primary;
+    border-bottom-left-radius: $border-radius-primary;
+
+    display: none;
+    width: 100%;
+    transform: translateY(-3px);
+}
+
+/*push up*/
+
+.m-formGroup__input:focus, .m-formGroup__input:not(:placeholder-shown){
+    padding: 1rem 2rem 0rem 2rem;
+}
+.m-formGroup__input:focus + .m-formGroup__label, 
+.m-formGroup__input:not(:placeholder-shown) + .m-formGroup__label{
+    font-size: 12px;
+    top: 10px;
+    transform: translateY(0%);
+}
+
+
+
+/*validation*/
+
+.m-formGroup__input:not(:focus):valid:not(:placeholder-shown):not([type="date"]) {
+    border: 2px solid $border-green;
+}
+
+.m-formGroup__input:not(:focus):invalid:not(:placeholder-shown):not([type="date"]) {
+    border: 2px solid $border-red;
+}
+
+
+
+.m-formGroup__input:not(:focus):invalid:not(:placeholder-shown):not([type="date"]) + .m-formGroup__label + .m-formGroup__error{
+    display: block;
+}
+
+/* IE Edge 16+ CSS */ 
+@supports (-ms-ime-align:auto){
+    .m-formGroup__label{
+        top: -10px;
+        transform: translateY(-100%);
+        left: 0;
+    }
+    .m-formGroup__wrap {
+        margin-top: 3rem;
+    }
+}
+/* IE 10, 11 CSS */ 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+    .m-formGroup__label{
+        top: -10px;
+        transform: translateY(-100%);
+        left: 0;
+    }
+    .m-formGroup__wrap {
+        margin-top: 3rem;
+    }
+}
