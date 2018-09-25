@@ -151,31 +151,21 @@
       </div>
     </section>
     <section class="o-cartNavResponsive"><a class="o-cartNavResponsive__link -prev -disabled" href="#"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
-      <p class="o-cartNavResponsive__title">1/4 Nákupní košík</p><a class="o-cartNavResponsive__link -next" onclick="$('#delivery-form-submit').trigger('click');"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
+      <p class="o-cartNavResponsive__title">1/4 Nákupní košík</p><a class="o-cartNavResponsive__link -next" onclick="$('#cart-form-submit').trigger('click');"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
     </section>
     <div class="a-cartNavResponsivePush"></div>
     <main>
       <div class="container">
         <form method="post" action="" name="cart_form">
-          <div class="cart-item-top">
-            <div class="cart-item-top__col-1">
-              <div class="cart-item-top__img">
-                <p class="cart-item-top__heading">Produkt</p>
-              </div>
-            </div>
-            <div class="cart-item-top__col-2">
-              <div class="cart-item-top__name"></div>
-              <div class="cart-item-top__inner">
-                <div class="cart-item-top__qty">
-                  <p class="cart-item-top__heading">Počet kusů</p>
-                </div>
-                <div class="cart-item-top__price">
-                  <p class="cart-item-top__heading">Cena za kus</p>
-                </div>
-                <div class="cart-item-top__sum">
-                  <p class="cart-item-top__heading">Cena celkem</p>
-                </div>
-                <div class="cart-item-top__delete"></div>
+          <div class="m-cartItemTop">
+            <div class="m-cartItemTop__item -img">Produkt</div>
+            <div class="m-cartItemTop__col">
+              <div class="m-cartItemTop__item -name"></div>
+              <div class="m-cartItemTop__wrap">
+                <div class="m-cartItemTop__item -qty">Množství</div>
+                <div class="m-cartItemTop__item -price">Cena za kus</div>
+                <div class="m-cartItemTop__item -sum">Cena celkem</div>
+                <div class="m-cartItemTop__item -remove"></div>
               </div>
             </div>
           </div>
@@ -205,7 +195,67 @@
                 <div class="cart-item-single__sum-wrap">
                   <p class="cart-item-single__sum"><span>18 546</span> Kč</p>
                 </div>
-                <div class="cart-item-single__delete-wrap"><a class="cart-item-single__delete" href="#"><span class="cross-icon cart-item-single__delete-icon"></span></a></div>
+                <div class="cart-item-single__delete-wrap"><a class="a-icon -crossCircle -red" href="#"></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-item-single">
+            <div class="cart-item-single__col-1"> 
+              <div class="cart-item-single__thumb-wrap">
+                <div class="cart-item-single__thumb"><img class="cart-item-single__img lazy" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg"></div>
+              </div>
+            </div>
+            <div class="cart-item-single__col-2">  
+              <div class="cart-item-single__name-wrap"><a class="cart-item-single__name" href="#">Postel Angelika 160/200 cm masiv borovice</a>
+                <p class="cart-item-single__stock">Dostupné skladem   </p>
+              </div>
+              <div class="cart-item-single__inner">   
+                <div class="cart-item-single__qty-wrap"> 
+                  <div class="cart-item-single__qty">
+                    <div class="m-numberStepper -dark">
+                      <input class="m-numberStepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty">
+                      <div class="m-numberStepper__btnUp"><span class="m-numberStepper__iconUp"></span></div>
+                      <div class="m-numberStepper__btnDown"><span class="m-numberStepper__iconDown"></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item-single__price-wrap"><span class="cart-item-single__price-old">14 290 Kč</span>
+                  <p class="cart-item-single__price">8 489 Kč</p>
+                </div>
+                <div class="cart-item-single__sum-wrap">
+                  <p class="cart-item-single__sum"><span>18 546</span> Kč</p>
+                </div>
+                <div class="cart-item-single__delete-wrap"><a class="a-icon -crossCircle -red" href="#"></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-item-single">
+            <div class="cart-item-single__col-1"> 
+              <div class="cart-item-single__thumb-wrap">
+                <div class="cart-item-single__thumb"><img class="cart-item-single__img lazy" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg"></div>
+              </div>
+            </div>
+            <div class="cart-item-single__col-2">  
+              <div class="cart-item-single__name-wrap"><a class="cart-item-single__name" href="#">Postel Angelika 160/200 cm masiv borovice</a>
+                <p class="cart-item-single__stock">Dostupné skladem   </p>
+              </div>
+              <div class="cart-item-single__inner">   
+                <div class="cart-item-single__qty-wrap"> 
+                  <div class="cart-item-single__qty">
+                    <div class="m-numberStepper -dark">
+                      <input class="m-numberStepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty">
+                      <div class="m-numberStepper__btnUp"><span class="m-numberStepper__iconUp"></span></div>
+                      <div class="m-numberStepper__btnDown"><span class="m-numberStepper__iconDown"></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item-single__price-wrap"><span class="cart-item-single__price-old">14 290 Kč</span>
+                  <p class="cart-item-single__price">8 489 Kč</p>
+                </div>
+                <div class="cart-item-single__sum-wrap">
+                  <p class="cart-item-single__sum"><span>18 546</span> Kč</p>
+                </div>
+                <div class="cart-item-single__delete-wrap"><a class="a-icon -crossCircle -red" href="#"></a></div>
               </div>
             </div>
           </div>
@@ -220,7 +270,7 @@
             <p class="m-cartFreeShipping__text">Nakupte ještě za <span class="m-cartFreeShipping__price">5 100 Kč</span> a máte dopravu zdarma</p>
           </div>
           <div class="m-cartButtons"><a class="btn -dark" href="#">Zpět do obchodu</a><a class="btn -remove -transparent" href="#">Vyprázdnit košík</a>
-            <button class="btn -secondary" type="submit" id="delivery-form-submit">Doprava a platba <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span></button>
+            <button class="btn -secondary" type="submit" id="cart-form-submit">Doprava a platba <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span></button>
           </div>
         </form>
       </div>
@@ -230,7 +280,7 @@
           <h3 class="m-cartBarResponsive__price"><span>65 599</span> Kč</h3>
         </div>
         <div class="m-cartBarResponsive__btnWrap">
-          <button class="btn m-cartBarResponsive__btn" onclick="$('#delivery-form-submit').trigger('click');">Doprava a platba <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span> </button>
+          <button class="btn m-cartBarResponsive__btn" onclick="$('#cart-form-submit').trigger('click');">Doprava a platba <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span> </button>
         </div>
       </div>
     </main><a class="scrollTop" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>

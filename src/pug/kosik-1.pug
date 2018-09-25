@@ -23,7 +23,7 @@ html(lang=lang)
             a.o-cartNavResponsive__link.-prev.-disabled(href="#")
                 span.a-icon.-cheveron.o-cartNavResponsive__icon
             p.o-cartNavResponsive__title 1/4 Nákupní košík
-            a.o-cartNavResponsive__link.-next(onclick="$('#delivery-form-submit').trigger('click');")
+            a.o-cartNavResponsive__link.-next(onclick="$('#cart-form-submit').trigger('click');")
                 span.a-icon.-cheveron.o-cartNavResponsive__icon
 
         .a-cartNavResponsivePush
@@ -31,56 +31,50 @@ html(lang=lang)
         main
             .container
                 form(method="post" action="" name="cart_form")
-                    .cart-item-top
-                        .cart-item-top__col-1
-                            .cart-item-top__img
-                                p.cart-item-top__heading Produkt
-                        .cart-item-top__col-2
-                            .cart-item-top__name
-                            .cart-item-top__inner
-                                .cart-item-top__qty
-                                    p.cart-item-top__heading Počet kusů
-                                .cart-item-top__price
-                                    p.cart-item-top__heading Cena za kus
-                                .cart-item-top__sum
-                                    p.cart-item-top__heading Cena celkem
-                                .cart-item-top__delete
+                    .m-cartItemTop
+                        .m-cartItemTop__item.-img Produkt
+                        .m-cartItemTop__col
+                            .m-cartItemTop__item.-name
+                            .m-cartItemTop__wrap
+                                .m-cartItemTop__item.-qty Množství
+                                .m-cartItemTop__item.-price Cena za kus
+                                .m-cartItemTop__item.-sum Cena celkem
+                                .m-cartItemTop__item.-remove
+
+                    - for (var i=0; i<3; i++)
+                        .cart-item-single
+                            .cart-item-single__col-1  
+                                .cart-item-single__thumb-wrap
+                                    .cart-item-single__thumb
+                                        img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
 
 
-                    .cart-item-single
-                        .cart-item-single__col-1  
-                            .cart-item-single__thumb-wrap
-                                .cart-item-single__thumb
-                                    img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+                            .cart-item-single__col-2   
+                                .cart-item-single__name-wrap
+                                    a.cart-item-single__name(href="#") #{ProductName}
+                                    p.cart-item-single__stock Dostupné skladem   
 
+                                .cart-item-single__inner    
+                                    .cart-item-single__qty-wrap 
+                                        .cart-item-single__qty
+                                            .m-numberStepper.-dark
+                                                input.m-numberStepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
+                                                .m-numberStepper__btnUp
+                                                    span.m-numberStepper__iconUp
+                                                .m-numberStepper__btnDown
+                                                    span.m-numberStepper__iconDown
 
-                        .cart-item-single__col-2   
-                            .cart-item-single__name-wrap
-                                a.cart-item-single__name(href="#") #{ProductName}
-                                p.cart-item-single__stock Dostupné skladem   
-
-                            .cart-item-single__inner    
-                                .cart-item-single__qty-wrap 
-                                    .cart-item-single__qty
-                                        .m-numberStepper.-dark
-                                            input.m-numberStepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
-                                            .m-numberStepper__btnUp
-                                                span.m-numberStepper__iconUp
-                                            .m-numberStepper__btnDown
-                                                span.m-numberStepper__iconDown
-
-                                .cart-item-single__price-wrap
-                                    span.cart-item-single__price-old 14 290 Kč
-                                    p.cart-item-single__price 8 489 Kč
-                                .cart-item-single__sum-wrap
-                                    p.cart-item-single__sum #[span 18 546] Kč
-                                .cart-item-single__delete-wrap
-                                    a.cart-item-single__delete(href="#")
-                                        span.cross-icon.cart-item-single__delete-icon
+                                    .cart-item-single__price-wrap
+                                        span.cart-item-single__price-old 14 290 Kč
+                                        p.cart-item-single__price 8 489 Kč
+                                    .cart-item-single__sum-wrap
+                                        p.cart-item-single__sum #[span 18 546] Kč
+                                    .cart-item-single__delete-wrap
+                                        a.a-icon.-crossCircle.-red(href="#")
 
                     .m-cartPriceOverview
-                            p.m-cartPriceOverview__text Celková cena s DPH:
-                            h3.m-cartPriceOverview__price #[span.m-cartPriceOverview__priceNumber 65 599] Kč
+                        p.m-cartPriceOverview__text Celková cena s DPH:
+                        h3.m-cartPriceOverview__price #[span.m-cartPriceOverview__priceNumber 65 599] Kč
 
                     .m-cartFreeShipping
                         .progress.m-cartFreeShipping__progress
@@ -91,7 +85,7 @@ html(lang=lang)
                     .m-cartButtons
                         a.btn.-dark(href="#") Zpět do obchodu
                         a.btn.-remove.-transparent(href="#") Vyprázdnit košík
-                        button.btn.-secondary(type="submit" id="delivery-form-submit") Doprava a platba #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
+                        button.btn.-secondary(type="submit" id="cart-form-submit") Doprava a platba #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
                                
 
             .m-cartBarResponsive
@@ -99,7 +93,7 @@ html(lang=lang)
                     p.m-cartBarResponsive__text Celková cena s DPH
                     h3.m-cartBarResponsive__price #[span 65 599] Kč
                 .m-cartBarResponsive__btnWrap
-                    button.btn.m-cartBarResponsive__btn(onclick="$('#delivery-form-submit').trigger('click');") Doprava a platba #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
+                    button.btn.m-cartBarResponsive__btn(onclick="$('#cart-form-submit').trigger('click');") Doprava a platba #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
 
 
         include partials/_footer.pug 

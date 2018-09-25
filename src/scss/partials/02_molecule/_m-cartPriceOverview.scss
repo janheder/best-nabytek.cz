@@ -5,6 +5,8 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
+    margin-top: 10px;
+    border-radius: $border-radius-primary;
 }
 .m-cartPriceOverview__text{
     @include f-16-primary-regular;

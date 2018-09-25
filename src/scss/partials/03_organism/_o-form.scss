@@ -31,6 +31,18 @@ input{
     text-align: center;
     margin-bottom: 4rem;
 }
+.o-form__text{
+    @include f-14-dark-regular;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.o-form__link{
+    display: block;
+    @include f-14-dark-medium;
+    text-align: center;
+    margin-top: 2rem; 
+}
+
 .o-form__divider{
 
 }
@@ -39,34 +51,85 @@ input{
 .m-formDivider{
     @include f-14-dark-regular;
     border-bottom: 1px solid $border-grey;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .m-formGroup{
     padding: 0;
     position: relative;
     margin-bottom: 20px;
+    border-radius: $border-radius-primary;
+
+    &.-radiobutton, &.-checkbox, &.-switch{
+        background: $bg-light;
+        min-height: 5.4rem;
+        display: flex;
+        flex-direction: row;
+        padding: 1.5rem 2rem;
+
+        .m-formGroup__input{
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            z-index: 2;
+
+            &:checked + .m-formGroup__radiobutton::after, &:checked + .m-formGroup__checkbox::after{
+                opacity: 1;
+            }
+            &:checked + .m-formGroup__checkbox::before{
+                background: $bg-brand-secondary;
+                border: 0;
+            }
+            &:checked + .m-formGroup__switch::before{
+                background: $bg-brand-secondary;
+            }
+            &:checked + .m-formGroup__switch::after{
+                right: 0;
+                left: 100%;
+                transform: translateX(-100%);
+                background: $bg-brand-secondary;
+            }
+        }
+        .m-formGroup__label{
+            position: relative;
+            transform: none;
+            top: 0;
+            left: 15px;
+            color: $text-primary;
+            z-index: 3;
+            cursor: pointer;
+        }
+    }
 }
 .m-formGroup__label{
-    font-size: 1.6rem;
+    @include f-16-dark-regular;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 2rem;
     transition: 0.2s ease all;
-    opacity: 0.8;
-    pointer-events: none;
     margin: 0;
-    line-height: 1;
+    cursor: text;
+
+    &.-small{
+        font-size: 1.4rem;
+    }
+    a{
+        @include f-14-primary-regular;
+        color: $text-brand;
+    }
 }
 .m-formGroup__input::placeholder{
     font-size: 0;
 }
 .m-formGroup__input{
     height: 5.4rem;
-    font-size: 1.6rem;
+    @include f-16-primary-medium;
     padding: 0 2rem;
-    font-weight: 500;
     border: 0;
     background: $bg-light;
     border-radius: $border-radius-primary;
@@ -81,21 +144,42 @@ input{
     background: $bg-red;
     border-bottom-right-radius: $border-radius-primary;
     border-bottom-left-radius: $border-radius-primary;
-
+    z-index: 1;
     display: none;
     width: 100%;
     transform: translateY(-3px);
+}
+.m-formGroup__success{
+    height: 2px;
+    width: 0%;
+    background: $bg-green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s ease all;
+}
+
+.o-form__legal{
+    @include f-14-primary-regular;
+    margin-bottom: 2rem;
+    a{
+        @include f-14-primary-regular;
+        color: $text-brand;
+    }
+}
+.m-formGroup__muted{
+    color: $text-medium;
 }
 
 /*push up*/
 
 .m-formGroup__input:focus, .m-formGroup__input:not(:placeholder-shown){
-    padding: 1rem 2rem 0rem 2rem;
+    padding: 1.1rem 2rem 0rem 2rem;
 }
 .m-formGroup__input:focus + .m-formGroup__label, 
 .m-formGroup__input:not(:placeholder-shown) + .m-formGroup__label{
     font-size: 12px;
-    top: 10px;
+    top: 8px;
     transform: translateY(0%);
 }
 
@@ -103,11 +187,11 @@ input{
 
 /*validation*/
 
-.m-formGroup__input:not(:focus):valid:not(:placeholder-shown):not([type="date"]) {
-    border: 2px solid $border-green;
+.m-formGroup__input:valid:not(:placeholder-shown):not([type="date"]) ~ .m-formGroup__success{
+    width: 100%;
 }
 
-.m-formGroup__input:not(:focus):invalid:not(:placeholder-shown):not([type="date"]) {
+.m-formGroup__input:not(:focus):invalid:not(:placeholder-shown):not([type="date"]){
     border: 2px solid $border-red;
 }
 
@@ -119,23 +203,37 @@ input{
 
 /* IE Edge 16+ CSS */ 
 @supports (-ms-ime-align:auto){
-    .m-formGroup__label{
-        top: -10px;
-        transform: translateY(-100%);
-        left: 0;
+    .m-formGroup{
+        display: flex;
+        flex-direction: column;
     }
-    .m-formGroup__wrap {
-        margin-top: 3rem;
+    .m-formGroup__label{
+        transform: none;
+        order: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding-bottom: 5px;
+    }
+    .m-formGroup__input{
+        order: 1;
     }
 }
 /* IE 10, 11 CSS */ 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
-    .m-formGroup__label{
-        top: -10px;
-        transform: translateY(-100%);
-        left: 0;
+    .m-formGroup{
+        display: flex;
+        flex-direction: column;
     }
-    .m-formGroup__wrap {
-        margin-top: 3rem;
+    .m-formGroup__label{
+        transform: none;
+        order: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding-bottom: 5px;
+    }
+    .m-formGroup__input{
+        order: 1;
     }
 }

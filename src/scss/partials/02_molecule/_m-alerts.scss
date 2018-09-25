@@ -1,11 +1,12 @@
-.alert{
+.m-alert{
+    @include f-16-white-medium;
     background: $bg-primary;
     padding: 2rem;
-    color: $text-white;
     display: block;
-    margin-bottom: 3rem;
+    margin: 2rem 0;
     border-radius: $border-radius-primary;
     border: 0;
+    text-align: center;
 
     &.-success{
         background: $bg-green;

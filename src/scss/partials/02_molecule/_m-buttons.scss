@@ -65,7 +65,9 @@
         }
     }
 }
-
+.btn.-fullWidth{
+    width: 100%;
+}
 .btn.-small{
     min-height: 4.8rem;
     @include f-14-white-medium;

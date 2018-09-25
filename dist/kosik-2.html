@@ -151,23 +151,85 @@
       </div>
     </section>
     <section class="o-cartNavResponsive"><a class="o-cartNavResponsive__link -prev" href="/kosik.html?krok=1"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
-      <p class="o-cartNavResponsive__title">2/4 Doprava a platba</p><a class="o-cartNavResponsive__link -next" onclick="responsive_check()"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
+      <p class="o-cartNavResponsive__title">2/4 Doprava a platba</p><a class="o-cartNavResponsive__link -next" onclick="$('#delivery-form-submit').trigger('click');"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
     </section>
     <div class="a-cartNavResponsivePush"></div>
     <main>
       <div class="container">
-        <div class="row"></div>
-        <div class="cart-bottom-btns"><a class="btn btn-dark" href="#"><span class="btn__icon arrow-icon left white"></span> Krok zpět</a>
-          <button class="btn" onclick="responsive_check()">Souhrn objednávky <span class="btn__icon arrow-icon white"></span></button>
-        </div>
+        <form class="o-cartDeliveryForm" method="post" action="" name="delivery_form" id="delivery_form">
+          <h2 class="o-cartDeliveryForm__title">Zvolte způsob dopravy</h2>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <label class="o-cartDeliveryForm__item m-cartDeliveryItem" for="delivery_form_shipping-1">
+                <input class="m-cartDeliveryItem__input" type="radio" name="delivery_form_shipping" id="delivery_form_shipping-1" required>
+                <div class="m-cartDeliveryItem__iconWrap"><span class="a-icon -store m-cartDeliveryItem__icon"></span><span class="a-icon -store m-cartDeliveryItem__icon -white"></span></div>
+                <div class="m-cartDeliveryItem__top">
+                  <h3 class="m-cartDeliveryItem__title">Osobní odběr </h3>
+                  <p class="m-cartDeliveryItem__text">Paskov, rudé armády 77 (po osobní tel. domluvě)</p>
+                </div>
+                <div class="m-cartDeliveryItem__bottom">   <span class="btn -secondary -transparent m-cartDeliveryItem__price">0 Kč</span></div>
+              </label>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <label class="o-cartDeliveryForm__item m-cartDeliveryItem" for="delivery_form_shipping-2">
+                <input class="m-cartDeliveryItem__input" type="radio" name="delivery_form_shipping" id="delivery_form_shipping-2" required>
+                <div class="m-cartDeliveryItem__iconWrap"><span class="a-icon -store m-cartDeliveryItem__icon"></span><span class="a-icon -store m-cartDeliveryItem__icon -white"></span></div>
+                <div class="m-cartDeliveryItem__top">
+                  <h3 class="m-cartDeliveryItem__title">GLS</h3>
+                  <p class="m-cartDeliveryItem__text">Přepravní společnost</p>
+                </div>
+                <div class="m-cartDeliveryItem__bottom">   <span class="btn -secondary -transparent m-cartDeliveryItem__price">149 Kč</span></div>
+              </label>
+            </div>
+          </div>
+          <h2 class="o-cartDeliveryForm__title">Zvolte způsob platby</h2>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <label class="o-cartDeliveryForm__item m-cartDeliveryItem" for="delivery_form_payment-1">
+                <input class="m-cartDeliveryItem__input" type="radio" name="delivery_form_payment" id="delivery_form_payment-1" required>
+                <div class="m-cartDeliveryItem__iconWrap"><span class="a-icon -store m-cartDeliveryItem__icon"></span><span class="a-icon -store m-cartDeliveryItem__icon -white"></span></div>
+                <div class="m-cartDeliveryItem__top">
+                  <h3 class="m-cartDeliveryItem__title">Převodem</h3>
+                  <p class="m-cartDeliveryItem__text">Celkovou částku převedete na náš účet předem</p>
+                </div>
+                <div class="m-cartDeliveryItem__bottom">   <span class="btn -secondary -transparent m-cartDeliveryItem__price">0 Kč</span></div>
+              </label>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <label class="o-cartDeliveryForm__item m-cartDeliveryItem" for="delivery_form_payment-2">
+                <input class="m-cartDeliveryItem__input" type="radio" name="delivery_form_payment" id="delivery_form_payment-2" required disabled>
+                <div class="m-cartDeliveryItem__iconWrap"><span class="a-icon -store m-cartDeliveryItem__icon"></span><span class="a-icon -store m-cartDeliveryItem__icon -white"></span></div>
+                <div class="m-cartDeliveryItem__top">
+                  <h3 class="m-cartDeliveryItem__title">Dobírka</h3>
+                  <p class="m-cartDeliveryItem__text">Celkovou částku zaplatíte při dodání zboží</p>
+                </div>
+                <div class="m-cartDeliveryItem__bottom">   <span class="btn -secondary -transparent m-cartDeliveryItem__price">10 Kč</span></div>
+              </label>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <label class="o-cartDeliveryForm__item m-cartDeliveryItem" for="delivery_form_payment-3">
+                <input class="m-cartDeliveryItem__input" type="radio" name="delivery_form_payment" id="delivery_form_payment-3" required>
+                <div class="m-cartDeliveryItem__iconWrap"><span class="a-icon -store m-cartDeliveryItem__icon"></span><span class="a-icon -store m-cartDeliveryItem__icon -white"></span></div>
+                <div class="m-cartDeliveryItem__top">
+                  <h3 class="m-cartDeliveryItem__title">V hotovosti</h3>
+                  <p class="m-cartDeliveryItem__text">Zaplatíte osobně na prodejně</p>
+                </div>
+                <div class="m-cartDeliveryItem__bottom">   <span class="btn -secondary -transparent m-cartDeliveryItem__price">0 Kč</span></div>
+              </label>
+            </div>
+          </div>
+          <div class="m-cartButtons"><a class="btn -dark" href="#">Zpět do obchodu</a>
+            <button class="btn -secondary" type="submit" id="delivery-form-submit">Osobní údaje <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span></button>
+          </div>
+        </form>
       </div>
-      <div class="cart-price-overview-responsive">
-        <div class="cart-price-overview-responsive__price-wrap">
-          <p class="cart-price-overview-responsive__text">Celková cena s DPH</p>
-          <h3 class="cart-price-overview-responsive__price"><span>16 989</span> Kč</h3>
+      <div class="m-cartBarResponsive">
+        <div class="m-cartBarResponsive__priceWrap">
+          <p class="m-cartBarResponsive__text">Celková cena s DPH</p>
+          <h3 class="m-cartBarResponsive__price"><span>65 599</span> Kč</h3>
         </div>
-        <div class="cart-price-overview-responsive__btn-wrap">
-          <button class="btn cart-price-overview-responsive__btn" onclick="responsive_check()">Souhrn objednávky <span class="btn__icon arrow-icon white"></span></button>
+        <div class="m-cartBarResponsive__btnWrap">
+          <button class="btn m-cartBarResponsive__btn" onclick="$('#delivery-form-submit').trigger('click');">Osobní údaje <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span> </button>
         </div>
       </div>
     </main><a class="scrollTop" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>

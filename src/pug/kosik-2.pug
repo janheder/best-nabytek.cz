@@ -25,29 +25,97 @@ html(lang=lang)
             a.o-cartNavResponsive__link.-prev(href="/kosik.html?krok=1")
                 span.a-icon.-cheveron.o-cartNavResponsive__icon
             p.o-cartNavResponsive__title 2/4 Doprava a platba
-            a.o-cartNavResponsive__link.-next(onclick="responsive_check()")
+            a.o-cartNavResponsive__link.-next(onclick="$('#delivery-form-submit').trigger('click');")
                 span.a-icon.-cheveron.o-cartNavResponsive__icon
 
         .a-cartNavResponsivePush
 
         main
             .container
-                .row
-                   
+                form.o-cartDeliveryForm(method="post" action="" name="delivery_form" id="delivery_form")
+                    h2.o-cartDeliveryForm__title Zvolte způsob dopravy
+
+                    .row
+
+                        .col-12.col-sm-6.col-md-4.col-lg-3
+                            label.o-cartDeliveryForm__item.m-cartDeliveryItem(for="delivery_form_shipping-1")
+                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_shipping" id="delivery_form_shipping-1" required)
+                                .m-cartDeliveryItem__iconWrap
+                                    span.a-icon.-store.m-cartDeliveryItem__icon
+                                    span.a-icon.-store.m-cartDeliveryItem__icon.-white
+                                .m-cartDeliveryItem__top
+                                    h3.m-cartDeliveryItem__title Osobní odběr 
+                                    p.m-cartDeliveryItem__text Paskov, rudé armády 77 (po osobní tel. domluvě)
+                                .m-cartDeliveryItem__bottom    
+                                    span.btn.-secondary.-transparent.m-cartDeliveryItem__price 0 Kč
+                                
+                        .col-12.col-sm-6.col-md-4.col-lg-3
+                            label.o-cartDeliveryForm__item.m-cartDeliveryItem(for="delivery_form_shipping-2")
+                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_shipping" id="delivery_form_shipping-2" required)
+                                .m-cartDeliveryItem__iconWrap
+                                    span.a-icon.-store.m-cartDeliveryItem__icon
+                                    span.a-icon.-store.m-cartDeliveryItem__icon.-white
+                                .m-cartDeliveryItem__top
+                                    h3.m-cartDeliveryItem__title GLS
+                                    p.m-cartDeliveryItem__text Přepravní společnost
+                                .m-cartDeliveryItem__bottom    
+                                    span.btn.-secondary.-transparent.m-cartDeliveryItem__price 149 Kč
 
 
 
-                .cart-bottom-btns
-                    a.btn.btn-dark(href="#") #[span.btn__icon.arrow-icon.left.white] Krok zpět
-                    button.btn(onclick="responsive_check()") Souhrn objednávky #[span.btn__icon.arrow-icon.white]
+                    h2.o-cartDeliveryForm__title Zvolte způsob platby
+
+                    .row
+
+                        .col-12.col-sm-6.col-md-4.col-lg-3
+                            label.o-cartDeliveryForm__item.m-cartDeliveryItem(for="delivery_form_payment-1")
+                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_payment" id="delivery_form_payment-1" required)
+                                .m-cartDeliveryItem__iconWrap
+                                    span.a-icon.-store.m-cartDeliveryItem__icon
+                                    span.a-icon.-store.m-cartDeliveryItem__icon.-white
+                                .m-cartDeliveryItem__top
+                                    h3.m-cartDeliveryItem__title Převodem
+                                    p.m-cartDeliveryItem__text Celkovou částku převedete na náš účet předem
+                                .m-cartDeliveryItem__bottom    
+                                    span.btn.-secondary.-transparent.m-cartDeliveryItem__price 0 Kč
+                                
+                        .col-12.col-sm-6.col-md-4.col-lg-3
+                            label.o-cartDeliveryForm__item.m-cartDeliveryItem(for="delivery_form_payment-2")
+                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_payment" id="delivery_form_payment-2" required disabled)
+                                .m-cartDeliveryItem__iconWrap
+                                    span.a-icon.-store.m-cartDeliveryItem__icon
+                                    span.a-icon.-store.m-cartDeliveryItem__icon.-white
+                                .m-cartDeliveryItem__top
+                                    h3.m-cartDeliveryItem__title Dobírka
+                                    p.m-cartDeliveryItem__text Celkovou částku zaplatíte při dodání zboží
+                                .m-cartDeliveryItem__bottom    
+                                    span.btn.-secondary.-transparent.m-cartDeliveryItem__price 10 Kč
+
+                        .col-12.col-sm-6.col-md-4.col-lg-3
+                            label.o-cartDeliveryForm__item.m-cartDeliveryItem(for="delivery_form_payment-3")
+                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_payment" id="delivery_form_payment-3" required)
+                                .m-cartDeliveryItem__iconWrap
+                                    span.a-icon.-store.m-cartDeliveryItem__icon
+                                    span.a-icon.-store.m-cartDeliveryItem__icon.-white
+                                .m-cartDeliveryItem__top
+                                    h3.m-cartDeliveryItem__title V hotovosti
+                                    p.m-cartDeliveryItem__text Zaplatíte osobně na prodejně
+                                .m-cartDeliveryItem__bottom    
+                                    span.btn.-secondary.-transparent.m-cartDeliveryItem__price 0 Kč
+
+
                 
+                    .m-cartButtons
+                        a.btn.-dark(href="#") Zpět do obchodu
+                        button.btn.-secondary(type="submit" id="delivery-form-submit") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
 
-            .cart-price-overview-responsive
-                .cart-price-overview-responsive__price-wrap
-                    p.cart-price-overview-responsive__text Celková cena s DPH
-                    h3.cart-price-overview-responsive__price #[span 16 989] Kč
-                .cart-price-overview-responsive__btn-wrap
-                    button.btn.cart-price-overview-responsive__btn(onclick="responsive_check()") Souhrn objednávky #[span.btn__icon.arrow-icon.white]
+                        
+            .m-cartBarResponsive
+                .m-cartBarResponsive__priceWrap
+                    p.m-cartBarResponsive__text Celková cena s DPH
+                    h3.m-cartBarResponsive__price #[span 65 599] Kč
+                .m-cartBarResponsive__btnWrap
+                    button.btn.m-cartBarResponsive__btn(onclick="$('#delivery-form-submit').trigger('click');") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
 
         include partials/_footer.pug
 

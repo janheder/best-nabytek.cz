@@ -7,7 +7,8 @@
     flex-direction: row;
     align-items: center;
     background: $bg-brand;
-    padding: 20px;
+    padding: 0 20px;
+    min-height: 56px;
 
     &[aria-expanded="true"] .m-navUserMenu__cheveron{
         transform: rotate(-90deg);

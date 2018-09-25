@@ -140,22 +140,23 @@
           <div class="o-cartNav__title">Doprava a platba</div>
           <div class="o-cartNav__number">2</div>
         </div>
-        <div class="o-cartNav__single -active">
+        <div class="o-cartNav__single -complete">
           <div class="o-cartNav__title">Osobní údaje</div>
           <div class="o-cartNav__number">3</div>
         </div>
-        <div class="o-cartNav__single">
+        <div class="o-cartNav__single -active">
           <div class="o-cartNav__title">Shrnutí objednávky</div>
           <div class="o-cartNav__number">4</div>
         </div>
       </div>
     </section>
-    <section class="page-heading page-heading--cart-responsive"><a class="page-heading--cart__control" href="/kosik.html?krok=2"><span class="caret-icon left"></span></a>
-      <p class="page-heading--cart__title">3/4 Souhrn objednávky</p><a class="page-heading--cart__control" onclick="$('#cart_3_submit').click();"><span class="caret-icon right"></span></a>
+    <section class="o-cartNavResponsive"><a class="o-cartNavResponsive__link -prev -disabled" href="/kosik.html?krok=3"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
+      <p class="o-cartNavResponsive__title">1/4 Nákupní košík</p><a class="o-cartNavResponsive__link -next" onclick="$('#cart_3_submit').click();"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
     </section>
-    <div class="page-heading--cart-responsive-push"></div>
+    <div class="a-cartNavResponsivePush"></div>
     <main>
       <div class="container">
+        <div class="m-alert -danger">Všechny údaje pěčlivě zkontrolujte a následně objednávku potvrďte tlačítkem "Odeslat objednávku"</div>
         <form method="post" action="" name="cart_form">
           <div class="row cart-item-top">
             <div class="cart-item-top__col-1">
@@ -167,7 +168,7 @@
               <div class="cart-item-top__name"></div>
               <div class="cart-item-top__inner">
                 <div class="cart-item-top__qty">
-                  <p class="cart-item-top__heading">Počet kusů</p>
+                  <p class="cart-item-top__heading">Množství</p>
                 </div>
                 <div class="cart-item-top__price">
                   <p class="cart-item-top__heading">Cena za kus</p>
@@ -226,23 +227,19 @@
               </div>
             </div>
           </div>
-          <div class="cart-shipping-payment-overview">
-            <h4 class="cart-shipping-payment-overview__title">Způsob dopravy</h4>
-            <div class="cart-shipping-payment-overview__single">
-              <p class="cart-shipping-payment-overview__name">ČP, Benefit-plus program, balík do ruky:</p><span class="cart-shipping-payment-overview__price">129 Kč</span>
-            </div>
+          <div class="m-cartDeliveryOverview">
+            <h5 class="m-cartDeliveryOverview__text">Způsob dopravy</h5>
+            <p class="m-cartDeliveryOverview__title">Česká pošta:</p>
+            <h3 class="m-cartDeliveryOverview__price"><span class="m-cartPriceOverview__priceNumber">75</span> Kč</h3>
           </div>
-          <div class="cart-shipping-payment-overview">
-            <h4 class="cart-shipping-payment-overview__title">Způsob dopravy a platby</h4>
-            <div class="cart-shipping-payment-overview__single">
-              <p class="cart-shipping-payment-overview__name">Převod na účet</p><span class="cart-shipping-payment-overview__price">0 Kč</span>
-            </div>
+          <div class="m-cartDeliveryOverview">
+            <h5 class="m-cartDeliveryOverview__text">Způsob platby</h5>
+            <p class="m-cartDeliveryOverview__title">Převod na účet:</p>
+            <h3 class="m-cartDeliveryOverview__price"><span class="m-cartPriceOverview__priceNumber">0</span> Kč</h3>
           </div>
-          <div class="cart-price-overview">
-            <div class="cart-price-overview__wrap">
-              <p class="cart-price-overview__text">Celková cena s DPH:</p>
-              <h3 class="cart-price-overview__price"><span class="cart-price-overview__number">16 989</span> Kč</h3>
-            </div>
+          <div class="m-cartPriceOverview">
+            <p class="m-cartPriceOverview__text">Celková cena s DPH:</p>
+            <h3 class="m-cartPriceOverview__price"><span class="m-cartPriceOverview__priceNumber">65 599</span> Kč</h3>
           </div>
           <div class="cart-user-info-overview">
             <div class="row">
@@ -274,33 +271,29 @@
               </div>
             </div>
           </div>
-          <div class="cart-terms-checkbox">
-            <div class="form-group">
-              <div class="form-check">
-                <label class="form-check__label">
-                  <input class="form-check__input" type="checkbox" name="cart-form-heureka"><span class="form-check__box checkbox"></span><span class="form-check__inline">Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.</span>
-                </label>
-              </div>
+          <div class="o-form">
+            <div class="m-formGroup -checkbox">
+              <input class="m-formGroup__input" type="checkbox" name="cart_form_heureka" id="cart_form_heureka"><span class="m-formGroup__checkbox a-checkbox"></span>
+              <label class="m-formGroup__label -small" for="cart_form_heureka">Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.  </label>
             </div>
-            <div class="form-group">
-              <div class="form-check">
-                <label class="form-check__label">
-                  <input class="form-check__input" type="checkbox" name="cart-form-terms" required><span class="form-check__box checkbox"></span><span class="form-check__inline">Souhlasím s <a class="form-check__link" href="#">obchodními podmínkami</a></span>
-                </label>
-              </div>
+            <div class="m-formGroup -checkbox">
+              <input class="m-formGroup__input" type="checkbox" name="cart_form_termsa" id="cart_form_terms" required><span class="m-formGroup__checkbox a-checkbox"></span>
+              <label class="m-formGroup__label -small" for="cart_form_terms">Souhlasím s <a href="#">obchodními podmínkami</a> </label>
             </div>
           </div>
-          <div class="cart-bottom-btns"><a class="btn btn-dark" href="#"><span class="btn__icon arrow-icon left white"></span> Krok zpět</a>
-            <button class="btn" type="submit" id="cart_3_submit">Dokončit objednávku <span class="btn__icon arrow-icon white"></span></button>
+          <div class="m-cartButtons"><a class="btn -dark" href="#">Zpět do obchodu</a><a class="btn -remove -transparent" href="#">Vyprázdnit košík</a>
+            <button class="btn -secondary" type="submit" id="cart_3_submit">Odeslat objednávku <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span></button>
           </div>
         </form>
       </div>
-      <div class="cart-price-overview-responsive">
-        <div class="cart-price-overview-responsive__price-wrap">
-          <p class="cart-price-overview-responsive__text">Celková cena s DPH</p>
-          <h3 class="cart-price-overview-responsive__price"><span>16 989</span> Kč</h3>
+      <div class="m-cartBarResponsive">
+        <div class="m-cartBarResponsive__priceWrap">
+          <p class="m-cartBarResponsive__text">Celková cena s DPH</p>
+          <h3 class="m-cartBarResponsive__price"><span>65 599</span> Kč</h3>
         </div>
-        <div class="cart-price-overview-responsive__btn-wrap"><a class="btn cart-price-overview-responsive__btn" onclick="$('#cart_3_submit').click();">Dokončit objednávku <span class="btn__icon arrow-icon white"></span></a></div>
+        <div class="m-cartBarResponsive__btnWrap">
+          <button class="btn m-cartBarResponsive__btn" onclick="$('#cart_3_submit').click();">Doprava a platba <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span> </button>
+        </div>
       </div>
     </main><a class="scrollTop" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>
     <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact" aria-hidden="true">

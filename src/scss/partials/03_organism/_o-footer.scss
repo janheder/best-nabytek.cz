@@ -50,7 +50,7 @@ footer{
     margin-left: 1rem;
 
     a{
-    color: $text-white;
+        color: $text-white;
     }
 }
 .m-emailSubscribe__check{
@@ -138,4 +138,17 @@ footer{
     font-size: 1.5rem; 
     line-height: 3.6rem;
     margin: 0;
+}
+
+
+@media screen and (max-width:768px){
+    .o-footerContacts__col:first-child{
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .m-emailSubscribe{
+        padding: 4rem 0;
+    }
+    .m-questionsContact{
+        padding: 4rem 0;
+    }
 }

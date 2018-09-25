@@ -169,9 +169,8 @@ $("#search-toggler-responsive").click(function() {
 // FORM VALIDATION AND REQUIRED SETUP
 // =============================================================================
 
-$('.billing-address-toggler input').click(function() {
-    $('.register-form-billing__wrap').slideToggle("slow");
-    $('.register-form-billing__wrap input:not(#register_form_billing_name, #register_form_billing_dic), .register-form-billing__wrap select').each(function(){
+$('#register_form_billing_toggler').click(function() {
+    $('#formBillingCollapse input:not(#register_form_billing_name, #register_form_billing_dic)').each(function(){
         if(!$(this).prop('required')){
             $(this).prop('required',true);
         }
@@ -181,9 +180,8 @@ $('.billing-address-toggler input').click(function() {
     });
 });
 
-$('.shipping-address-toggler input').click(function() {
-    $('.register-form-shipping__wrap').slideToggle("slow");
-    $('.register-form-shipping__wrap input:not(#register_form_shipping_company), .register-form-shipping__wrap select').each(function(){
+$('#register_form_shipping_toggler').click(function() {
+    $('#formShippingCollapse input:not(#register_form_shipping_company)').each(function(){
         if(!$(this).prop('required')){
             $(this).prop('required',true);
         }
@@ -192,6 +190,21 @@ $('.shipping-address-toggler input').click(function() {
         }
     });
 });
+
+$('#register_form_register_toggler').click(function() {
+    $('#formRegisterCollapse input').each(function(){
+        if(!$(this).prop('required')){
+            $(this).prop('required',true);
+        }
+        else {
+        $(this).prop('required',false);
+        }
+    });
+});
+
+// =============================================================================
+// SHOW PASSWORD
+// =============================================================================
 
 $('#show_password_toggler').click(function() {
     if($("#register_form_password, #register_form_register_password").prop("type") == "text"){
@@ -200,18 +213,6 @@ $('#show_password_toggler').click(function() {
     else {
         $("#register_form_password, #register_form_register_password").prop("type","text");
     }
-});
-
-$('.cart-register-toggler input').click(function() {
-$('.register-form-register__wrap').slideToggle("slow");
-$('.register-form-register__wrap input').each(function(){
-    if(!$(this).prop('required')){
-        $(this).prop('required',true);
-    }
-    else {
-    $(this).prop('required',false);
-    }
-});
 });
 
 // =============================================================================

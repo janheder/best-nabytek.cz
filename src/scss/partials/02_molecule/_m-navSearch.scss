@@ -60,8 +60,21 @@
 @media screen and (max-width:991px){
     .m-navSearch{
         padding: 0;
+        transform: translateX(100%);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: 0.3s ease all;
+        z-index: 1;
+
+        &.-active{
+            transform: translateX(0%);
+        }
     }
-    .m-navSearch__form{
-        display: none;
+    .m-navSearch__input{
+        height: 56px;
+        border-radius: 0;
     }
 }
