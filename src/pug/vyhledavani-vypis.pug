@@ -5,33 +5,48 @@ html(lang=lang)
     body
         include partials/_navMain.pug
         include partials/_navProducts.pug
-        include partials/_breadcrumb.pug
 
-        section.page-heading.page-heading--category
-            .container
-                h1.page-heading--category__title Výsledky vyhledávání: Lorem ipsum
-                p.page-heading--category__subtitle-excerpt Nalezeno 8 výsledků
+        section.o-pageHeading.b-bgCover__wrap
+            include partials/_breadcrumb-transparent.pug
+            .container.o-pageHeading__container
+                h1.o-pageHeading__title.-search Výsledky vyhledávání pro výraz: "postel"
 
+            img.lazy.o-pageHeading__img.b-bgCover__img(src=URLbase+"img/lazy/category-thumb-large.jpg" data-src=URLbase+"img/category-thumb-large.jpg" alt="#" title="#")
+        
+        include partials/_filter.pug
+
+        
         main
             .container
 
-                include partials/_pagination.pug
+                .m-filterBadges
+                    .m-filterBadges__single 
+                        .m-filterBadges__wrap
+                            .m-filterBadges__title Filtr položka
+                            a.m-filterBadges__remove(href="#")
+                                span.a-icon.-cross.-white.m-filterBadges__Icon 
 
-                .product-grid
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
 
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
+                .o-productPagination
+                    .o-productPagination__resultNumber 1 - 30 z 322 produktů
+                    .o-productPagination__resultLimit 
+                        span.o-productPagination__resultLimitText Produktů na stránku
+                        a.o-productPagination__resultLimitButton.-active(href="#") 20
+                        a.o-productPagination__resultLimitButton(href="#") 60
 
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
+                    include partials/_pagination.pug
 
-                include partials/_pagination.pug
 
+                .o-productGrid
+                    - for (var i=0; i<20; i++)
+                        include partials/_single-product-cell.pug
+
+
+                .o-productBottomButton
+                    a.btn.o-productBottomButton__btn(href="#") Dalších 20 produktů
+                    include partials/_pagination.pug
+
+ 
 
         include partials/_footer.pug
 

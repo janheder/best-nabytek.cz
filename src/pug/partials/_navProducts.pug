@@ -10,11 +10,11 @@ nav.o-navProducts(id="js-navProducts")
 			a.m-navUserMenu__link(href="#") #[span.a-icon.-calendar.m-navUserMenu__icon] Historie objednávek
 			a.m-navUserMenu__link(href="#") #[span.a-icon.-logOut.m-navUserMenu__icon] Odhlásit
 
-	.accordion.o-navProducts__accordion(id="accordionExample")
+	.accordion.o-navProducts__accordion(id="accordionProducts")
 
 		.o-navProducts__item
-			.o-navProducts__link(id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne") Produkty 
-			.collapse.o-navProducts__collapse(id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample")
+			.o-navProducts__link(id="headingProducts-1" data-toggle="collapse" data-target="#collapseProducts-1" aria-expanded="false" aria-controls="collapseProducts-1") Akční nabídka
+			.collapse.o-navProducts__collapse(id="collapseProducts-1" aria-labelledby="headingProducts-1" data-parent="#accordionProducts")
 
 				.o-navProducts__subCategoryWrap
 					- for (var i=0; i<12; i++)
@@ -24,11 +24,21 @@ nav.o-navProducts(id="js-navProducts")
 
 
 		.o-navProducts__item
-			.o-navProducts__link(id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo") Produkty 
-			.collapse.o-navProducts__collapse(id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample")
+			.o-navProducts__link(id="headingProducts-2" data-toggle="collapse" data-target="#collapseProducts-2" aria-expanded="false" aria-controls="collapseProducts-2") Matrace 
+			.collapse.o-navProducts__collapse(id="collapseProducts-2" aria-labelledby="headingProducts-2" data-parent="#accordionProducts")
 
 				.o-navProducts__subCategoryWrap
 					- for (var i=0; i<8; i++)
+						a.o-navProducts__subCategory(href="#")
+							img.o-navProducts__subCategoryImg(src=URLbase+"img/product-thumb-small.jpg")
+							span.o-navProducts__subCategoryText(href="#") Postele
+
+		.o-navProducts__item
+			.o-navProducts__link(id="headingProducts-3" data-toggle="collapse" data-target="#collapseProducts-3" aria-expanded="false" aria-controls="collapseProducts-3") Postele
+			.collapse.o-navProducts__collapse(id="collapseProducts-3" aria-labelledby="headingProducts-3" data-parent="#accordionProducts")
+
+				.o-navProducts__subCategoryWrap
+					- for (var i=0; i<12; i++)
 						a.o-navProducts__subCategory(href="#")
 							img.o-navProducts__subCategoryImg(src=URLbase+"img/product-thumb-small.jpg")
 							span.o-navProducts__subCategoryText(href="#") Postele

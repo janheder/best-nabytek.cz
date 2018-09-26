@@ -11,10 +11,18 @@
 .o-pageHeading__container{
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 .o-pageHeading__title{
     @include f-48-white-medium;
     margin: 0;
+    display: inline-block;
+
+    &.-search{
+        font-size: 3.6rem;
+        background: $bg-brand;
+        padding: 10px 20px;
+    }
 }
 .o-pageHeading__text{
     @include f-16-white-regular;

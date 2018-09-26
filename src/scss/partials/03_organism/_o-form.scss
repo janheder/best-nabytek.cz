@@ -19,17 +19,41 @@ input{
 .o-form{
     background: $bg-white;
     padding: 20px;
+    margin: 20px 0;
 }
 .o-form__collapseToggler{
+    width: 100%;
+    margin-bottom: 0px;
+    @include f-16-primary-medium;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: $bg-light;
+    border-radius: $border-radius-primary;
+
+    &:hover, &:active, &:focus{
+        text-decoration: none;
+        background: $bg-grey;
+    }
+}
+.o-form__collapseTogglerIcon{
+    height: 10px;
+    transform: rotate(90deg);
 
 }
+.o-form__collapseToggler[aria-expanded="true"] .o-form__collapseTogglerIcon{
+    transform: rotate(-90deg); 
+}
 .o-form__collapse{
-
+  
 }
 .o-form__title{
     @include f-24-primary-medium;
     text-align: center;
     margin-bottom: 4rem;
+    padding-top: 4rem;
 }
 .o-form__text{
     @include f-14-dark-regular;
@@ -47,11 +71,20 @@ input{
 
 }
 
+@media screen and (max-width: 991px){
+    .o-form{
+        margin: 5px 0;
+    }
+    .o-form__collapseToggler{
+        display: flex;
+    }
+}
+
 
 .m-formDivider{
     @include f-14-dark-regular;
     border-bottom: 1px solid $border-grey;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .m-formGroup{
@@ -103,6 +136,7 @@ input{
             color: $text-primary;
             z-index: 3;
             cursor: pointer;
+            padding-bottom: 0;
         }
     }
 
@@ -226,7 +260,7 @@ input{
 /*push up*/
 
 .m-formGroup__input:focus, .m-formGroup__input:not(:placeholder-shown){
-    padding: 1.1rem 2rem;
+    padding: 1.1rem 2rem 0 2rem;
 }
 .m-formGroup__input:focus + .m-formGroup__label, 
 .m-formGroup__input:not(:placeholder-shown) + .m-formGroup__label{

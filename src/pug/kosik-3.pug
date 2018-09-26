@@ -32,12 +32,13 @@ html(lang=lang)
 
         main
             .container
-                .form-responsive-error Prosím zadejte své osobní údaje nebo se přihlaste.
+                .a-cartResponsiveError Prosím zadejte své osobní údaje nebo se přihlaste.
+
                 .row
                     .col-12.col-sm-12.col-md-12.col-lg-8.register-form-col
                         form.o-form(method="post" action="" name="register_form" id="register_form")
-                            
-                            a.o-form__collapseToggler(data-toggle="collapse" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse") Bez registrace #[span.register-form-toggler__icon]
+
+                            a.o-form__collapseToggler(data-toggle="collapse" id="js-registerCollpaseToggler" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse") Bez registrace #[span.a-icon.-cheveron.o-form__collapseTogglerIcon]
                             .collapse.o-form__collapse.show(id="register-collapse")
 
                                 h2.o-form__title Bez registrace
@@ -283,7 +284,7 @@ html(lang=lang)
 
                         form.o-form(method="post" action="" class="login-form" name="login_form")
                             
-                            a.o-form__collapseToggler(data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse") Přihlášení #[span.register-form-toggler__icon]
+                            a.o-form__collapseToggler(data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse") Přihlášení #[span.a-icon.-cheveron.o-form__collapseTogglerIcon]
                             .collapse.o-form__collapse.show(id="login-collapse")
 
                                 h2.o-form__title Přihlášení
@@ -316,8 +317,8 @@ html(lang=lang)
 
             script.
                 function responsive_check(){
-                    if($(".register-form-toggler").attr("aria-expanded") === "false"){
-                        $(".form-responsive-error").fadeIn(200);
+                    if($("#js-registerCollpaseToggler").attr("aria-expanded") === "false"){
+                        $(".a-cartResponsiveError").fadeIn(200);
                     }else{
                         $("#register_form_submit").trigger("click");
                     }

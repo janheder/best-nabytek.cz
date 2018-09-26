@@ -156,10 +156,10 @@
     <div class="a-cartNavResponsivePush"></div>
     <main>
       <div class="container">
-        <div class="form-responsive-error">Prosím zadejte své osobní údaje nebo se přihlaste.</div>
+        <div class="a-cartResponsiveError">Prosím zadejte své osobní údaje nebo se přihlaste.</div>
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-8 register-form-col">
-            <form class="o-form" method="post" action="" name="register_form" id="register_form"><a class="o-form__collapseToggler" data-toggle="collapse" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse">Bez registrace <span class="register-form-toggler__icon"></span></a>
+            <form class="o-form" method="post" action="" name="register_form" id="register_form"><a class="o-form__collapseToggler" data-toggle="collapse" id="js-registerCollpaseToggler" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse">Bez registrace <span class="a-icon -cheveron o-form__collapseTogglerIcon"></span></a>
               <div class="collapse o-form__collapse show" id="register-collapse">
                 <h2 class="o-form__title">Bez registrace</h2>
                 <div class="o-form__divider m-formDivider">Osobní údaje</div>
@@ -347,7 +347,7 @@
             </form>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 login-form-col">
-            <form class="o-form login-form" method="post" action="" name="login_form"><a class="o-form__collapseToggler" data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse">Přihlášení <span class="register-form-toggler__icon"></span></a>
+            <form class="o-form login-form" method="post" action="" name="login_form"><a class="o-form__collapseToggler" data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse">Přihlášení <span class="a-icon -cheveron o-form__collapseTogglerIcon"></span></a>
               <div class="collapse o-form__collapse show" id="login-collapse">
                 <h2 class="o-form__title">Přihlášení</h2>
                 <p class="o-form__text">Jako registrovaný uživatel získává slevu ve výši 1% na veškeré zboží, které není aktuálně ve slevě. </p>
@@ -376,8 +376,8 @@
       </div>
       <script>
         function responsive_check(){
-            if($(".register-form-toggler").attr("aria-expanded") === "false"){
-                $(".form-responsive-error").fadeIn(200);
+            if($("#js-registerCollpaseToggler").attr("aria-expanded") === "false"){
+                $(".a-cartResponsiveError").fadeIn(200);
             }else{
                 $("#register_form_submit").trigger("click");
             }

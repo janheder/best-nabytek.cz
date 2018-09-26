@@ -20,6 +20,18 @@
     height: 14px;
     width: 14xp;
 }
+.o-filter__responsiveBottom{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: $bg-brand-secondary;
+    padding: 0 2rem;
+    height: 50px;
+    margin: 10px;
+    border-radius: $border-radius-primary;
+    @include f-18-white-medium;
+}
 .o-filter__accordion{
     display: flex;
     flex-direction: row;
@@ -88,6 +100,9 @@
     .o-filter__responsive{
         display: flex;
     }
+    .o-filter__responsiveBottom{
+        display: flex;
+    }
     .o-filter__accordion{
         display: flex;
         flex-direction: column;
@@ -97,13 +112,10 @@
     }
     .o-filter__single{
         width: 100%;
-        border-top: 1px solid $border-grey;
-
-        &:first-child{
-            border: 0;
-        }
+        border-bottom: 1px solid $border-grey;
+        
         &:last-child{
-            border-bottom: 1px solid $border-grey;
+            display: none;
         }
     }
     .o-filter__link{

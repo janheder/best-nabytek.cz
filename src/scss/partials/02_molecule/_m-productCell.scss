@@ -90,6 +90,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding-right: 10px;
+    flex-shrink: 0;
 }
 .m-productCell__priceOld{
     text-decoration: line-through;

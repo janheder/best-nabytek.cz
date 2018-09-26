@@ -1,5 +1,25 @@
 section.m-filterResponsive
-    .m-filterResponsive__sort Řadit produkty
+    .m-filterResponsive__sort(id="headingFilterSort" data-toggle="collapse" data-target="#collapseFilterSort" aria-expanded="false" aria-controls="collapseFilterSort") Řadit produkty
+    .collapse.m-filterResponsive__collapse(id="collapseFilterSort" aria-labelledby="hcollapseFilterSort")
+        .m-filterResponsive__sortContent
+
+            .o-filter__item
+                .o-filter__formGroup.m-formGroup.-radiobutton.-noMargin
+                    input.m-formGroup__input(type="radio" name="filter-sort-responsive" id="filter-sort-responsive-1" required)
+                    span.m-formGroup__radiobutton.a-radiobutton
+                    label.m-formGroup__label(for="filter-sort-responsive-1") Od nejlevnějšího
+            .o-filter__item
+                .o-filter__formGroup.m-formGroup.-radiobutton.-noMargin
+                    input.m-formGroup__input(type="radio" name="filter-sort-responsive" id="filter-sort-responsive-2" required)
+                    span.m-formGroup__radiobutton.a-radiobutton
+                    label.m-formGroup__label(for="filter-sort-responsive-2") Podle názvu A - Z
+            .o-filter__item
+                .o-filter__formGroup.m-formGroup.-radiobutton.-noMargin
+                    input.m-formGroup__input(type="radio" name="filter-sort-responsive" id="filter-sort-responsive-3" required)
+                    span.m-formGroup__radiobutton.a-radiobutton
+                    label.m-formGroup__label(for="filter-sort-responsive-3") Podle data zveřejnění
+
+
     .m-filterResponsive__filter(id="js-filterToggler") Filtr produktů
 
 section.o-filter(id="js-filter" method="post" name="filter-form" action="")
@@ -105,3 +125,5 @@ section.o-filter(id="js-filter" method="post" name="filter-form" action="")
                                     input.m-formGroup__input(type="radio" name="filter-sort" id="filter-sort-3" required)
                                     span.m-formGroup__radiobutton.a-radiobutton
                                     label.m-formGroup__label(for="filter-sort-3") Podle data zveřejnění
+
+    .o-filter__responsiveBottom(id="js-filterTogglerResponsive2") Potvrdit filtr

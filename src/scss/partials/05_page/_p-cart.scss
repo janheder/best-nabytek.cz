@@ -276,24 +276,14 @@
 	text-align: right;
 	width: 10%;
 	align-items: center;
+
 }
-.cart-item-single__delete{
-	opacity: 0.3;
-	padding: 5px;
-	border-radius: 999px;
-	border: 2px solid $border-dark;
+.cart-item-single__delete-wrap a{
 	transition: 0.2s ease all;
+	opacity: 0.5;
 
-	&:hover{
+	&:hover, &:active, &:focus{
 		opacity: 1;
-		border-color: $bg-red;
-		transform: rotate(90);
-
-		.cart-item-single__delete-icon{
-			&::before, &::after{
-				background: $bg-red;
-			}
-		}
 	}
 }
 .cart-item-single__delete-icon{

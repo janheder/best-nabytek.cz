@@ -146,7 +146,7 @@ $("#js-navSearchToggler").click(function() {
     $("#searchbox").focus();
 });
 
-$("#js-filterToggler, #js-filterTogglerResponsive").click(function() { 
+$("#js-filterToggler, #js-filterTogglerResponsive, #js-filterTogglerResponsive2").click(function() { 
     $("#js-filter").toggleClass("-active");
 });
 
@@ -260,15 +260,13 @@ $(function () {
 })
 
 // =============================================================================
-// SELECTBOX
+// SELECTBOX 
 // =============================================================================
 
 $(".m-selectBox .m-selectBox__input").click(function () {   
     var value = $(this).siblings(".m-selectBox__content").find(".m-selectBox__name").text();
     $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
 });
-  
-
 
 // =============================================================================
 // MODAL AUTO DISPLAY

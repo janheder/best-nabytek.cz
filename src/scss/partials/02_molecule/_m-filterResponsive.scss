@@ -5,7 +5,7 @@
     width: 100%;
     display: none;
     flex-direction: row;
-    border-bottom: 1px solid $border-grey;
+    box-shadow: $box-shadow-primary;
     background: $bg-white;
     z-index: 5;
     padding: 0;
@@ -17,6 +17,12 @@
     flex-grow: 1;
     flex-basis: 0;
     text-align: center;
+}
+.m-filterResponsive__collapse{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
 }
 
 @media screen and (max-width:991px){

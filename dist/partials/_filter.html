@@ -1,6 +1,28 @@
 
 <section class="m-filterResponsive">
-  <div class="m-filterResponsive__sort">Řadit produkty</div>
+  <div class="m-filterResponsive__sort" id="headingFilterSort" data-toggle="collapse" data-target="#collapseFilterSort" aria-expanded="false" aria-controls="collapseFilterSort">Řadit produkty</div>
+  <div class="collapse m-filterResponsive__collapse" id="collapseFilterSort" aria-labelledby="hcollapseFilterSort">
+    <div class="m-filterResponsive__sortContent">
+      <div class="o-filter__item">
+        <div class="o-filter__formGroup m-formGroup -radiobutton -noMargin">
+          <input class="m-formGroup__input" type="radio" name="filter-sort-responsive" id="filter-sort-responsive-1" required="required"/><span class="m-formGroup__radiobutton a-radiobutton"></span>
+          <label class="m-formGroup__label" for="filter-sort-responsive-1">Od nejlevnějšího</label>
+        </div>
+      </div>
+      <div class="o-filter__item">
+        <div class="o-filter__formGroup m-formGroup -radiobutton -noMargin">
+          <input class="m-formGroup__input" type="radio" name="filter-sort-responsive" id="filter-sort-responsive-2" required="required"/><span class="m-formGroup__radiobutton a-radiobutton"></span>
+          <label class="m-formGroup__label" for="filter-sort-responsive-2">Podle názvu A - Z</label>
+        </div>
+      </div>
+      <div class="o-filter__item">
+        <div class="o-filter__formGroup m-formGroup -radiobutton -noMargin">
+          <input class="m-formGroup__input" type="radio" name="filter-sort-responsive" id="filter-sort-responsive-3" required="required"/><span class="m-formGroup__radiobutton a-radiobutton"></span>
+          <label class="m-formGroup__label" for="filter-sort-responsive-3">Podle data zveřejnění</label>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="m-filterResponsive__filter" id="js-filterToggler">Filtr produktů</div>
 </section>
 <section class="o-filter" id="js-filter" method="post" name="filter-form" action="">
@@ -146,4 +168,5 @@
       </div>
     </form>
   </div>
+  <div class="o-filter__responsiveBottom" id="js-filterTogglerResponsive2">Potvrdit filtr</div>
 </section>
