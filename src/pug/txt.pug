@@ -5,12 +5,14 @@ html(lang=lang)
     body
         include partials/_navMain.pug
         include partials/_navProducts.pug
-        section.page-heading.post__image-container
-            .container
-                h1.page-heading__title Lorem ipsum dolor sit amet
-            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-news-thumb-large.jpg" data-src=URLbase+"img/news-thumb-large.jpg" alt="#" title="#")
+        
+        section.o-pageHeading.b-bgCover__wrap
+            include partials/_breadcrumb-transparent.pug
+            .container.o-pageHeading__container
+                h1.o-pageHeading__title Lorem ipsum dolor sit amet
+                p.o-pageHeading__text Napsáno: 1. 1. 1970
+            img.lazy.o-pageHeading__img.b-bgCover__img(src=URLbase+"img/lazy/lazy-news-thumb-large.jpg" data-src=URLbase+"img/news-thumb-large.jpg" alt="#" title="#")
 
-        include partials/_breadcrumb.pug
 
         main
             .container

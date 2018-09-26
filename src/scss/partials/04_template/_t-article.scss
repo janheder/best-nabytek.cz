@@ -27,7 +27,7 @@ article{
         margin-bottom: 3rem;
     }
     & b, & strong{
-        font-weight: 700;
+        font-weight: 500;
     }
     & p{
         margin-bottom: 3rem;
@@ -52,7 +52,7 @@ article.post{
         font-weight: 400;
     }
     & b, & strong{
-        font-weight: 700;
+        font-weight: 500;
     }
     & .article-bottom{
         border-top: 1px solid rgba(0,0,0,0.1);
@@ -71,7 +71,7 @@ article{
         @for $index from 1 through 6 {
           & h#{$index}{
             line-height: 1.5;
-            font-weight: 600;
+            font-weight: 500;
             font-family: $font-family-primary;
           }
         }
@@ -110,7 +110,7 @@ article{
 	& h3{
 		font-size: 2.4rem;
 		font-family: $font-family-primary;
-		font-weight: 600;
+		font-weight: 500;
 		margin-bottom: 1rem;
 		padding-bottom: 1rem;
 		position: relative;
@@ -163,7 +163,7 @@ article{
     display: table-row;
 
     &.head p{
-        font-weight: 600;
+        font-weight: 500;
     }
 }
 .order-history-single-col{
@@ -185,11 +185,11 @@ article{
     }
     & .price{
         color: $text-red;
-        font-weight: 600;
+        font-weight: 500;
     }
     & .status{
         color: $text-green;
-        font-weight: 600;
+        font-weight: 500;
     }
 }
 @media screen and (max-width: 991px){
@@ -254,7 +254,7 @@ article{
     font-size: 3rem;
     margin-bottom: 3rem;
     font-family: $font-family-secondary;
-    font-weight: 700;
+    font-weight: 500;
 }
 .page-message__buttons{
     margin: 0 auto;
