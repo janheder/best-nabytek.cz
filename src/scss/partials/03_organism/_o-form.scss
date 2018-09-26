@@ -98,11 +98,63 @@ input{
             position: relative;
             transform: none;
             top: 0;
-            left: 15px;
+            left: auto;
+            padding-left: 15px;
             color: $text-primary;
             z-index: 3;
             cursor: pointer;
         }
+    }
+
+    &.-range{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+
+        .m-formGroup__rangewWrap{
+            position: relative;
+            height: 5.4rem;
+            width: 100%;
+
+            &::after{
+                content: "";
+                top: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                left: 0;
+                background: $bg-light;
+                height: 8px;
+                width: 100%;
+                z-index: -1;
+                border-radius: $border-radius-primary;
+            }
+        }
+        .m-formGroup__input{
+            background: transparent; 
+            padding: 0;
+            position: absolute;
+            top: 0;
+            margin: 0;
+        }
+        .m-formGroup__label{
+            position: relative;
+            transform: none;
+            top: 0;
+            left: auto;
+            padding-left: 0;
+            color: $text-primary;
+            width: 50%;
+
+            &:last-child{
+                text-align: right;
+            }
+        }
+    }
+
+    &.-noMargin{
+        margin: 0;
     }
 }
 .m-formGroup__label{
@@ -174,7 +226,7 @@ input{
 /*push up*/
 
 .m-formGroup__input:focus, .m-formGroup__input:not(:placeholder-shown){
-    padding: 1.1rem 2rem 0rem 2rem;
+    padding: 1.1rem 2rem;
 }
 .m-formGroup__input:focus + .m-formGroup__label, 
 .m-formGroup__input:not(:placeholder-shown) + .m-formGroup__label{

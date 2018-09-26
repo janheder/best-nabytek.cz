@@ -1,0 +1,26 @@
+.m-filterResponsive{
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    border-bottom: 1px solid $border-grey;
+    background: $bg-white;
+    z-index: 5;
+    padding: 0;
+}
+.m-filterResponsive__sort, .m-filterResponsive__filter{
+    border-right: 1px solid $border-grey; 
+    @include f-16-primary-medium;
+    padding: 15px 20px;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+}
+
+@media screen and (max-width:991px){
+    .m-filterResponsive{
+        display: flex;
+    }
+}

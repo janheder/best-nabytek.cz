@@ -25,49 +25,40 @@ html(lang=lang)
                                 img.m-categoryCell__img(src=URLbase+"img/product-thumb-medium.jpg" alt="#" title="#")
                                 p.m-categoryCell__title Postele
 
-            img.lazy.o-pageHeading__img.b-bgCover__img(src=URLbase+"img/lazy/lazy-news-archive-thumb-large.jpg" data-src=URLbase+"img/news-archive-thumb-large.jpg" alt="#" title="#")
+            img.lazy.o-pageHeading__img.b-bgCover__img(src=URLbase+"img/lazy/category-thumb-large.jpg" data-src=URLbase+"img/category-thumb-large.jpg" alt="#" title="#")
+        
+        include partials/_filter.pug
 
-
-        section.o-filter
-            .container
-
+        
         main
-
             .container
+
                 .m-filterBadges
                     .m-filterBadges__single 
-                        .m-filterBadges__title Filtr prvek
-                        .m-filterBadges__remove
-                            span.a-icon.white.m-filterBadges__Icon 
-
-                include partials/_pagination.pug
-
-                .filter-sort
-                    ul.nav.nav-tabs
-                        li.nav-item
-                            a.nav-link.active(onclick="#") Nejoblíbenější
-                        li.nav-item
-                            a.nav-link(onclick="#") Nejlevnější
-                        li.nav-item
-                            a.nav-link(onclick="#") Nejdražší
-                        li.nav-item
-                            a.nav-link(onclick="#") Jméno A-Z
+                        .m-filterBadges__wrap
+                            .m-filterBadges__title Filtr položka
+                            a.m-filterBadges__remove(href="#")
+                                span.a-icon.-cross.-white.m-filterBadges__Icon 
 
 
-                .product-grid
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
+                .o-productPagination
+                    .o-productPagination__resultNumber 1 - 30 z 322 produktů
+                    .o-productPagination__resultLimit 
+                        span.o-productPagination__resultLimitText Produktů na stránku
+                        a.o-productPagination__resultLimitButton.-active(href="#") 20
+                        a.o-productPagination__resultLimitButton(href="#") 60
 
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
+                    include partials/_pagination.pug
 
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
-                    include partials/_single-product-cell.pug
 
-                include partials/_pagination.pug
+                .o-productGrid
+                    - for (var i=0; i<20; i++)
+                        include partials/_single-product-cell.pug
+
+
+                .o-productBottomButton
+                    a.btn.o-productBottomButton__btn(href="#") Dalších 20 produktů
+                    include partials/_pagination.pug
 
  
 

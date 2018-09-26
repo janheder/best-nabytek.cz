@@ -127,7 +127,6 @@ var carousel_main = new Swiper('.m-heroCarousel__content', {
   },
 });
 
-
 // =============================================================================
 // VARIOUS TOGGLES AND CONTROLS
 // =============================================================================
@@ -144,25 +143,11 @@ $("#js-darkOverlay").click(function() {
 
 $("#js-navSearchToggler").click(function() { 
     $("#js-navSearch").toggleClass("-active");
-});
-
-$("#dark-overlay-cart, .navbar-cart__toggle-off").click(function() { 
-    $("body").toggleClass("active-right");
-    $("#dark-overlay-cart").toggleClass("active");
-});
-
-$("#search-toggler-responsive").click(function() { 
-    $(".navbar-search").fadeToggle(200);
-    $("body").toggleClass("stop-scroll");
-});
-
-$("#search-toggler-responsive-close").click(function() { 
-    $(".navbar-search").fadeToggle(200);
-    $("body").toggleClass("stop-scroll");
-});
-
-$("#search-toggler-responsive").click(function() {
     $("#searchbox").focus();
+});
+
+$("#js-filterToggler, #js-filterTogglerResponsive").click(function() { 
+    $("#js-filter").toggleClass("-active");
 });
 
 // =============================================================================

@@ -3,12 +3,13 @@
     top: 56px;
     width: 100%;
     padding: 0;
-    z-index: 2;
+    z-index: 3;
     height: 50px;
     flex-direction: row;
     align-items: center;
     background: $bg-white;
     display: none;
+    box-shadow: $box-shadow-primary;
 }
 .o-cartNavResponsive__link{
     height: 100%;

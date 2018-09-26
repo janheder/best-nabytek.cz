@@ -36,19 +36,14 @@ html(lang=lang)
                 .m-alert.-danger Všechny údaje pěčlivě zkontrolujte a následně objednávku potvrďte tlačítkem "Odeslat objednávku"
 
                 form(method="post" action="" name="cart_form")
-                    .row.cart-item-top
-                        .cart-item-top__col-1
-                            .cart-item-top__img
-                                p.cart-item-top__heading Produkt
-                        .cart-item-top__col-2
-                            .cart-item-top__name
-                            .cart-item-top__inner
-                                .cart-item-top__qty
-                                    p.cart-item-top__heading Množství
-                                .cart-item-top__price
-                                    p.cart-item-top__heading Cena za kus
-                                .cart-item-top__sum
-                                    p.cart-item-top__heading Cena celkem
+                    .m-cartItemTop
+                        .m-cartItemTop__item.-img Produkt
+                        .m-cartItemTop__col
+                            .m-cartItemTop__item.-name
+                            .m-cartItemTop__wrap
+                                .m-cartItemTop__item.-qty Množství
+                                .m-cartItemTop__item.-price Cena za kus
+                                .m-cartItemTop__item.-sum.-right Cena celkem
 
 
                     .row.cart-item-single

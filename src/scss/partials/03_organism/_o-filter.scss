@@ -1,0 +1,132 @@
+.o-filter{
+    background: $bg-white;
+    border-bottom: 1px solid $border-grey;
+    position: relative;
+    padding: 0;
+}
+.o-filter__responsive{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    background: $bg-brand;
+    padding: 0 2rem;
+    height: 56px;
+}
+.o-filter__responsiveText{
+    @include f-18-white-medium;
+    flex-grow: 1;
+}
+.o-filter__responsiveIcon{
+    height: 14px;
+    width: 14xp;
+}
+.o-filter__accordion{
+    display: flex;
+    flex-direction: row;
+}
+.o-filter__single{
+    width: 20%;
+}
+.o-filter__link{
+    border-right: 1px solid $border-grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 64px;
+    padding: 0 2rem;
+    @include f-16-primary-medium;
+    cursor: pointer;
+}
+.o-filter__single:first-child .o-filter__link{
+    border-left: 1px solid $border-grey;
+}
+.o-filter__icon{
+    transform: rotate(90deg);
+    height: 10px;
+    margin-left: 10px;
+}
+.o-filter__collapse{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: $bg-white;
+    border-top: 1px solid $border-grey;
+    z-index: 3;
+    box-shadow: $box-shadow-primary;
+}
+.o-filter__content{
+    padding: 10px 20px;
+}
+.o-filter__item{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.o-filter__formGroup.-range{
+    width: 100%;
+}
+
+@media screen and (max-width: 991px){
+    .o-filter{
+        position: fixed;
+        top: 0;
+        right: 0;
+        overflow-y: scroll;
+        height: 100%;
+        transform: translate(100%);
+        z-index: 9;
+        width: 100%;
+        border: 0;
+        transition: 0.3s ease all;
+
+        &.-active{
+            transform: translate(0%);
+        }
+    }
+    .o-filter__responsive{
+        display: flex;
+    }
+    .o-filter__accordion{
+        display: flex;
+        flex-direction: column;
+    }
+    .o-filter__container{
+        padding: 0;
+    }
+    .o-filter__single{
+        width: 100%;
+        border-top: 1px solid $border-grey;
+
+        &:first-child{
+            border: 0;
+        }
+        &:last-child{
+            border-bottom: 1px solid $border-grey;
+        }
+    }
+    .o-filter__link{
+        height: 56px;
+        border: 0;
+    }
+    .o-filter__single:first-child .o-filter__link{
+        border-left: 0;
+    }
+    .o-filter__collapse{
+        border-top: 1px solid $border-grey;
+        position: relative;
+        box-shadow: none;
+    }
+    .o-filter__content{
+        padding: 0 10px;
+    }
+    .o-filter__item{
+        width: 100%;
+        padding: 0;
+        background: $bg-light;
+    }
+    .o-filter__formGroup{
+        width: 100%;
+    }
+}

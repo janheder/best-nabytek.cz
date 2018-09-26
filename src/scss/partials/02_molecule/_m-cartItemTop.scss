@@ -38,6 +38,9 @@
         flex-grow: 1;
         text-align: right;
     }
+    &.-right{
+        text-align: right;
+    }
 }
 .m-cartItemTop__wrap{
     width: 60%;

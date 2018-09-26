@@ -1,41 +1,41 @@
-/*------------------------------------*\
-    PAGINATION
-\*------------------------------------*/
-
-.pagination{
+.m-pagination{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 2rem 0 4rem 0;
+    align-items: center;
+    margin: 0 -5px;
 }
-.page-item{
+.m-pagination__item{
     padding: 5px;
-}
-.page-item.active .page-link{
-    background: $brand-primary;
-    color: $text-white;
-}
-.page-link{
-    padding: 10px 15px;
-    color: $text-primary;
-    border: 0;
-    background: $bg-white;
-    border-radius: $border-radius-primary;
-    box-shadow: 0px, 2px, 3px, rgba(0,0,0,0.05);
 
-    &:hover, &:active, &:focus{
-        background: $bg-dark;
-        color: $text-white;
+    &.-active .m-pagination__link{
+        background: $bg-white;
+        color: $text-primary;
+    }
+    &.-disabled .m-pagination__link{
+        background: $bg-white;
+        color: $text-medium;
+        pointer-events: none;
     }
 }
-.page-dots{
-    height: 100%;
-    position: relative;
-    padding: 0 7px;
-    font-weight: 700;
+.m-pagination__link{
+    padding: 0px 15px;
+    color: $text-primary;
+    border: 0;
+    background: transparent;
+    border-radius: $border-radius-primary;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    &:hover, &:active, &:focus{
+        background: $bg-white;
+        color: $text-brand;
+    }
+}
+.m-pagination__icon{
+    opacity: 0.5
 }
