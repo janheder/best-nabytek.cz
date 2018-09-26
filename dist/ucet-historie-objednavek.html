@@ -171,197 +171,53 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-            <div class="m-registerBanner">  
-              <h2 class="m-registerBanner__title">Registrace</h2>
-              <p class="m-registerBanner__subtitle">Jako registrovaný uživatel získáte</p>
-              <ul class="m-registerBanner__list">
-                <li class="m-registerBanner__point">slevu 1% na veškeré zboží </li>
-                <li class="m-registerBanner__point">možnost vrácení zboží do 30 dnů od doručení</li>
-                <li class="m-registerBanner__point">sledování průběhu vyřízení své objednávky</li>
-              </ul>
+            <div class="m-userSidebar">
+              <div class="m-userSidebar__top"><img class="m-userSidebar__img" src="img/user-icon.svg" alt="Petr Novák" title="Petr Novák">
+                <div class="m-userSidebar__title">Petr Novák</div>
+              </div>
+              <div class="m-userSidebar__bottom"><a class="m-userSidebar__link" href="#"><span class="a-icon -personalInfo"></span> Změna osobních údajů</a><a class="m-userSidebar__link -active" href="#"><span class="a-icon -calendar -red"></span> Historie objednávek</a><a class="m-userSidebar__link" href="#"><span class="a-icon -logOut"></span> Odhlásit</a></div>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-8">
-            <form class="o-form -noMargin" method="post" action="" name="register_form" id="register_form">
-              <div class="o-form__divider m-formDivider">Osobní údaje</div>
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="text" name="register_form_name" id="register_form_name" autocomplete="given-name" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_name">Jméno</label><span class="m-formGroup__error">Neplatné jméno</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="o-form__group m-formGroup">      
-                    <input class="m-formGroup__input" type="text" name="register_form_surname" id="register_form_surname" autocomplete="family-name" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_surname">Příjmení</label><span class="m-formGroup__error">Neplatné příjmení</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="email" name="register_form_email" id="register_form_email" autocomplete="email" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_email">Emailová adresa</label><span class="m-formGroup__error">Neplatný email</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="tel" name="register_form_tel" id="register_form_tel" autocomplete="tel" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_tel">Telefonní číslo</label><span class="m-formGroup__error">Neplatné číslo</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-12">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="password" name="register_form_password" id="register_form_password" autocomplete="password" placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_password">Heslo</label><span class="m-formGroup__error">Neplatné heslo</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="o-form__divider m-formDivider">Adresa</div>
-              <div class="row">
-                <div class="col-12 col-md-9">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="text" name="register_form_address" id="register_form_address" autocomplete="street-address" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_address">Ulice</label><span class="m-formGroup__error">Neplatné jméno ulice</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-3">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="number" name="register_form_descriptive" id="register_form_descriptive" autocomplete="descriptive-address" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_descriptive">Číslo popisné</label><span class="m-formGroup__error">Neplatné číslo popisné</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-9">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="text" name="register_form_locality" id="register_form_locality" autocomplete="address-level2" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_locality">Město</label><span class="m-formGroup__error">Neplatné jméno města</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-3">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="number" name="register_form_postal_code" id="register_form_postal_code" autocomplete="postal-code" required placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_postal_code">PSČ</label><span class="m-formGroup__error">Neplatné PSČ</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="o-form__group m-formGroup -radiobutton">
-                    <input class="m-formGroup__input" type="radio" name="register_form_country" id="register_form_country_cz" required checked><span class="m-formGroup__radiobutton a-radiobutton"></span>
-                    <label class="m-formGroup__label" for="register_form_country_cz">Česká republika</label>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="o-form__group m-formGroup -radiobutton">
-                    <input class="m-formGroup__input" type="radio" name="register_form_country" id="register_form_country_sk" required><span class="m-formGroup__radiobutton a-radiobutton"></span>
-                    <label class="m-formGroup__label" for="register_form_country_sk">Slovensko</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <div class="o-form__groupToggler" data-toggle="collapse" href="#formBillingCollapse" aria-expanded="false" aria-controls="formBillingCollapse">
-                    <div class="o-form__group m-formGroup -switch">
-                      <input class="m-formGroup__input" type="checkbox" name="register_form_billing_toggler" id="register_form_billing_toggler"><span class="m-formGroup__switch a-switch"></span>
-                      <label class="m-formGroup__label" for="register_form_billing_toggler">Vyplnit fakturační adresu   </label>
-                    </div>
-                  </div>
-                  <div class="collapse o-form__groupCollapse" id="formBillingCollapse">
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_name" id="register_form_billing_name" autocomplete="name" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_name">Jméno a příjmení <span class="m-formGroup__muted">(nepovinné)</span></label><span class="m-formGroup__error">Neplatné jméno a příjmení</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_company" id="register_form_billing_company" autocomplete="org" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_company">Název firmy </label><span class="m-formGroup__error">Neplatný název firmy</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_ico" id="register_form_billing_ico" autocomplete="ico" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_ico">IČO</label><span class="m-formGroup__error">Neplatné IČO</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_dic" id="register_form_billing_dic" autocomplete="dic" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_dic">DIČ <span class="m-formGroup__muted">(nepovinné)</span></label><span class="m-formGroup__error">Neplatné DIČ</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_address" id="register_form_billing_address" autocomplete="street-address" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_address">Ulice</label><span class="m-formGroup__error">Neplatná ulice</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_descriptive" id="register_form_billing_descriptive" autocomplete="descriptive-address" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_descriptive">Číslo popisné</label><span class="m-formGroup__error">Neplatné číslo popisné</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_billing_localitye" id="register_form_billing_locality" autocomplete="address-level2" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_locality">Město</label><span class="m-formGroup__error">Neplatné město</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="number" name="register_form_billing_postal_code" id="register_form_billing_postal_code" autocomplete="postal-code" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_billing_postal_code">PSČ</label><span class="m-formGroup__error">Neplatné PSČ</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup -radiobutton">
-                      <input class="m-formGroup__input" type="radio" name="register_form_billing_postal_country" id="register_form_billing_postal_country_cz" checked><span class="m-formGroup__radiobutton a-radiobutton"></span>
-                      <label class="m-formGroup__label" for="register_form_billing_postal_country_cz">Česká republika</label>
-                    </div>
-                    <div class="o-form__group m-formGroup -radiobutton">
-                      <input class="m-formGroup__input" type="radio" name="register_form_billing_postal_country" id="register_form_billing_postal_country_sk"><span class="m-formGroup__radiobutton a-radiobutton"></span>
-                      <label class="m-formGroup__label" for="register_form_billing_postal_country_sk">Slovensko</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="o-form__groupToggler" data-toggle="collapse" href="#formShippingCollapse" aria-expanded="false" aria-controls="formShippingCollapse">
-                    <div class="o-form__group m-formGroup -switch">
-                      <input class="m-formGroup__input" type="checkbox" name="register_form_shipping_toggler" id="register_form_shipping_toggler"><span class="m-formGroup__switch a-switch"></span>
-                      <label class="m-formGroup__label" for="register_form_shipping_toggler">Vyplnit jinou dodací adresu   </label>
-                    </div>
-                  </div>
-                  <div class="collapse o-form__groupCollapse" id="formShippingCollapse">
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_shipping_name" id="register_form_shipping_name" autocomplete="name" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_shipping_name">Jméno a příjmení</label><span class="m-formGroup__error">Neplatné jméno a příjmení</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_shipping_company" id="register_form_shipping_company" autocomplete="org" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_shipping_company">Název firmy <span class="m-formGroup__muted">(nepovinné)</span></label><span class="m-formGroup__error">Neplatný název firmy</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_shipping_address" id="register_form_shipping_address" autocomplete="street-address" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_shipping_address">Ulice</label><span class="m-formGroup__error">Neplatná ulice</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_shipping_descriptive" id="register_form_shipping_descriptive" autocomplete="descriptive-address" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_shipping_descriptive">Číslo popisné</label><span class="m-formGroup__error">Neplatné číslo popisné</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_shipping_locality" id="register_form_shipping_locality" autocomplete="address-level2" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_shipping_locality">Město</label><span class="m-formGroup__error">Neplatné město</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup">
-                      <input class="m-formGroup__input" type="text" name="register_form_shipping_postal_code" id="register_form_shipping_postal_code" autocomplete="postal-code" placeholder=" ">
-                      <label class="m-formGroup__label" for="register_form_shipping_postal_code">PSČ</label><span class="m-formGroup__error">Neplatné PSČ</span><span class="m-formGroup__success"></span>
-                    </div>
-                    <div class="o-form__group m-formGroup -radiobutton">
-                      <input class="m-formGroup__input" type="radio" name="register_form_shipping_postal_country" id="register_form_shipping_postal_country_cz" checked><span class="m-formGroup__radiobutton a-radiobutton"></span>
-                      <label class="m-formGroup__label" for="register_form_shipping_postal_country_cz">Česká republika</label>
-                    </div>
-                    <div class="o-form__group m-formGroup -radiobutton">
-                      <input class="m-formGroup__input" type="radio" name="register_form_shipping_postal_country" id="register_form_shipping_postal_country_sk"><span class="m-formGroup__radiobutton a-radiobutton"></span>
-                      <label class="m-formGroup__label" for="register_form_shipping_postal_country_sk">Slovensko</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="o-form__divider m-formDivider">Ostatní</div>
-              <div class="o-form__group m-formGroup -checkbox">
-                <input class="m-formGroup__input" type="checkbox" name="register_form_newsletter" id="register_form_newsletter" required><span class="m-formGroup__checkbox a-checkbox"></span>
-                <label class="m-formGroup__label -small" for="register_form_newsletter">Chci odebírat newsletter a souhlasím se <a href="#">zpracováním osobních údajů</a> za účelem zasílání informací o novinkách a slevách.            </label>
-              </div>
-              <div class="o-form__group m-formGroup -checkbox">
-                <input class="m-formGroup__input" type="checkbox" name="register_form_legal" id="register_form_legal" required><span class="m-formGroup__checkbox a-checkbox"></span>
-                <label class="m-formGroup__label -small" for="register_form_legal">Souhlasím se <a href="#">zpracováním osobních údajů</a> za účelem registrace .            </label>
-              </div>
-              <div class="m-cartButtons">
-                <button class="btn -secondary -fullWidth" type="submit" id="register_form_submit">Vytvořit účet</button>
-              </div>
-            </form>
+            <div class="o-userHistory">
+              <div class="o-userHistory__title">Historie objednávek</div>
+              <table class="o-userHistory__table">
+                <tr class="o-userHistory__tr">
+                  <th class="o-userHistory__th">Číslo nákupu</th>
+                  <th class="o-userHistory__th">Datum</th>
+                  <th class="o-userHistory__th">Cena</th>
+                  <th class="o-userHistory__th">Stav objednávky</th>
+                  <th class="o-userHistory__th"></th>
+                </tr>
+                <tr class="o-userHistory__tr">
+                  <td class="o-userHistory__id">1598879</td>
+                  <td class="o-userHistory__date">1. 1. 1970</td>
+                  <td class="o-userHistory__price">16 999 Kč</td>
+                  <td>
+                    <div class="o-userHistory__status -success">Dokončeno</div>
+                  </td>
+                  <th class="o-userHistory__info"></th>
+                </tr>
+                <tr class="o-userHistory__tr">
+                  <td class="o-userHistory__id">1598879</td>
+                  <td class="o-userHistory__date">1. 1. 1970</td>
+                  <td class="o-userHistory__price">16 999 Kč</td>
+                  <td>
+                    <div class="o-userHistory__status -info">Odesláno poštou</div>
+                  </td>
+                  <th class="o-userHistory__info"></th>
+                </tr>
+                <tr class="o-userHistory__tr">
+                  <td class="o-userHistory__id">1598879</td>
+                  <td class="o-userHistory__date">1. 1. 1970</td>
+                  <td class="o-userHistory__price">16 999 Kč</td>
+                  <td>
+                    <div class="o-userHistory__status -danger">Vráceno</div>
+                  </td>
+                  <th class="o-userHistory__info">                       </th>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>

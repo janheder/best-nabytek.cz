@@ -141,7 +141,7 @@ $("#js-darkOverlay").click(function() {
     $("#js-navToggler, #js-navProducts, #js-darkOverlay").toggleClass("-active");
 });
 
-$("#js-navSearchToggler").click(function() { 
+$("#js-navSearchToggler, #js-navSearchTogglerClose").click(function() { 
     $("#js-navSearch").toggleClass("-active");
     $("#searchbox").focus();
 });

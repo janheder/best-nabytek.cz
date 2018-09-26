@@ -5,178 +5,247 @@ html(lang=lang)
     body
         include partials/_navMain.pug
         include partials/_navProducts.pug
-        section.page-heading.post__image-container
-            .container
-                h1.page-heading__title Uživatelský účet
-            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-user-thumb-large.jpg" data-src=URLbase+"img/user-thumb-large.jpg" alt="#" title="#")
+
                 
         include partials/_breadcrumb.pug
         main
             .container
-                .printArea
-                    article.page
-                        .page-message
+                .row
+                    .col-12.col-sm-12.col-md-12.col-lg-4
+                        .m-registerBanner   
+                            h2.m-registerBanner__title Registrace
+                            p.m-registerBanner__subtitle Jako registrovaný uživatel získáte
+                            ul.m-registerBanner__list
+                                li.m-registerBanner__point slevu 1% na veškeré zboží 
+                                li.m-registerBanner__point možnost vrácení zboží do 30 dnů od doručení
+                                li.m-registerBanner__point sledování průběhu vyřízení své objednávky
 
-                            form(method="post" action="" class="register-form page-message__login-form" name="register_form")
+                    .col-12.col-sm-12.col-md-12.col-lg-8
+                        form.o-form.-noMargin(method="post" action="" name="register_form" id="register_form")
 
-                                h3.page-message__title Vytvořit nový účet
+                            .o-form__divider.m-formDivider Osobní údaje
 
-                                .alert.alert-danger Chybně vyplněná kontrolní otázka
-                                .alert.alert-success Nakupujte za lepší ceny! Stačí se zdarma zaregistrovat a automaticky získáváte členskou slevu 1% na veškeré zboží, které právě není ve slevě.
-                                
-                                .form-group
-                                    label(for="register_form_name") Jméno
-                                    input.form-control(type="text" name="register_form_name" id="register_form_name" autocomplete="given-name" required)
-
-                                .form-group
-                                    label(for="register_form_surname") Příjmení
-                                    input.form-control(type="text" name="register_form_surname" id="register_form_surname" autocomplete="family-name" required)
-
-                                .form-group
-                                    label(for="register_form_username") Uživatelské jméno
-                                    input.form-control(type="text" name="register_form_username" id="register_form_username" autocomplete="username" required)
-
-                                .form-group
-                                    label(for="register_form_email") Emailová adresa
-                                    input.form-control(type="email" name="register_form_email" id="register_form_email" autocomplete="email" required)
-
-                                .form-group
-                                    label(for="register_form_password") Heslo
-                                    span(id="show_password_toggler" data-toggle="tooltip" data-placement="top" title="Zobrazit/Skrýt heslo") #[span.fa.fa-eye]
-                                    input.form-control(type="password" name="register_form_password" id="register_form_password" autocomplete="off")
-
-                                .form-group
-                                    label(for="register_form_tel") Telefonní číslo
-                                    input.form-control(type="tel" name="register_form_tel" id="register_form_tel" autocomplete="tel")
-
-                                .form-group
-                                    label(for="register_form_address") Ulice
-                                    input.form-control(type="text" name="register_form_address" id="register_form_address" autocomplete="street-address" required)
-
-                                .form-group
-                                    label(for="register_form_descriptive") Číslo popisné
-                                    input.form-control(type="text" name="register_form_descriptive" id="register_form_descriptive" autocomplete="descriptive-address" required)
-
-                                .form-group
-                                    label(for="register_form_locality") Město
-                                    input.form-control(type="text" name="register_form_locality" id="register_form_locality" autocomplete="address-level2" required)
-
-                                .form-group
-                                    label(for="register_form_postal_code") PSČ
-                                    input.form-control(type="text" name="register_form_postal_code" id="register_form_postal_code" autocomplete="postal-code"  required)
-
-                                .form-group
-                                    label(for="register_form_country") Stát
-                                    select.form-control(type="text" name="register_form_country" id="register_form_country" required)
-                                        option(value="cz") Česká republika
-                                        option(value="sk") Slovensko
-
-                                .register-form-info-collapse-wrap   
-                                    .form-group
-                                        .form-check
-                                            label.form-check__label.billing-address-toggler
-                                                input.form-check__input(type="checkbox" name="register_form_billing_toggler") 
-                                                | Vyplnit fakturační adresu
-                                                span.form-check__box.checkbox
-
-                                    .register-form-billing__wrap 
-                                        .form-group
-                                            label(for="register_form_billing_name") Jméno a příjmení #[span.label__muted (nepovinné)]
-                                            input.form-control(type="text" name="register_form_billing_name" id="register_form_billing_name" autocomplete="name")
-
-                                        .form-group
-                                            label(for="register_form_billing_company") Název firmy 
-                                            input.form-control(type="text" name="register_form_billing_company" id="register_form_billing_company" autocomplete="org")
-
-                                        .form-group
-                                            label(for="register_form_billing_ico") IČO
-                                            input.form-control(type="text" name="register_form_billing_ico" id="register_form_billing_ico" autocomplete="ico")
-
-                                        .form-group
-                                            label(for="register_form_billing_dic") DIČ #[span.label__muted (nepovinné)]
-                                            input.form-control(type="text" name="register_form_billing_dic" id="register_form_billing_dic" autocomplete="dic")
-
-                                        .form-group
-                                            label(for="register_form_billing_address") Ulice
-                                            input.form-control(type="text" name="register_form_billing_address" id="register_form_billing_address" autocomplete="street-address")
+                            .row
+                                .col-12.col-md-6
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="text" name="register_form_name" id="register_form_name" autocomplete="given-name" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_name") Jméno
+                                        span.m-formGroup__error Neplatné jméno
+                                        span.m-formGroup__success
                                         
-                                        .form-group
-                                            label(for="register_form_billing_descriptive") Číslo popisné
-                                            input.form-control(type="text" name="register_form_billing_descriptive" id="register_form_billing_descriptive" autocomplete="descriptive-address")
+                                .col-12.col-md-6
+                                    .o-form__group.m-formGroup       
+                                        input.m-formGroup__input(type="text" name="register_form_surname" id="register_form_surname" autocomplete="family-name" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_surname") Příjmení
+                                        span.m-formGroup__error Neplatné příjmení
+                                        span.m-formGroup__success
 
-                                        .form-group
-                                            label(for="register_form_billing_locality") Město
-                                            input.form-control(type="text" name="register_form_billing_locality" id="register_form_billing_locality" autocomplete="address-level2")
-
-                                        .form-group
-                                            label(for="register_form_billing_postal_code") PSČ
-                                            input.form-control(type="text" name="register_form_billing_postal_code" id="register_form_billing_postal_code" autocomplete="postal-code")
-
-                                        .form-group
-                                            label(for="register_form_billing_postal_country") Stát
-                                            select.form-control(type="text" name="register_form_billing_postal_country" id="register_form_billing_postal_country")
-                                                option(value="cz") Česká republika
-                                                option(value="sk") Slovensko
-
-                                    .form-group
-                                        .form-check
-                                            label.form-check__label.shipping-address-toggler
-                                                input.form-check__input(type="checkbox" name="register_form_shipping_toggler")
-                                                | Mám jinou dodací adresu
-                                                span.form-check__box.checkbox 
-
-                                    .register-form-shipping__wrap 
-                                        .form-group
-                                            label(for="register_form_shipping_name") Jméno a příjmení 
-                                            input.form-control(type="text" name="register_form_shipping_name" id="register_form_shipping_name" autocomplete="name")
-
-                                        .form-group
-                                            label(for="register_form_shipping_company") Název firmy #[span.label__muted (nepovinné)]
-                                            input.form-control(type="text" name="register_form_shipping_company" id="register_form_shipping_company"  autocomplete="org")
-
-                                        .form-group
-                                            label(for="register_form_shipping_address") Ulice
-                                            input.form-control(type="text" name="register_form_shipping_address" id="register_form_shipping_address" autocomplete="street-address")
+                                .col-12.col-md-6
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="email" name="register_form_email" id="register_form_email" autocomplete="email" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_email") Emailová adresa
+                                        span.m-formGroup__error Neplatný email
+                                        span.m-formGroup__success
                                         
-                                        .form-group
-                                            label(for="register_form_shipping_descriptive") Číslo popisné
-                                            input.form-control(type="text" name="register_form_shipping_descriptive" id="register_form_shipping_descriptive" autocomplete="descriptive-address")
+                                .col-12.col-md-6
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="tel" name="register_form_tel" id="register_form_tel" autocomplete="tel" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_tel") Telefonní číslo
+                                        span.m-formGroup__error Neplatné číslo
+                                        span.m-formGroup__success
 
-                                        .form-group
-                                            label(for="register_form_shipping_locality") Město
-                                            input.form-control(type="text" name="register_form_shipping_locality" id="register_form_shipping_locality" autocomplete="address-level2")
+                                .col-12.col-md-12
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="password" name="register_form_password" id="register_form_password" autocomplete="password" placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_password") Heslo
+                                        span.m-formGroup__error Neplatné heslo
+                                        span.m-formGroup__success
 
-                                        .form-group
-                                            label(for="register_form_shipping_postal_code") PSČ
-                                            input.form-control(type="text" name="register_form_shipping_postal_code" id="register_form_shipping_postal_code" autocomplete="postal-code")
-                                        
-                                        .form-group
-                                            label(for="register_form_shipping_country") Stát
-                                            select.form-control(type="text" name="register_form_shipping_country" id="register_form_shipping_country")
-                                                option(value="cz") Česká republika
-                                                option(value="sk") Slovensko
+                            .o-form__divider.m-formDivider Adresa
 
-                                .form-group
-                                    .form-check
-                                        label.form-check__label
-                                            input.form-check__input(type="checkbox" name="register_form_email_marketing")
-                                            span.form-check__inline Chci odebírat newsletter a souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem zasílání informací o novinkách a slevách.
-                                            span.form-check__box.checkbox
+                            .row
+                                .col-12.col-md-9
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="text" name="register_form_address" id="register_form_address" autocomplete="street-address" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_address") Ulice
+                                        span.m-formGroup__error Neplatné jméno ulice
+                                        span.m-formGroup__success
 
-                                .form-group
-                                    .form-check
-                                        label.form-check__label
-                                            input.form-check__input(type="checkbox" name="register_form_terms" required)
-                                            span.form-check__inline Souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem registrace
-                                            span.form-check__box.checkbox
+                                .col-12.col-md-3
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="number" name="register_form_descriptive" id="register_form_descriptive" autocomplete="descriptive-address" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_descriptive") Číslo popisné
+                                        span.m-formGroup__error Neplatné číslo popisné
+                                        span.m-formGroup__success
 
-                                .form-group
-                                    label(for="register_form_antispam") Kontrolní otázka: kolik je dva plus dva
-                                    input.form-control(type="number" name="register_form_antispam" id="register_form_antispam" placeholder="Napište číslo" required)
+                                .col-12.col-md-9
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="text" name="register_form_locality" id="register_form_locality" autocomplete="address-level2" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_locality") Město
+                                        span.m-formGroup__error Neplatné jméno města
+                                        span.m-formGroup__success
 
-                                .form-group
-                                    button.form-control.btn(type="submit" name="register_form_submit" id="register_form_submit") Vytvořit účet
+                                .col-12.col-md-3
+                                    .o-form__group.m-formGroup
+                                        input.m-formGroup__input(type="number" name="register_form_postal_code" id="register_form_postal_code" autocomplete="postal-code" required placeholder=" ")
+                                        label.m-formGroup__label(for="register_form_postal_code") PSČ
+                                        span.m-formGroup__error Neplatné PSČ
+                                        span.m-formGroup__success
 
+                                .col-12.col-md-6
+                                    .o-form__group.m-formGroup.-radiobutton
+                                        input.m-formGroup__input(type="radio" name="register_form_country" id="register_form_country_cz" required checked)
+                                        span.m-formGroup__radiobutton.a-radiobutton
+                                        label.m-formGroup__label(for="register_form_country_cz") Česká republika
+
+                                .col-12.col-md-6
+                                    .o-form__group.m-formGroup.-radiobutton
+                                        input.m-formGroup__input(type="radio" name="register_form_country" id="register_form_country_sk" required)
+                                        span.m-formGroup__radiobutton.a-radiobutton
+                                        label.m-formGroup__label(for="register_form_country_sk") Slovensko
+
+                            .row
+                                .col-12.col-md-6
+
+                                    .o-form__groupToggler(data-toggle="collapse" href="#formBillingCollapse" aria-expanded="false" aria-controls="formBillingCollapse")
+                                        .o-form__group.m-formGroup.-switch
+                                            input.m-formGroup__input(type="checkbox" name="register_form_billing_toggler" id="register_form_billing_toggler" )
+                                            span.m-formGroup__switch.a-switch
+                                            label.m-formGroup__label(for="register_form_billing_toggler") Vyplnit fakturační adresu   
+
+                                    .collapse.o-form__groupCollapse(id="formBillingCollapse")
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_name" id="register_form_billing_name" autocomplete="name" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_name") Jméno a příjmení #[span.m-formGroup__muted (nepovinné)]
+                                            span.m-formGroup__error Neplatné jméno a příjmení
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_company" id="register_form_billing_company" autocomplete="org" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_company") Název firmy 
+                                            span.m-formGroup__error Neplatný název firmy
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_ico" id="register_form_billing_ico" autocomplete="ico" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_ico") IČO
+                                            span.m-formGroup__error Neplatné IČO
+                                            span.m-formGroup__success
+                                            
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_dic" id="register_form_billing_dic" autocomplete="dic" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_dic") DIČ #[span.m-formGroup__muted (nepovinné)]
+                                            span.m-formGroup__error Neplatné DIČ
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_address" id="register_form_billing_address" autocomplete="street-address" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_address") Ulice
+                                            span.m-formGroup__error Neplatná ulice
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_descriptive" id="register_form_billing_descriptive" autocomplete="descriptive-address" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_descriptive") Číslo popisné
+                                            span.m-formGroup__error Neplatné číslo popisné
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_billing_localitye" id="register_form_billing_locality" autocomplete="address-level2" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_locality") Město
+                                            span.m-formGroup__error Neplatné město
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="number" name="register_form_billing_postal_code" id="register_form_billing_postal_code" autocomplete="postal-code" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_billing_postal_code") PSČ
+                                            span.m-formGroup__error Neplatné PSČ
+                                            span.m-formGroup__success
+                
+                                        .o-form__group.m-formGroup.-radiobutton
+                                            input.m-formGroup__input(type="radio" name="register_form_billing_postal_country" id="register_form_billing_postal_country_cz" checked)
+                                            span.m-formGroup__radiobutton.a-radiobutton
+                                            label.m-formGroup__label(for="register_form_billing_postal_country_cz") Česká republika
+
+                                        .o-form__group.m-formGroup.-radiobutton
+                                            input.m-formGroup__input(type="radio" name="register_form_billing_postal_country" id="register_form_billing_postal_country_sk" )
+                                            span.m-formGroup__radiobutton.a-radiobutton
+                                            label.m-formGroup__label(for="register_form_billing_postal_country_sk") Slovensko
+
+
+                                .col-12.col-md-6
+
+                                    .o-form__groupToggler(data-toggle="collapse" href="#formShippingCollapse" aria-expanded="false" aria-controls="formShippingCollapse")
+                                        .o-form__group.m-formGroup.-switch
+                                            input.m-formGroup__input(type="checkbox" name="register_form_shipping_toggler" id="register_form_shipping_toggler")
+                                            span.m-formGroup__switch.a-switch
+                                            label.m-formGroup__label(for="register_form_shipping_toggler") Vyplnit jinou dodací adresu   
+
+                                    .collapse.o-form__groupCollapse(id="formShippingCollapse")
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_shipping_name" id="register_form_shipping_name" autocomplete="name" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_shipping_name") Jméno a příjmení
+                                            span.m-formGroup__error Neplatné jméno a příjmení
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_shipping_company" id="register_form_shipping_company" autocomplete="org" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_shipping_company") Název firmy #[span.m-formGroup__muted (nepovinné)]
+                                            span.m-formGroup__error Neplatný název firmy
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_shipping_address" id="register_form_shipping_address" autocomplete="street-address" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_shipping_address") Ulice
+                                            span.m-formGroup__error Neplatná ulice
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_shipping_descriptive" id="register_form_shipping_descriptive" autocomplete="descriptive-address" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_shipping_descriptive") Číslo popisné
+                                            span.m-formGroup__error Neplatné číslo popisné
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_shipping_locality" id="register_form_shipping_locality" autocomplete="address-level2" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_shipping_locality") Město
+                                            span.m-formGroup__error Neplatné město
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup
+                                            input.m-formGroup__input(type="text" name="register_form_shipping_postal_code" id="register_form_shipping_postal_code" autocomplete="postal-code" placeholder=" ")
+                                            label.m-formGroup__label(for="register_form_shipping_postal_code") PSČ
+                                            span.m-formGroup__error Neplatné PSČ
+                                            span.m-formGroup__success
+
+                                        .o-form__group.m-formGroup.-radiobutton
+                                            input.m-formGroup__input(type="radio" name="register_form_shipping_postal_country" id="register_form_shipping_postal_country_cz" checked)
+                                            span.m-formGroup__radiobutton.a-radiobutton
+                                            label.m-formGroup__label(for="register_form_shipping_postal_country_cz") Česká republika
+
+                                        .o-form__group.m-formGroup.-radiobutton
+                                            input.m-formGroup__input(type="radio" name="register_form_shipping_postal_country" id="register_form_shipping_postal_country_sk" )
+                                            span.m-formGroup__radiobutton.a-radiobutton
+                                            label.m-formGroup__label(for="register_form_shipping_postal_country_sk") Slovensko
+
+
+                            .o-form__divider.m-formDivider Ostatní
+
+
+                            .o-form__group.m-formGroup.-checkbox
+                                input.m-formGroup__input(type="checkbox" name="register_form_newsletter" id="register_form_newsletter" required)
+                                span.m-formGroup__checkbox.a-checkbox
+                                label.m-formGroup__label.-small(for="register_form_newsletter") Chci odebírat newsletter a souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem zasílání informací o novinkách a slevách.            
+
+                            .o-form__group.m-formGroup.-checkbox
+                                input.m-formGroup__input(type="checkbox" name="register_form_legal" id="register_form_legal" required)
+                                span.m-formGroup__checkbox.a-checkbox
+                                label.m-formGroup__label.-small(for="register_form_legal") Souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem registrace .            
+                
+                            .m-cartButtons
+                                button.btn.-secondary.-fullWidth(type="submit" id="register_form_submit") Vytvořit účet
 
 
 

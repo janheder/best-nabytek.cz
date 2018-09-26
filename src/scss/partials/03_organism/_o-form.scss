@@ -20,6 +20,10 @@ input{
     background: $bg-white;
     padding: 20px;
     margin: 20px 0;
+
+    &.-noMargin{
+        margin: 0;
+    }
 }
 .o-form__collapseToggler{
     width: 100%;
@@ -52,8 +56,8 @@ input{
 .o-form__title{
     @include f-24-primary-medium;
     text-align: center;
-    margin-bottom: 4rem;
-    padding-top: 4rem;
+    margin: 0;
+    padding: 2rem 0 2rem 0;
 }
 .o-form__text{
     @include f-14-dark-regular;

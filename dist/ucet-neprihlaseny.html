@@ -96,6 +96,9 @@
         <div class="o-navMain__logo m-navLogo"><a class="m-navLogo__link" href="#"><img class="m-navLogo__img" src="img/logo.svg" alt="" title=""></a></div>
         <div class="o-navMain__search m-navSearch" id="js-navSearch">
           <form class="m-navSearch__form" method="POST" id="search-form">
+            <div class="m-navSearch__close" id="js-navSearchTogglerClose">
+              <div class="a-icon -cross m-navSearch__closeIcon"></div>
+            </div>
             <input class="m-navSearch__input" type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required>
             <button class="m-navSearch__button"><span class="a-icon -search m-navSearch__icon"></span></button>
           </form>
@@ -161,36 +164,30 @@
         </div>
       </div>
     </nav>
-    <section class="page-heading post__image-container">
-      <div class="container">
-        <h1 class="page-heading__title">Uživatelský účet</h1>
-      </div><img class="lazy post__featured-image" src="img/lazy/lazy-user-thumb-large.jpg" data-src="img/user-thumb-large.jpg" alt="#" title="#">
-    </section>
     <nav class="m-breadcrumb">
       <div class="container m-breadcrumb__container"><a class="m-breadcrumb__item" href="#">Lorem ipsum</a><a class="m-breadcrumb__item" href="#">Dolor sit amet</a><a class="m-breadcrumb__item" href="#">Lorem ipsum</a><a class="m-breadcrumb__item" href="#">Dolor sit amet</a><span class="m-breadcrumb__item active">Lorem ipsum</span></div>
     </nav>
     <main>
       <div class="container">
-        <div class="printArea">
-          <article class="page">
-            <div class="page-message">
-              <h3 class="page-message__title">Přihlásit se k existujícímu účtu</h3>
-              <form class="login-form page-message__login-form" method="post" action="" name="login_form">
-                <div class="alert alert-danger">Zadali jste špatné údaje</div>
-                <div class="form-group">
-                  <label for="login_form_username">Uživatelské jméno</label>
-                  <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
-                </div>
-                <div class="form-group">
-                  <label for="login_form_password">Heslo</label>
-                  <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
-                </div>
-                <div class="form-group">
-                  <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
-                </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
-              </form>
-            </div>
-          </article>
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-3"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+            <form class="o-form login-form" method="post" action="" name="login_form">
+              <div class="m-alert -danger">Zadali jste špatné údaje</div>
+              <h2 class="o-form__title">Přihlášení</h2>
+              <p class="o-form__text">Jako registrovaný uživatel získává slevu ve výši 1% na veškeré zboží, které není aktuálně ve slevě. .</p>
+              <div class="o-form__group m-formGroup">
+                <input class="m-formGroup__input" type="email" name="login_form_email" id="login_form_email" autocomplete="email" required placeholder=" ">
+                <label class="m-formGroup__label" for="login_form_email">Emailová adresa</label><span class="m-formGroup__error">Neplatný email</span><span class="m-formGroup__success"></span>
+              </div>
+              <div class="o-form__group m-formGroup">
+                <input class="m-formGroup__input" type="password" name="login_form_password" id="login_form_password" autocomplete="password" required placeholder=" ">
+                <label class="m-formGroup__label" for="login_form_password">Heslo</label><span class="m-formGroup__error">Neplatné heslo</span><span class="m-formGroup__success"></span>
+              </div>
+              <button class="btn -secondary -fullWidth" type="submit" id="login_form_submit">Přihlásit se</button><a class="o-form__link" href="#">Obnovit zapomenuté heslo</a>
+            </form>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-3"></div>
         </div>
       </div>
     </main>

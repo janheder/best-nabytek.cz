@@ -5,27 +5,32 @@ html(lang=lang)
     body
         include partials/_navMain.pug
         include partials/_navProducts.pug
-        section.page-heading.post__image-container
-            .container
-                h1.page-heading__title Zapomenuté heslo
-            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-user-thumb-large.jpg" data-src=URLbase+"img/user-thumb-large.jpg" alt="#" title="#")
                 
         include partials/_breadcrumb.pug
         main
             .container
-                .printArea
-                    article.page
-                        .forgotten-password
-                            form(method="post" action="" class="register-form" name="password_form")
-                                p.forgotten-password_text Pokud jste zapomněli své heslo, pošleme Vám nové na email, který jste uvedli při registraci.
-                                .form-group
-                                    label(for="password_form-email") Emailová adresa
-                                    input.form-control(type="email" name="password_form_email" id="password_form_email" required autocomplete="email")
+                .row
+                    .col-12.col-sm-12.col-md-12.col-lg-3
 
-                                .form-group
-                                    button.form-control.btn(type="submit" name="password_form_submit" id="password_form_submit") Poslat nové heslo
+                    .col-12.col-sm-12.col-md-12.col-lg-6
+
+                        form.o-form(method="post" action="" class="login-form" name="login_form")
+
+                            h2.o-form__title Zapomenuté heslo
+                            p.o-form__text Pokud jste zapomněli své heslo, pošleme Vám nové na email, který jste uvedli při registraci.
+
+                            .o-form__group.m-formGroup
+                                input.m-formGroup__input(type="email" name="login_form_email" id="login_form_email" autocomplete="email" required placeholder=" ")
+                                label.m-formGroup__label(for="login_form_email") Emailová adresa
+                                span.m-formGroup__error Neplatný email
+                                span.m-formGroup__success
 
 
+                            button.btn.-secondary.-fullWidth(type="submit" id="login_form_submit") Poslat nové heslo
+
+     
+
+                    .col-12.col-sm-12.col-md-12.col-lg-3
 
 
         include partials/_footer.pug

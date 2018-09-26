@@ -14,6 +14,8 @@ header.o-nav
 
 		.o-navMain__search.m-navSearch(id="js-navSearch")
 			form.m-navSearch__form(method="POST" id="search-form")
+				.m-navSearch__close(id="js-navSearchTogglerClose")
+					.a-icon.-cross.m-navSearch__closeIcon
 				input.m-navSearch__input(type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ" required)
 				button.m-navSearch__button #[span.a-icon.-search.m-navSearch__icon]
 			
