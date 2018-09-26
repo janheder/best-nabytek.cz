@@ -37,3 +37,9 @@
         transform: rotate(180deg);
     }
 }
+
+@media screen and (max-width: 500px){
+    .m-productCarousel__content{
+        padding: 0;
+    }
+}

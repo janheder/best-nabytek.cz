@@ -114,3 +114,9 @@
 .m-productDetailMain__id{
     @include f-14-dark-regular;
 }
+
+@media screen and (max-width:991px){
+    .m-productDetailMain{
+        padding-top: 20px;
+    }
+}

@@ -1,5 +1,4 @@
 .m-productDetailThumbs{
-
 }
 .m-productDetailThumbs__content{
     width: 100%;
@@ -13,7 +12,8 @@
 
 }
 .m-productDetailThumbs__slide.swiper-slide-active{
-    border: 2px solid red;
+    border: 2px solid $border-brand;
+    border-radius: $border-radius-primary;
 }
 .m-productDetailThumbs__paddingWrap{
     padding-bottom: 100%;

@@ -309,18 +309,29 @@ function startDictation() {
 // =============================================================================
 
 var carousel_main = new Swiper('.m-productCarousel__content', {
-  lazy: true,
-  autoplay: false,
-  spaceBetween: 0,
-  grabCursor: true,
-  slidesPerView: 4,
-  zoom: false,
-  loop: false,
-  pagination: false,
-  navigation: {
-      nextEl: '.m-productCarousel__swiperButton.-next',
-      prevEl: '.m-productCarousel__swiperButton.-prev',
-  },
+    lazy: true,
+    autoplay: false,
+    spaceBetween: 0,
+    grabCursor: true,
+    slidesPerView: 4,
+    zoom: false,
+    loop: false,
+    pagination: false,
+    navigation: {
+        nextEl: '.m-productCarousel__swiperButton.-next',
+        prevEl: '.m-productCarousel__swiperButton.-prev',
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 3
+        },
+        600: {
+            slidesPerView: 2
+        },
+        400: {
+            slidesPerView: 1
+        }
+    }
 });
 
 // =============================================================================

@@ -498,14 +498,14 @@
     .product-detail-responsive{
         position: fixed;
         bottom: 0;
-        background: #fff;
+        background: $bg-white;
         z-index: 8;
         padding: 5px;
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        box-shadow: 0px, 0, 10px, rgba(0,0,0,0.25);
+        box-shadow: $box-shadow-primary;
     }
     & .product-detail-responsive__name, & .product-detail-responsive__btn{
         flex-grow: 1;
