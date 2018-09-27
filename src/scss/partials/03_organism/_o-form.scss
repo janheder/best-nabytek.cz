@@ -191,7 +191,7 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
             left: auto;
             padding-left: 0;
             color: $text-primary;
-            width: 50%;
+            transition: 0s ease all;
 
             &:last-child{
                 text-align: right;

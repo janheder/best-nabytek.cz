@@ -98,7 +98,7 @@ html(lang=lang)
                                 .dropdown.m-productDetailMain__sizes.m-selectBox
                                     input.m-selectBox__honeypot(type="radio" name="productSize" id="productSizeId" required)
                                     .dropdown-toggle.m-selectBox__dropdown(id="productSizeDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 
-                                        .m-selectBox__dropdownText Výběr rozměru
+                                        .m-selectBox__dropdownText Provedení
                                         span.a-icon.-cheveron.m-selectBox__icon
                                     .dropdown-menu.m-selectBox__dropdownMenu(aria-labelledby="productSizeDrop")
 
@@ -128,6 +128,17 @@ html(lang=lang)
                                 .m-productDetailMain__variations.m-productVariation
                                     .swiper-container-horizontal.m-productVariation__content
                                         .swiper-wrapper.m-productVariation__wrap
+
+                                            .swiper-slide.m-productVariation__slide
+                                                label.m-productVariation__label
+                                                    input.m-productVariation__input(type="radio" name="productVariation" id="productVariationId" required checked)
+                                                    .m-productVariation__paddingWrap
+                                                        figure.m-productVariation__figure
+                                                            img.swiper-lazy.m-productVariation__img(data-src=URLbase+"img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1")
+                                                            .swiper-lazy-preloader.m-productVariation__preloader
+                                                    .m-productVariation__title grey flex
+                                                    .m-productVariation__cta Zvolit variantu
+                                                    .m-productVariation__ctaActive Vybráno
 
                                             - for (var i=0; i<8; i++)
                                                 .swiper-slide.m-productVariation__slide
