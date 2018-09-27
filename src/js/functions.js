@@ -131,7 +131,7 @@ var carousel_main = new Swiper('.m-heroCarousel__content', {
 // VARIOUS TOGGLES AND CONTROLS
 // =============================================================================
 
-$("#js-navToggler").click(function() { 
+$("#js-navToggler, #js-navProductsClose").click(function() { 
     $("body").toggleClass("-noScroll");
     $("#js-navToggler, #js-navProducts, #js-darkOverlay").toggleClass("-active");
 });
@@ -263,10 +263,69 @@ $(function () {
 // SELECTBOX 
 // =============================================================================
 
+if($(".m-selectBox .m-selectBox__input:checked")){ 
+    var value = $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__name").text();
+    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
+
+    var price= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__price").text();
+    $(".m-productDetailMain__priceMain").text(price);
+}
+
 $(".m-selectBox .m-selectBox__input").click(function () {   
     var value = $(this).siblings(".m-selectBox__content").find(".m-selectBox__name").text();
     $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
+
+    var price= $(this).siblings(".m-selectBox__content").find(".m-selectBox__price").text();
+    $(".m-productDetailMain__priceMain").text(price);
 });
+
+
+// =============================================================================
+// CART
+// =============================================================================
+
+if($('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_shipping"]').prop('checked')){ 
+
+    var name = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_shipping"]:checked').siblings(".m-cartDeliveryItem__top").find(".m-cartDeliveryItem__title").text();
+    $(".m-cartOverview__shippingTitle").text(name);
+
+    var value = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_shipping"]:checked').siblings(".m-cartDeliveryItem__bottom").find(".m-cartDeliveryItem__price").text();
+    $(".m-cartOverview__shippingNumber").text(value);
+
+}
+
+$('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_shipping"]').click(function () { 
+    
+    var name = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_shipping"]:checked').siblings(".m-cartDeliveryItem__top").find(".m-cartDeliveryItem__title").text();
+    $(".m-cartOverview__shippingTitle").text(name);
+    
+    var value = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_shipping"]:checked').siblings(".m-cartDeliveryItem__bottom").find(".m-cartDeliveryItem__price").text();
+    $(".m-cartOverview__shippingNumber").text(value);
+});
+
+
+
+
+
+if($('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]').prop('checked')){ 
+
+    var name = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]:checked').siblings(".m-cartDeliveryItem__top").find(".m-cartDeliveryItem__title").text();
+    $(".m-cartOverview__paymentTitle").text(name);
+
+    var value = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]:checked').siblings(".m-cartDeliveryItem__bottom").find(".m-cartDeliveryItem__price").text();
+    $(".m-cartOverview__paymentNumber").text(value);
+
+}
+
+$('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]').click(function () { 
+    
+    var name = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]:checked').siblings(".m-cartDeliveryItem__top").find(".m-cartDeliveryItem__title").text();
+    $(".m-cartOverview__paymentTitle").text(name);
+    
+    var value = $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]:checked').siblings(".m-cartDeliveryItem__bottom").find(".m-cartDeliveryItem__price").text();
+    $(".m-cartOverview__paymentNumber").text(value);
+});
+
 
 // =============================================================================
 // MODAL AUTO DISPLAY
@@ -325,7 +384,7 @@ var carousel_main = new Swiper('.m-productCarousel__content', {
         991: {
             slidesPerView: 3
         },
-        600: {
+        700: {
             slidesPerView: 2
         },
         400: {

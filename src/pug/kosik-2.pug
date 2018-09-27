@@ -32,6 +32,49 @@ html(lang=lang)
 
         main
             .container
+
+                .m-cartOverview
+                    .m-cartOverview__product
+                        .m-cartOverview__productSingle
+                            .m-cartOverview__productThumb
+                                img.m-cartOverview__productImg(src=URLbase+"img/product-thumb-small.jpg" at="#" title="#")
+                            .m-cartOverview__productNumber 2x
+
+                        .m-cartOverview__productSingle
+                            .m-cartOverview__productThumb
+                                img.m-cartOverview__productImg(src=URLbase+"img/product-thumb-small.jpg" at="#" title="#")
+                            .m-cartOverview__productNumber 2x
+
+                        .m-cartOverview__productSingle
+                            .m-cartOverview__productThumb.-more
+                                .m-cartOverview__productImg +10
+                            .m-cartOverview__productNumber
+
+                    .m-cartOverview__plus 
+
+                    .m-cartOverview__shipping
+                        .m-cartOverview__shippingText Způsob dopravy
+                        .m-cartOverview__shippingWrap
+                            .m-cartOverview__shippingTitle Nevybráno
+                            .m-cartOverview__shippingNumber
+
+                    .m-cartOverview__plus 
+
+                    .m-cartOverview__payment
+                        .m-cartOverview__paymentText Způsob platby
+                        .m-cartOverview__paymentWrap
+                            .m-cartOverview__paymentTitle Nevybráno 
+                            .m-cartOverview__paymentNumber
+
+                    .m-cartOverview__equals 
+
+                    .m-cartOverview__price
+                        .m-cartOverview__priceText Celková cena s DPH
+                        .m-cartOverview__priceTitle 0 Kč
+
+
+
+
                 form.o-cartDeliveryForm(method="post" action="" name="delivery_form" id="delivery_form")
                     h2.o-cartDeliveryForm__title Zvolte způsob dopravy
 
@@ -39,7 +82,7 @@ html(lang=lang)
 
                         .col-12.col-sm-6.col-md-4.col-lg-3.o-cartDeliveryForm__col
                             label.o-cartDeliveryForm__item.m-cartDeliveryItem(for="delivery_form_shipping-1")
-                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_shipping" id="delivery_form_shipping-1" required)
+                                input.m-cartDeliveryItem__input(type="radio" name="delivery_form_shipping" id="delivery_form_shipping-1" required checked)
                                 .m-cartDeliveryItem__iconWrap
                                     span.a-icon.-store.m-cartDeliveryItem__icon
                                     span.a-icon.-store.m-cartDeliveryItem__icon.-white
@@ -106,7 +149,7 @@ html(lang=lang)
 
                 
                     .m-cartButtons
-                        a.btn.-dark(href="#") Zpět do obchodu
+                        a.btn.-dark(href="#") Krok zpět
                         button.btn.-secondary(type="submit" id="delivery-form-submit") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
 
                         
@@ -115,7 +158,7 @@ html(lang=lang)
                     p.m-cartBarResponsive__text Celková cena s DPH
                     h3.m-cartBarResponsive__price #[span 65 599] Kč
                 .m-cartBarResponsive__btnWrap
-                    button.btn.m-cartBarResponsive__btn(onclick="$('#delivery-form-submit').trigger('click');") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
+                    button.btn.-secondary.m-cartBarResponsive__btn(onclick="$('#delivery-form-submit').trigger('click');") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
 
         include partials/_footer.pug
 

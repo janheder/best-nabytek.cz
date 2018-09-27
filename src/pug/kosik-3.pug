@@ -32,6 +32,47 @@ html(lang=lang)
 
         main
             .container
+
+                .m-cartOverview
+                    .m-cartOverview__product
+                        .m-cartOverview__productSingle
+                            .m-cartOverview__productThumb
+                                img.m-cartOverview__productImg(src=URLbase+"img/product-thumb-small.jpg" at="#" title="#")
+                            .m-cartOverview__productNumber 2x
+
+                        .m-cartOverview__productSingle
+                            .m-cartOverview__productThumb
+                                img.m-cartOverview__productImg(src=URLbase+"img/product-thumb-small.jpg" at="#" title="#")
+                            .m-cartOverview__productNumber 2x
+
+                        .m-cartOverview__productSingle
+                            .m-cartOverview__productThumb.-more
+                                .m-cartOverview__productImg +10
+                            .m-cartOverview__productNumber
+
+                    .m-cartOverview__plus 
+
+                    .m-cartOverview__shipping
+                        .m-cartOverview__shippingText Způsob dopravy
+                        .m-cartOverview__shippingWrap
+                            .m-cartOverview__shippingTitle Nevybráno
+                            .m-cartOverview__shippingNumber
+
+                    .m-cartOverview__plus 
+
+                    .m-cartOverview__payment
+                        .m-cartOverview__paymentText Způsob platby
+                        .m-cartOverview__paymentWrap
+                            .m-cartOverview__paymentTitle Nevybráno 
+                            .m-cartOverview__paymentNumber
+
+                    .m-cartOverview__equals 
+
+                    .m-cartOverview__price
+                        .m-cartOverview__priceText Celková cena s DPH
+                        .m-cartOverview__priceTitle 0 Kč
+
+
                 .a-cartResponsiveError Prosím zadejte své osobní údaje nebo se přihlaste.
 
                 .row
@@ -274,7 +315,7 @@ html(lang=lang)
 
                         
                                 .m-cartButtons
-                                    a.btn.-dark(href="#") Zpět do obchodu
+                                    a.btn.-dark(href="#") Krok zpět
                                     button.btn.-secondary(type="submit" id="register_form_submit") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]  
 
 
@@ -312,7 +353,7 @@ html(lang=lang)
                     p.m-cartBarResponsive__text Celková cena s DPH
                     h3.m-cartBarResponsive__price #[span 65 599] Kč
                 .m-cartBarResponsive__btnWrap
-                    button.btn.m-cartBarResponsive__btn(onclick="responsive_check()") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
+                    button.btn.-secondary.m-cartBarResponsive__btn(onclick="responsive_check()") Osobní údaje #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
 
 
             script.

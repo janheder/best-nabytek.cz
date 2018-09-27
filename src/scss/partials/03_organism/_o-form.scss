@@ -1,5 +1,5 @@
 ::placeholder{
-    @include f-16-medium-regular;
+  
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
@@ -14,6 +14,14 @@ input{
     border: 0;
     border-radius: $border-radius-primary;
     padding: 0 2rem;
+}
+textarea.m-formGroup__input{
+    display: flex;
+    height: auto;
+    padding: 2rem 2rem 0 2rem;
+}
+textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-shown){
+    padding: 2rem 2rem 0 2rem;
 }
 
 .o-form{

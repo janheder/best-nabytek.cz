@@ -23,7 +23,7 @@ html(lang=lang)
         section.o-cartNavResponsive
             a.o-cartNavResponsive__link.-prev.-disabled(href="/kosik.html?krok=3")
                 span.a-icon.-cheveron.o-cartNavResponsive__icon
-            p.o-cartNavResponsive__title 1/4 Nákupní košík
+            p.o-cartNavResponsive__title 4/4 Shrnutí objednávky
             a.o-cartNavResponsive__link.-next(onclick="$('#cart_3_submit').click();")
                 span.a-icon.-cheveron.o-cartNavResponsive__icon
 
@@ -144,8 +144,7 @@ html(lang=lang)
                   
 
                     .m-cartButtons
-                        a.btn.-dark(href="#") Zpět do obchodu
-                        a.btn.-remove.-transparent(href="#") Vyprázdnit košík
+                        a.btn.-dark(href="#") Krok zpět
                         button.btn.-secondary(type="submit" id="cart_3_submit") Odeslat objednávku #[span.a-btnIcon #[span.a-icon.-cheveron.-white]]
 
             .m-cartBarResponsive
@@ -153,7 +152,7 @@ html(lang=lang)
                     p.m-cartBarResponsive__text Celková cena s DPH
                     h3.m-cartBarResponsive__price #[span 65 599] Kč
                 .m-cartBarResponsive__btnWrap
-                    button.btn.m-cartBarResponsive__btn(onclick="$('#cart_3_submit').click();") Doprava a platba #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
+                    button.btn.-secondary.m-cartBarResponsive__btn(onclick="$('#cart_3_submit').click();") Odeslat objednávku #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 
 
 
         include partials/_footer.pug

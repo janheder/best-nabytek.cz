@@ -7,8 +7,14 @@
     align-items: center;
     padding: 0 3rem;
     transition: 0.2s ease all;
+    position: relative;
+    cursor: pointer;
 
     &:hover, &:active, &:focus{
+        background: $bg-dark;
+        text-decoration: none;
+    }
+    &[aria-expanded="true"]{
         background: $bg-dark;
         text-decoration: none;
     }
@@ -30,6 +36,28 @@
 }
 .m-navUser__title{
     @include f-16-white-medium;
+}
+.m-navUser__collapse{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $bg-white;
+    box-shadow: $box-shadow-primary;
+    width: 280px;
+}   
+.m-navUser__collapseLink{
+    height: 5.4rem;
+    padding: 0 20px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:hover, &:active, &:focus{
+        background: $bg-light;
+        text-decoration: none;
+    }
 }
 
 @media screen and (max-width:991px){

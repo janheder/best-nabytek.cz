@@ -107,14 +107,17 @@
           <div class="a-icon -search -white m-navSearchToggler__icon"></div>
         </div>
         <!--
-        a.o-navMain__user.m-navUser(href="#")
+        a.o-navMain__user.m-navUser(href="#" data-toggle="modal" data-target="#modal-login")
         	.a-icon.-user.-white.m-navUser__icon
         	.m-navUser__info
-        		span.m-navUser__title Můj účet
+        		span.m-navUser__title Přihlášení
         
-        --><a class="o-navMain__user m-navUser" href="#">
+        -->
+        <div class="o-navMain__user m-navUser" data-toggle="collapse" data-target="#collapseNavUser" aria-expanded="false" aria-controls="collapseNavUser">
           <div class="a-icon -user -white m-navUser__icon"></div>
-          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div></a>
+          <div class="m-navUser__info"><span class="m-navUser__text">Přihlášen jako</span><span class="m-navUser__title">Petr Novák</span></div>
+          <div class="collapse m-navUser__collapse" id="collapseNavUser" aria-labelledby="collapseNavUser"><a class="m-navUser__collapseLink" href="#">Změna osobních údajů</a><a class="m-navUser__collapseLink" href="#">Historie objednávek</a><a class="m-navUser__collapseLink" href="#">Odhlásit</a></div>
+        </div>
         <!--
         a.o-navMain__cart.m-navCart(href="#")
         	.m-navCart__iconWrap
@@ -122,13 +125,42 @@
         	.m-navCart__info
         		span.m-navCart__title Nákupní košík
         
-        --><a class="o-navMain__cart m-navCart -active" href="#">
+        -->
+        <div class="o-navMain__cart m-navCart -active" data-toggle="collapse" data-target="#collapseNavCart" aria-expanded="false" aria-controls="collapseNavCart">
           <div class="m-navCart__iconWrap">
             <div class="a-icon -cart -white m-navCart__icon">
               <div class="m-navCart__icoNumber">2</div>
             </div>
           </div>
-          <div class="m-navCart__info"><span class="m-navCart__text">Nákupní košík</span><span class="m-navCart__title">859 Kč</span></div></a>
+          <div class="m-navCart__info"><span class="m-navCart__text">Nákupní košík</span><span class="m-navCart__title">859 Kč</span></div>
+          <div class="collapse m-navCart__collapse" id="collapseNavCart" aria-labelledby="collapseNavCart">
+            <div class="m-navCart__collapseItem">
+              <div class="m-navCart__collapseThumb"><img class="m-navCart__collapseImg lazy" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
+              <div class="m-navCart__collapseInfo">
+                <div class="m-navCart__collapseName">Postel Angelika 160/200 cm masiv borovice</div>
+                <div class="m-navCart__collapsePrice">2 000 Kč</div>
+                <div class="m-navCart__collapseStock">Skladem</div>
+              </div>
+            </div>
+            <div class="m-navCart__collapseItem">
+              <div class="m-navCart__collapseThumb"><img class="m-navCart__collapseImg lazy" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
+              <div class="m-navCart__collapseInfo">
+                <div class="m-navCart__collapseName">Postel Angelika 160/200 cm masiv borovice</div>
+                <div class="m-navCart__collapsePrice">2 000 Kč</div>
+                <div class="m-navCart__collapseStock">Skladem</div>
+              </div>
+            </div>
+            <div class="m-navCart__collapseOverview">
+              <div class="m-navCart__collapsePriceWrap">
+                <div class="m-navCart__collapseTitle">Celková cena</div>
+                <div class="m-navCart__collapseText">Včetně DPH</div>
+              </div>
+              <div class="m-navCart__collapseSum">2 000 Kč</div>
+            </div>
+            <div class="m-navCart__collapseShipping">Nakupte ještě za 1077 Kč a máte Dopravu zdarma	</div>
+            <div class="m-navCart__collapseBtn"><a class="btn -small -fullWidth" href="#">Objednat zboží</a></div>
+          </div>
+        </div>
       </nav>
     </header>
     <div class="a-darkOverlay" id="js-darkOverlay"></div>
@@ -154,7 +186,7 @@
       </div>
     </section>
     <section class="o-cartNavResponsive"><a class="o-cartNavResponsive__link -prev -disabled" href="/kosik.html?krok=3"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
-      <p class="o-cartNavResponsive__title">1/4 Nákupní košík</p><a class="o-cartNavResponsive__link -next" onclick="$('#cart_3_submit').click();"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
+      <p class="o-cartNavResponsive__title">4/4 Shrnutí objednávky</p><a class="o-cartNavResponsive__link -next" onclick="$('#cart_3_submit').click();"><span class="a-icon -cheveron o-cartNavResponsive__icon"></span></a>
     </section>
     <div class="a-cartNavResponsivePush"></div>
     <main>
@@ -274,7 +306,7 @@
               <label class="m-formGroup__label -small" for="cart_form_terms">Souhlasím s <a href="#">obchodními podmínkami</a> </label>
             </div>
           </div>
-          <div class="m-cartButtons"><a class="btn -dark" href="#">Zpět do obchodu</a><a class="btn -remove -transparent" href="#">Vyprázdnit košík</a>
+          <div class="m-cartButtons"><a class="btn -dark" href="#">Krok zpět</a>
             <button class="btn -secondary" type="submit" id="cart_3_submit">Odeslat objednávku <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span></button>
           </div>
         </form>
@@ -285,7 +317,7 @@
           <h3 class="m-cartBarResponsive__price"><span>65 599</span> Kč</h3>
         </div>
         <div class="m-cartBarResponsive__btnWrap">
-          <button class="btn m-cartBarResponsive__btn" onclick="$('#cart_3_submit').click();">Doprava a platba <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span> </button>
+          <button class="btn -secondary m-cartBarResponsive__btn" onclick="$('#cart_3_submit').click();">Odeslat objednávku <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span> </button>
         </div>
       </div>
     </main>

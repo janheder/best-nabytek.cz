@@ -8,7 +8,9 @@
 }
 .m-pagination__item{
     padding: 5px;
-
+    &::before{
+        content: none;
+    }
     &.-active .m-pagination__link{
         background: $bg-white;
         color: $text-primary;

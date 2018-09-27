@@ -6,7 +6,7 @@ html(lang=lang)
         include partials/_navMain.pug
         include partials/_navProducts.pug
         include partials/_modal-add-to-cart.pug
-        include partials/_modal-question.pug
+        include partials/_modal-contact.pug
         include partials/_breadcrumb.pug
         section.o-productDetail
             .container
@@ -32,13 +32,12 @@ html(lang=lang)
 
                                         - for (var i=0; i<8; i++)
                                             .swiper-slide.m-productDetailCarousel__slide
-                                                .m-productDetailCarousel__paddingWrap
-                                                   
-                                                    figure.m-productDetailCarousel__figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                                                        a.m-productDetailCarousel__link(href=URLbase+"img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920")
-                                                            img.swiper-lazy.m-productDetailCarousel__img(data-src=URLbase+"img/product-thumb-medium.jpg" itemprop="thumbnail" alt="Image description" data-index="1")
-                                                            .swiper-lazy-preloader.m-productDetailCarousel__preloader
-                                                            figcaption.m-productDetailCarousel__figcaption(itemprop="caption description") Popis obrázku 1
+
+                                                figure.m-productDetailCarousel__figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+                                                    a.m-productDetailCarousel__link(href=URLbase+"img/product-thumb-large.jpg" itemprop="contentUrl" data-size="1920x1920")
+                                                        img.swiper-lazy.m-productDetailCarousel__img(data-src=URLbase+"img/product-thumb-large.jpg" itemprop="thumbnail" alt="Image description" data-index="1")
+                                                        .swiper-lazy-preloader.m-productDetailCarousel__preloader
+                                                        figcaption.m-productDetailCarousel__figcaption(itemprop="caption description") Popis obrázku 1
 
                                     .swiper-pagination.swiper-pagination-white.m-productDetailCarousel__swiperNav
                                     .swiper-button-prev.m-productDetailCarousel__swiperButton.-prev
@@ -102,13 +101,21 @@ html(lang=lang)
                                         .m-selectBox__dropdownText Výběr rozměru
                                         span.a-icon.-cheveron.m-selectBox__icon
                                     .dropdown-menu.m-selectBox__dropdownMenu(aria-labelledby="productSizeDrop")
+
+                                        label.m-selectBox__label
+                                            input.m-selectBox__input(type="radio" name="productSize" id="productSizeId" required checked)
+                                            .m-selectBox__content
+                                                .m-selectBox__name medium
+                                                .m-selectBox__price 2 000 Kč
+                                                .m-selectBox__stock 21 dnů
+
                                         - for (var i=0; i<8; i++)
                                             
                                             label.m-selectBox__label
                                                 input.m-selectBox__input(type="radio" name="productSize" id="productSizeId" required)
                                                 .m-selectBox__content
                                                     .m-selectBox__name largo
-                                                    .m-selectBox__price 5541 Kč
+                                                    .m-selectBox__price 5 541 Kč
                                                     .m-selectBox__stock 21 dnů
 
 
@@ -313,9 +320,22 @@ html(lang=lang)
                 breakpointsInverse: true,
                 breakpoints: {
                     991: {
+                    slidesPerView: '4.5',
                     touchRatio: 0 
-                }
-                }
+                    },
+                    500: {
+                    slidesPerView: '3.5',
+                    touchRatio: 0 
+                    },
+                    400: {
+                    slidesPerView: '2.5',
+                    touchRatio: 0 
+                    },
+                    0: {
+                    slidesPerView: '2.5',
+                    touchRatio: 0 
+                    }
+                } 
             });
 
             initPhotoSwipeFromDOM('.m-productDetailCarousel__gallery');

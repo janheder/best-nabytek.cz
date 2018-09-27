@@ -4,6 +4,7 @@
     cursor: pointer;
     display: none;
     position: relative;
+    flex-shrink: 0;
 }
 .m-navSearchToggler.-active{
 

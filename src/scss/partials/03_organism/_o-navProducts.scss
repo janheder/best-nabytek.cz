@@ -108,7 +108,6 @@
         left: 0;
 
         &.collapsing {
-            -webkit-transition: none;
             transition: none;
             display: none;
         }
@@ -120,7 +119,7 @@
     .o-navProducts{
         position: fixed;
         z-index: 9;
-        width: 280px;
+        width: 260px;
         transform: translateX(-100%);
         transition: 0.3s ease transform;
         top: 0;

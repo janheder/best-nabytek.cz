@@ -17,4 +17,12 @@
         padding: 0 0 0 10px;
         flex-grow: 1;
     }
+    .m-navLogo__link{
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width:500px){
+    .m-navLogo{
+        padding: 0;
+    }
 }

@@ -124,9 +124,16 @@
 .m-heroCell{
     height: 100%;
     background: $bg-primary;
+    transition: 0.2s ease all;
+
+    &:hover, &:active, &:focus{
+        opacity: 0.9;
+    }
 }
 .m-heroCell__link{
-
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 .m-heroCell__caption{
 

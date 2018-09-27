@@ -44,7 +44,11 @@
     margin: 0;
     padding: 10px 20px;
     border: 0;
+    @include f-14-primary-regular;
 
+    &::before{
+        content: none;
+    }
     &.selected{
         background: $bg-light;
         border: 0;
