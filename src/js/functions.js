@@ -274,18 +274,32 @@ $(function () {
 
 if($(".m-selectBox .m-selectBox__input:checked")){ 
     var value = $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__name").text();
-    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
 
-    var price= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__price").text();
+    var priceOld= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__priceOld").text();
+    $(".m-productDetailMain__priceOld").text(priceOld);
+
+    var price= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__priceNew").text();
     $(".m-productDetailMain__priceMain").text(price);
+
+    var stock= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__stock").text();
+    $(".m-productDetailMain__stockText").text(stock);
+
+    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value + ", " + price + ", " + stock);
 }
 
 $(".m-selectBox .m-selectBox__input").click(function () {   
     var value = $(this).siblings(".m-selectBox__content").find(".m-selectBox__name").text();
-    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
 
-    var price= $(this).siblings(".m-selectBox__content").find(".m-selectBox__price").text();
+    var priceOld= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__priceOld").text();
+    $(".m-productDetailMain__priceOld").text(priceOld);
+
+    var price= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__priceNew").text();
     $(".m-productDetailMain__priceMain").text(price);
+
+    var stock= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__stock").text();
+    $(".m-productDetailMain__stockText").text(stock);
+
+    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value + ", " + price + ", " + stock);
 });
 
 

@@ -36,6 +36,10 @@
 }
 .m-navUser__title{
     @include f-16-white-medium;
+    max-width: 160px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .m-navUser__collapse{
     position: absolute;

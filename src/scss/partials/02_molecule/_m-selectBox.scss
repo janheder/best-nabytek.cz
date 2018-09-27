@@ -45,7 +45,7 @@
     flex-direction: row;
     align-items: center;
     min-height: 4rem;
-    padding: 0 2rem;
+    padding: 5px 2rem;
 
     &:hover, &:active, &:focus{
         background: $bg-white;
@@ -56,7 +56,13 @@
     flex-basis: 0;
     @include f-14-primary-medium;
 }
-.m-selectBox__price{
+.m-selectBox__priceOld{
+    @include f-12-dark-regular;
+    line-height: 1;
+    text-decoration: line-through;
+}
+.m-selectBox__priceNew{
+    @include f-16-primary-medium;
     color: $text-red;
 }
 .m-selectBox__stock{
@@ -65,7 +71,7 @@
 .m-selectBox__input:checked + .m-selectBox__content{
     background: $bg-brand-secondary;
 
-    & .m-selectBox__name, & .m-selectBox__price, & .m-selectBox__stock{
+    & .m-selectBox__name, & .m-selectBox__priceOld, & .m-selectBox__priceNew, & .m-selectBox__stock{
         color: $text-white;
     }
 }

@@ -106,8 +106,10 @@ html(lang=lang)
                                             input.m-selectBox__input(type="radio" name="productSize" id="productSizeId" required checked)
                                             .m-selectBox__content
                                                 .m-selectBox__name medium
-                                                .m-selectBox__price 2 000 Kč
-                                                .m-selectBox__stock 21 dnů
+                                                .m-selectBox__price 
+                                                    .m-selectBox__priceOld 5 000 Kč
+                                                    .m-selectBox__priceNew 2 000 Kč
+                                                .m-selectBox__stock Dostupné skladem
 
                                         - for (var i=0; i<8; i++)
                                             
@@ -115,7 +117,9 @@ html(lang=lang)
                                                 input.m-selectBox__input(type="radio" name="productSize" id="productSizeId" required)
                                                 .m-selectBox__content
                                                     .m-selectBox__name largo
-                                                    .m-selectBox__price 5 541 Kč
+                                                    .m-selectBox__price 
+                                                        .m-selectBox__priceOld 9 000 Kč
+                                                        .m-selectBox__priceNew 5 000 Kč
                                                     .m-selectBox__stock 21 dnů
 
 
