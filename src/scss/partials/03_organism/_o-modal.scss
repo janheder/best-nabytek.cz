@@ -51,9 +51,18 @@
     border-bottom-right-radius: $border-radius-primary;
 }
 .o-modal__footer{
-    display: block;
+    display: flex;
     justify-content: flex-start;
     padding: 20px;
+
+    .btn{
+        margin-right: 10px;
+    }
+    .btn:last-child{
+        margin-left: auto;
+        margin-right: 0;
+        order: 2;
+    }
 }
 
 @media (min-width: 576px){
@@ -67,10 +76,6 @@
     }
     .o-modal__title{
         font-size: 2.4rem;
-    }
-    .o-modal__footer .btn{
-        width: 100%;
-        margin: 5px 0;
     }
 }
 

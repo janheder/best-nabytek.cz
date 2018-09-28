@@ -64,6 +64,7 @@ footer{
     background: $bg-white;
     border-radius: $border-radius-primary;
     position: relative;
+    flex-shrink: 0;
 }
 .m-emailSubscribe__check:checked + .m-emailSubscribe__checkbox{
     background: $bg-brand-secondary;

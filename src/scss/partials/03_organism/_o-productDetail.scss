@@ -5,6 +5,10 @@
     padding-left: 40px;
 }
 @media screen and (max-width:991px){
+    .o-productDetail{
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
     .o-productDetail__main{
         padding-left: 0px;
     }

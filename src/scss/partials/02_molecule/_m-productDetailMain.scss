@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 .m-productDetailMain__rating{
 
@@ -98,6 +99,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background: $bg-light;
     margin-top: 1px;
     padding: 2rem;
@@ -122,6 +124,9 @@
     .m-productDetailMain__cta{
         flex-wrap: wrap;
     }
+    .m-productDetailMain__title{
+        font-size: 2.4rem;
+    }
 }
 
 @media screen and (max-width:500px){
@@ -138,5 +143,11 @@
     }
     .m-productDetailMain__button{
         width: 100%
+    }
+    .m-productDetailMain__info{
+        flex-direction: column;
+    }
+    .m-productDetailMain__id{
+        margin-top: 5px;
     }
 }

@@ -1,33 +1,35 @@
-.modal.fade(id="modal-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="modal-add-to-cart-heading" aria-hidden="true")
-    .modal-dialog(role="document")
-        .modal-content
+.modal.fade.o-modal(id="modal-add-to-cart" tabindex="-1" role="dialog" aria-labelledby="modal-add-to-cart-heading" aria-hidden="true")
+    .modal-dialog.o-modal__dialog(role="document")
+        .modal-content.o-modal__content
 
-            .modal-header
-                h5.modal-title(id="modal-add-to-cart-heading") Zboží bylo přidáno do košíku
-                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-                    span.cross-icon
+            .modal-header.o-modal__header
+                h5.modal-title.o-modal__title(id="modal-add-to-cart-heading") Dotaz na produkt
 
-            .modal-body
-                .row.cart-item-single
-                    .cart-item-single__col-1  
-                        .cart-item-single__thumb-wrap
-                            .cart-item-single__thumb
-                                img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+                button.o-modal__close(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                    span.a-icon.-cross.-red.o-modal__closeIcon
 
-                    .cart-item-single__col-2   
-                        .cart-item-single__name-wrap
-                            p.cart-item-single__name #{ProductName}
-                            p.cart-item-single__stock Dostupné skladem   
+            .modal-body.o-modal__body
 
-                        .cart-item-single__inner    
-                            .cart-item-single__qty-wrap 
-                                p.cart-item-single__qty-text 1 kus/ů
-                            .cart-item-single__price-wrap
-                                span.cart-item-single__price-old 14 290 Kč
-                                p.cart-item-single__price 8 489 Kč
-                            .cart-item-single__sum-wrap.text-right
-                                p.cart-item-single__sum #[span 8 489] Kč
+                .row.m-cartItemSingle
+                    .m-cartItemSingle__col-1  
+                        .m-cartItemSingle__thumb-wrap
+                            .m-cartItemSingle__thumb
+                                img.m-cartItemSingle__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
 
-            .modal-footer
-                button.btn.btn-dark(type="button" data-dismiss="modal") #[span.btn__icon.arrow-icon.left.white] Zpět do obchodu
-                a.btn(href="#") Pokračovat do košíku #[span.btn__icon.arrow-icon.white]
+                    .m-cartItemSingle__col-2   
+                        .m-cartItemSingle__name-wrap
+                            p.m-cartItemSingle__name #{ProductName}
+                            p.m-cartItemSingle__stock Dostupné skladem   
+
+                        .m-cartItemSingle__inner    
+                            .m-cartItemSingle__qty-wrap  
+                                p.m-cartItemSingle__qty-text 1 kus/ů
+                            .m-cartItemSingle__price-wrap
+                                span.m-cartItemSingle__price-old 14 290 Kč
+                                p.m-cartItemSingle__price 8 489 Kč
+                            .m-cartItemSingle__sum-wrap.text-right
+                                p.m-cartItemSingle__sum #[span 8 489] Kč
+
+            .modal-footer.o-modal__footer
+                button.btn.-dark(type="button" data-dismiss="modal") Zpět do obchodu
+                a.btn.-secondary(href="#") Dokončit objednávku #[span.a-btnIcon #[span.a-icon.-cheveron.-white]] 

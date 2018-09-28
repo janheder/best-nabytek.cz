@@ -42,21 +42,21 @@ html(lang=lang)
                                 .m-cartItemTop__item.-remove
 
                     - for (var i=0; i<3; i++)
-                        .cart-item-single
-                            .cart-item-single__col-1  
-                                .cart-item-single__thumb-wrap
-                                    .cart-item-single__thumb
-                                        img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+                        .m-cartItemSingle
+                            .m-cartItemSingle__col-1  
+                                .m-cartItemSingle__thumb-wrap
+                                    .m-cartItemSingle__thumb
+                                        img.m-cartItemSingle__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
 
 
-                            .cart-item-single__col-2   
-                                .cart-item-single__name-wrap
-                                    a.cart-item-single__name(href="#") #{ProductName}
-                                    p.cart-item-single__stock Dostupné skladem   
+                            .m-cartItemSingle__col-2   
+                                .m-cartItemSingle__name-wrap
+                                    a.m-cartItemSingle__name(href="#") #{ProductName}
+                                    p.m-cartItemSingle__stock Dostupné skladem   
 
-                                .cart-item-single__inner    
-                                    .cart-item-single__qty-wrap 
-                                        .cart-item-single__qty
+                                .m-cartItemSingle__inner    
+                                    .m-cartItemSingle__qty-wrap 
+                                        .m-cartItemSingle__qty
                                             .m-numberStepper.-dark
                                                 input.m-numberStepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
                                                 .m-numberStepper__btnUp
@@ -64,12 +64,12 @@ html(lang=lang)
                                                 .m-numberStepper__btnDown
                                                     span.m-numberStepper__iconDown
 
-                                    .cart-item-single__price-wrap
-                                        span.cart-item-single__price-old 14 290 Kč
-                                        p.cart-item-single__price 8 489 Kč
-                                    .cart-item-single__sum-wrap
-                                        p.cart-item-single__sum #[span 18 546] Kč
-                                    .cart-item-single__delete-wrap
+                                    .m-cartItemSingle__price-wrap
+                                        span.m-cartItemSingle__price-old 14 290 Kč
+                                        p.m-cartItemSingle__price 8 489 Kč
+                                    .m-cartItemSingle__sum-wrap
+                                        p.m-cartItemSingle__sum #[span 18 546] Kč
+                                    .m-cartItemSingle__delete-wrap
                                         a.a-icon.-crossCircle.-red(href="#")
 
                     .m-cartPriceOverview

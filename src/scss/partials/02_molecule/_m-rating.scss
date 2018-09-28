@@ -16,3 +16,12 @@
     @include f-14-dark-regular;
     margin-left: 6px;
 }
+@media screen and (max-width:350px){
+    .m-rating{
+        flex-direction: column;
+    }
+    .m-rating__text{
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+}

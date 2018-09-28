@@ -58,6 +58,10 @@
 
 .m-productDetailCarousel__swiperNav{
     z-index: 2;
+    
+    .swiper-pagination-bullet-active{
+        background: $bg-brand;
+    }
 }
 .m-productDetailCarousel__swiperButton{
     background: rgba(0,0,0,0.5);
@@ -89,10 +93,12 @@
     .m-productDetailCarousel__figure{
         padding-bottom: 50%;
     }
-
+    .m-productDetailCarousel{
+        margin-top: 10px;
+    }
 }
 @media screen and (max-width:500px){
     .m-productDetailCarousel__figure{
-        padding-bottom: 100%;
+        padding-bottom: 60%;
     }
 }

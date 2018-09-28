@@ -290,7 +290,7 @@ if($(".m-selectBox .m-selectBox__input:checked")){
     var stock= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__stock").text();
     $(".m-productDetailMain__stockText").text(stock);
 
-    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value + ", " + price + ", " + stock);
+    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
 }
 
 $(".m-selectBox .m-selectBox__input").click(function () {   
@@ -305,7 +305,7 @@ $(".m-selectBox .m-selectBox__input").click(function () {
     var stock= $(".m-selectBox .m-selectBox__input:checked").siblings(".m-selectBox__content").find(".m-selectBox__stock").text();
     $(".m-productDetailMain__stockText").text(stock);
 
-    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value + ", " + price + ", " + stock);
+    $(".m-selectBox .m-selectBox__dropdownText").text("Vybráno: " + value);
 });
 
 
@@ -359,11 +359,11 @@ $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="delivery_form_payment"]'
 // =============================================================================
 // MODAL AUTO DISPLAY
 // =============================================================================
-/*
+
 $(window).on("load",function(){
     $("#modal-info, #modal-add-to-cart").modal("show");
 });
-*/
+
 // =============================================================================
 // HTML5 Speech Recognition API 
 // =============================================================================

@@ -181,17 +181,6 @@ html(lang=lang)
                                     span.m-productDetailMain__id Katalogové číslo: Angeli160
 
 
- 
-
-
-        .product-detail-responsive
-            .product-detail-responsive__name
-                p.product-detail-responsive__title #{ProductName}
-                h3.product-detail-responsive__price #[span 16 989] Kč
-            .product-detail-responsive__btn-wrap
-                a.btn.product-detail-responsive__btn(onclick="$('#product_detail_form').submit();") Do košíku
-
-
         section.o-productDescription.o-tabs(id="anchor-product-detail-description")
 
             nav.o-tabs__nav.m-tabsNav
@@ -207,47 +196,59 @@ html(lang=lang)
 
             .tab-content.o-tabs__content.m-tabsContent
 
-                .tab-pane.fade.m-tabsContent__pane.show.active(id="product-1" role="tabpanel" aria-labelledby="product-1-tab")  
-                    .container  
-                        strong Popis
-                        p Hydrance Optimale Riche je výživný hydratační krém, který je určen pro suchou až velmi suchou dehydratovanou citlivou pleť. Přináší okamžitou a intenzivní hydrataci pleti, která má dlouhotrvající účinek. Krém má vláčnou texturu, která dodává pleti pocit pohodlí. Díky unikátnímu složení se snižuje možnost vzniku alergií. Krém je vhodný jako podklad pod make-up.
+                .tab-pane.fade.m-tabsContent__pane.show.active(id="product-1" role="tabpanel" aria-labelledby="product-1-tab")
 
-                        strong Dávkování a způsob užití
-                        p Aplikujte krém ráno, anebo večer na dokonale čistou a osušenou pleť.
+                    .m-tabsContent__collapseToggle(data-toggle="collapse" data-target="#collapseProductDescription-1" aria-expanded="false" aria-controls="#collapseProductDescription-1") Popis produktu 
+                    .collapse.m-tabsContent__collapse.show(id="collapseProductDescription-1" aria-labelledby="collapseProductDescription-1")
 
-                        strong Složení
-                        p Přípravek obsahuje termální vodu Avene, bambucké máslo, meiboserin, lipomucin.
+                        .container  
+                            strong Popis
+                            p Hydrance Optimale Riche je výživný hydratační krém, který je určen pro suchou až velmi suchou dehydratovanou citlivou pleť. Přináší okamžitou a intenzivní hydrataci pleti, která má dlouhotrvající účinek. Krém má vláčnou texturu, která dodává pleti pocit pohodlí. Díky unikátnímu složení se snižuje možnost vzniku alergií. Krém je vhodný jako podklad pod make-up.
+
+                            strong Dávkování a způsob užití
+                            p Aplikujte krém ráno, anebo večer na dokonale čistou a osušenou pleť.
+
+                            strong Složení
+                            p Přípravek obsahuje termální vodu Avene, bambucké máslo, meiboserin, lipomucin.
 
 
-                .tab-pane.fade.m-tabsContent__pane(id="product-2" role="tabpanel" aria-labelledby="product-2-tab")    
-                    .container  
-                        table.table
-                            tr
-                                th Parametr
-                                th Hodnota
-                            tr
-                                td Délka vnější
-                                td 206 cm
-                            tr
-                                td Délka vnější
-                                td 206 cm 
-                            tr                            
-                                td Délka vnější
-                                td 206 cm     
-                            tr                          
-                                td Délka vnější
-                                td 206 cm   
-                            tr                             
-                                td Délka vnější
-                                td 206 cm
+                .tab-pane.fade.m-tabsContent__pane(id="product-2" role="tabpanel" aria-labelledby="product-2-tab") 
 
-                .tab-pane.fade.m-tabsContent__pane(id="product-3" role="tabpanel" aria-labelledby="product-3-tab")    
-                    .container  
-                        .o-productGrid
-                            include partials/_single-product-cell.pug
-                            include partials/_single-product-cell.pug
-                            include partials/_single-product-cell.pug
-                            include partials/_single-product-cell.pug
+                    .m-tabsContent__collapseToggle(data-toggle="collapse" data-target="#collapseProductDescription-2" aria-expanded="false" aria-controls="#collapseProductDescription-2") Parametry
+                    .collapse.m-tabsContent__collapse(id="collapseProductDescription-2" aria-labelledby="collapseProductDescription-2")
+                        
+                        .container  
+                            table.table
+                                tr
+                                    th Parametr
+                                    th Hodnota
+                                tr
+                                    td Délka vnější
+                                    td 206 cm
+                                tr
+                                    td Délka vnější
+                                    td 206 cm 
+                                tr                            
+                                    td Délka vnější
+                                    td 206 cm     
+                                tr                          
+                                    td Délka vnější
+                                    td 206 cm   
+                                tr                             
+                                    td Délka vnější
+                                    td 206 cm
+
+                .tab-pane.fade.m-tabsContent__pane(id="product-3" role="tabpanel" aria-labelledby="product-3-tab")  
+
+                    .m-tabsContent__collapseToggle(data-toggle="collapse" data-target="#collapseProductDescription-3" aria-expanded="false" aria-controls="#collapseProductDescription-3") Příslušenství 
+                    .collapse.m-tabsContent__collapse(id="collapseProductDescription-3" aria-labelledby="collapseProductDescription-3")
+
+                        .container  
+                            .o-productGrid
+                                include partials/_single-product-cell.pug
+                                include partials/_single-product-cell.pug
+                                include partials/_single-product-cell.pug
+                                include partials/_single-product-cell.pug
 
 
 
@@ -272,6 +273,15 @@ html(lang=lang)
                         
                     .swiper-button-prev.m-productCarousel__swiperButton.-prev
                     .swiper-button-next.m-productCarousel__swiperButton.-next
+
+
+
+        .productDetailResponsive
+            .productDetailResponsive__name
+                p.productDetailResponsive__title #{ProductName}
+                h3.productDetailResponsive__price #[span 16 989] Kč
+            .productDetailResponsive__btn-wrap
+                a.btn.productDetailResponsive__btn(onclick="$('#product_detail_form').submit();") Do košíku
 
 
         include partials/_footer.pug
