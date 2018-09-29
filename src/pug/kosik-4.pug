@@ -46,7 +46,7 @@ html(lang=lang)
                                 .m-cartItemTop__item.-sum.-right Cena celkem
 
 
-                    .row.m-cartItemSingle
+                    .m-cartItemSingle
                         .m-cartItemSingle__col-1  
                             .m-cartItemSingle__thumb-wrap
                                 .m-cartItemSingle__thumb
@@ -55,6 +55,7 @@ html(lang=lang)
                         .m-cartItemSingle__col-2   
                             .m-cartItemSingle__name-wrap
                                 p.m-cartItemSingle__name #{ProductName}
+                                p.m-cartItemSingle__tags #[span Rozměr: 80/200 cm] #[span Varianta: grey flex]
                                 p.m-cartItemSingle__stock Dostupné skladem   
 
                             .m-cartItemSingle__inner    
@@ -102,44 +103,95 @@ html(lang=lang)
                         p.m-cartPriceOverview__text Celková cena s DPH:
                         h3.m-cartPriceOverview__price #[span.m-cartPriceOverview__priceNumber 65 599] Kč
 
-                    .cart-user-info-overview
+                    .o-cartUserOverview
                         .row
-                            .cart-user-info-overview__single
-                                h3.cart-user-info-overview__title #[span.cart-user-info-overview__title-number 1.] Osobní údaje
-                                .cart-user-info-overview__single-content
-                                    p.cart-user-info-overview__text Jméno a příjmení: #[span.cart-user-info-overview__strong Petr Novák]
-                                    p.cart-user-info-overview__text Emailová adresa: #[span.cart-user-info-overview__strong petr@novak.cz]
-                                    p.cart-user-info-overview__text Telefonní číslo: #[span.cart-user-info-overview__strong 605 598 989]
-                                    p.cart-user-info-overview__text Ulice: #[span.cart-user-info-overview__strong Petra Bezruče]
-                                    p.cart-user-info-overview__text Číslo ulice: #[span.cart-user-info-overview__strong 18]
-                                    p.cart-user-info-overview__text Město: #[span.cart-user-info-overview__strong Praha]
-                                    p.cart-user-info-overview__text Kraj: #[span.cart-user-info-overview__strong Praha]
-                                    p.cart-user-info-overview__text PSČ: #[span.cart-user-info-overview__strong 898 89]
-                                    p.cart-user-info-overview__text Stát: #[span.cart-user-info-overview__strong Česko]
+                            .col-12.col-sm-6.col-md-4.o-cartUserOverview__col
+                                .o-cartUserOverview__item.m-cartUserItem.-active
+                                    .m-cartUserItem__top
+                                        .m-cartUserItem__iconWrap
+                                            span.a-icon.-user.-white.m-cartUserItem__icon
+                                        .m-cartUserItem_title Petr Novák
+                                        .m-cartUserItem_subtitleWrap
+                                            .m-cartUserItem_subtitle petrnovak@seznam.cz
+                                            .m-cartUserItem_subtitle (+420) 605 598 989
+                                            
+                                    .m-cartUserItem__bottom
+                                        .m-cartUserItem__street
+                                            .m-cartUserItem__small Ulice
+                                            .m-cartUserItem__text Petra Bezruče, 18
+                                        .m-cartUserItem__row
+                                            .m-cartUserItem__city
+                                                .m-cartUserItem__small Město/obec
+                                                .m-cartUserItem__text Praha 1
+                                            .m-cartUserItem__psc
+                                                .m-cartUserItem__small PSČ
+                                                .m-cartUserItem__text 187 98
 
-                            .cart-user-info-overview__single
-                                h3.cart-user-info-overview__title #[span.cart-user-info-overview__title-number 2.] Fakturační adresa
-                                .cart-user-info-overview__single-content
-                                    p.cart-user-info-overview__text Stejná jako u osobních ůdajů
 
-                            .cart-user-info-overview__single
-                                h3.cart-user-info-overview__title #[span.cart-user-info-overview__title-number 3.] Dodací adresa
-                                .cart-user-info-overview__single-content
-                                    p.cart-user-info-overview__text Stejná jako u osobních ůdajů
+                            .col-12.col-sm-6.col-md-4.o-cartUserOverview__col
+                                .o-cartUserOverview__item.m-cartUserItem
+                                    .m-cartUserItem__top
+                                        .m-cartUserItem__iconWrap
+                                            span.a-icon.-address.-white.m-cartUserItem__icon
+                                        .m-cartUserItem_title Fakturační adresa
+                                        .m-cartUserItem_subtitleWrap
+                                            .m-cartUserItem_subtitle Petr Novák
+                                            .m-cartUserItem_subtitle Název firmy s.r.o.
+                                            
+                                    .m-cartUserItem__bottom
+                                        .m-cartUserItem__row
+                                            .m-cartUserItem__city
+                                                .m-cartUserItem__small IČO
+                                                .m-cartUserItem__text 14803685
+                                            .m-cartUserItem__psc
+                                                .m-cartUserItem__small DIČ
+                                                .m-cartUserItem__text CZ14803685
+                                        .m-cartUserItem__street
+                                            .m-cartUserItem__small Ulice
+                                            .m-cartUserItem__text Petra Bezruče, 18
+                                        .m-cartUserItem__row
+                                            .m-cartUserItem__city
+                                                .m-cartUserItem__small Město/obec
+                                                .m-cartUserItem__text Praha 1
+                                            .m-cartUserItem__psc
+                                                .m-cartUserItem__small PSČ
+                                                .m-cartUserItem__text 187 98                
 
-                 
 
-                    .o-form
-                        
-                        .m-formGroup.-checkbox
-                            input.m-formGroup__input(type="checkbox" name="cart_form_heureka" id="cart_form_heureka")
-                            span.m-formGroup__checkbox.a-checkbox
-                            label.m-formGroup__label.-small(for="cart_form_heureka") Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.  
+                            .col-12.col-sm-6.col-md-4.o-cartUserOverview__col
+                                .o-cartUserOverview__item.m-cartUserItem
+                                    .m-cartUserItem__top
+                                        .m-cartUserItem__iconWrap
+                                            span.a-icon.-home.-white.m-cartUserItem__icon
+                                        .m-cartUserItem_title Dodací adresa
+                                        .m-cartUserItem_subtitleWrap
+                                            .m-cartUserItem_subtitle Petr Novák
+                                            .m-cartUserItem_subtitle Název firmy s.r.o.
+                                            
+                                    .m-cartUserItem__bottom
+                                        .m-cartUserItem__street
+                                            .m-cartUserItem__small Ulice
+                                            .m-cartUserItem__text Petra Bezruče, 18
+                                        .m-cartUserItem__row
+                                            .m-cartUserItem__city
+                                                .m-cartUserItem__small Město/obec
+                                                .m-cartUserItem__text Praha 1
+                                            .m-cartUserItem__psc
+                                                .m-cartUserItem__small PSČ
+                                                .m-cartUserItem__text 187 98 
 
-                        .m-formGroup.-checkbox
-                            input.m-formGroup__input(type="checkbox" name="cart_form_termsa" id="cart_form_terms" required)
-                            span.m-formGroup__checkbox.a-checkbox
-                            label.m-formGroup__label.-small(for="cart_form_terms") Souhlasím s #[a(href="#") obchodními podmínkami] 
+                    .o-cartUsefInfo
+                        .o-form.o-cartUsefInfo__form
+                            
+                            .m-formGroup.-checkbox
+                                input.m-formGroup__input(type="checkbox" name="cart_form_heureka" id="cart_form_heureka")
+                                span.m-formGroup__checkbox.a-checkbox
+                                label.m-formGroup__label.-small(for="cart_form_heureka") Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.  
+
+                            .m-formGroup.-checkbox
+                                input.m-formGroup__input(type="checkbox" name="cart_form_termsa" id="cart_form_terms" required)
+                                span.m-formGroup__checkbox.a-checkbox
+                                label.m-formGroup__label.-small(for="cart_form_terms") Souhlasím s #[a(href="#") obchodními podmínkami] 
 
                   
 

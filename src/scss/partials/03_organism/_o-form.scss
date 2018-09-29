@@ -215,6 +215,7 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
 
     &.-small{
         font-size: 1.4rem;
+        padding-top: 2px;
     }
     a{
         @include f-14-primary-regular;

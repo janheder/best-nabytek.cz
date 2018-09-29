@@ -109,7 +109,7 @@
 }
 
 .m-cartDeliveryItem__input:disabled{
-    & ~ .m-cartDeliveryItem__icon{
+    & ~ .m-cartDeliveryItem__iconWrap .m-cartDeliveryItem__icon{
         opacity: 0.5;
     }
     & ~ .m-cartDeliveryItem__top .m-cartDeliveryItem__title, & ~ .m-cartDeliveryItem__top .m-cartDeliveryItem__text, & ~ .m-cartDeliveryItem__bottom .m-cartDeliveryItem__price{

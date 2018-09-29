@@ -204,7 +204,7 @@
               </div>
             </div>
           </div>
-          <div class="row m-cartItemSingle">
+          <div class="m-cartItemSingle">
             <div class="m-cartItemSingle__col-1"> 
               <div class="m-cartItemSingle__thumb-wrap">
                 <div class="m-cartItemSingle__thumb"><img class="m-cartItemSingle__img lazy" src="img/placeholder-200x200.png" data-src="img/product-thumb-small.jpg"></div>
@@ -213,6 +213,7 @@
             <div class="m-cartItemSingle__col-2">  
               <div class="m-cartItemSingle__name-wrap">
                 <p class="m-cartItemSingle__name">Postel Angelika 160/200 cm masiv borovice</p>
+                <p class="m-cartItemSingle__tags"><span>Rozměr: 80/200 cm</span> <span>Varianta: grey flex</span></p>
                 <p class="m-cartItemSingle__stock">Dostupné skladem   </p>
               </div>
               <div class="m-cartItemSingle__inner">   
@@ -266,44 +267,114 @@
             <p class="m-cartPriceOverview__text">Celková cena s DPH:</p>
             <h3 class="m-cartPriceOverview__price"><span class="m-cartPriceOverview__priceNumber">65 599</span> Kč</h3>
           </div>
-          <div class="cart-user-info-overview">
+          <div class="o-cartUserOverview">
             <div class="row">
-              <div class="cart-user-info-overview__single">
-                <h3 class="cart-user-info-overview__title"><span class="cart-user-info-overview__title-number">1.</span> Osobní údaje</h3>
-                <div class="cart-user-info-overview__single-content">
-                  <p class="cart-user-info-overview__text">Jméno a příjmení: <span class="cart-user-info-overview__strong">Petr Novák</span></p>
-                  <p class="cart-user-info-overview__text">Emailová adresa: <span class="cart-user-info-overview__strong">petr@novak.cz</span></p>
-                  <p class="cart-user-info-overview__text">Telefonní číslo: <span class="cart-user-info-overview__strong">605 598 989</span></p>
-                  <p class="cart-user-info-overview__text">Ulice: <span class="cart-user-info-overview__strong">Petra Bezruče</span></p>
-                  <p class="cart-user-info-overview__text">Číslo ulice: <span class="cart-user-info-overview__strong">18</span></p>
-                  <p class="cart-user-info-overview__text">Město: <span class="cart-user-info-overview__strong">Praha</span></p>
-                  <p class="cart-user-info-overview__text">Kraj: <span class="cart-user-info-overview__strong">Praha</span></p>
-                  <p class="cart-user-info-overview__text">PSČ: <span class="cart-user-info-overview__strong">898 89</span></p>
-                  <p class="cart-user-info-overview__text">Stát: <span class="cart-user-info-overview__strong">Česko</span></p>
+              <div class="col-12 col-sm-6 col-md-4 o-cartUserOverview__col">
+                <div class="o-cartUserOverview__item m-cartUserItem -active">
+                  <div class="m-cartUserItem__top">
+                    <div class="m-cartUserItem__iconWrap"><span class="a-icon -user -white m-cartUserItem__icon"></span></div>
+                    <div class="m-cartUserItem_title">Petr Novák</div>
+                    <div class="m-cartUserItem_subtitleWrap">
+                      <div class="m-cartUserItem_subtitle">petrnovak@seznam.cz</div>
+                      <div class="m-cartUserItem_subtitle">(+420) 605 598 989</div>
+                    </div>
+                  </div>
+                  <div class="m-cartUserItem__bottom">
+                    <div class="m-cartUserItem__street">
+                      <div class="m-cartUserItem__small">Ulice</div>
+                      <div class="m-cartUserItem__text">Petra Bezruče, 18</div>
+                    </div>
+                    <div class="m-cartUserItem__row">
+                      <div class="m-cartUserItem__city">
+                        <div class="m-cartUserItem__small">Město/obec</div>
+                        <div class="m-cartUserItem__text">Praha 1</div>
+                      </div>
+                      <div class="m-cartUserItem__psc">
+                        <div class="m-cartUserItem__small">PSČ</div>
+                        <div class="m-cartUserItem__text">187 98</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="cart-user-info-overview__single">
-                <h3 class="cart-user-info-overview__title"><span class="cart-user-info-overview__title-number">2.</span> Fakturační adresa</h3>
-                <div class="cart-user-info-overview__single-content">
-                  <p class="cart-user-info-overview__text">Stejná jako u osobních ůdajů</p>
+              <div class="col-12 col-sm-6 col-md-4 o-cartUserOverview__col">
+                <div class="o-cartUserOverview__item m-cartUserItem">
+                  <div class="m-cartUserItem__top">
+                    <div class="m-cartUserItem__iconWrap"><span class="a-icon -address -white m-cartUserItem__icon"></span></div>
+                    <div class="m-cartUserItem_title">Fakturační adresa</div>
+                    <div class="m-cartUserItem_subtitleWrap">
+                      <div class="m-cartUserItem_subtitle">Petr Novák</div>
+                      <div class="m-cartUserItem_subtitle">Název firmy s.r.o.</div>
+                    </div>
+                  </div>
+                  <div class="m-cartUserItem__bottom">
+                    <div class="m-cartUserItem__row">
+                      <div class="m-cartUserItem__city">
+                        <div class="m-cartUserItem__small">IČO</div>
+                        <div class="m-cartUserItem__text">14803685</div>
+                      </div>
+                      <div class="m-cartUserItem__psc">
+                        <div class="m-cartUserItem__small">DIČ</div>
+                        <div class="m-cartUserItem__text">CZ14803685</div>
+                      </div>
+                    </div>
+                    <div class="m-cartUserItem__street">
+                      <div class="m-cartUserItem__small">Ulice</div>
+                      <div class="m-cartUserItem__text">Petra Bezruče, 18</div>
+                    </div>
+                    <div class="m-cartUserItem__row">
+                      <div class="m-cartUserItem__city">
+                        <div class="m-cartUserItem__small">Město/obec</div>
+                        <div class="m-cartUserItem__text">Praha 1</div>
+                      </div>
+                      <div class="m-cartUserItem__psc">
+                        <div class="m-cartUserItem__small">PSČ</div>
+                        <div class="m-cartUserItem__text">187 98                </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="cart-user-info-overview__single">
-                <h3 class="cart-user-info-overview__title"><span class="cart-user-info-overview__title-number">3.</span> Dodací adresa</h3>
-                <div class="cart-user-info-overview__single-content">
-                  <p class="cart-user-info-overview__text">Stejná jako u osobních ůdajů</p>
+              <div class="col-12 col-sm-6 col-md-4 o-cartUserOverview__col">
+                <div class="o-cartUserOverview__item m-cartUserItem">
+                  <div class="m-cartUserItem__top">
+                    <div class="m-cartUserItem__iconWrap"><span class="a-icon -home -white m-cartUserItem__icon"></span></div>
+                    <div class="m-cartUserItem_title">Dodací adresa</div>
+                    <div class="m-cartUserItem_subtitleWrap">
+                      <div class="m-cartUserItem_subtitle">Petr Novák</div>
+                      <div class="m-cartUserItem_subtitle">Název firmy s.r.o.</div>
+                    </div>
+                  </div>
+                  <div class="m-cartUserItem__bottom">
+                    <div class="m-cartUserItem__street">
+                      <div class="m-cartUserItem__small">Ulice</div>
+                      <div class="m-cartUserItem__text">Petra Bezruče, 18</div>
+                    </div>
+                    <div class="m-cartUserItem__row">
+                      <div class="m-cartUserItem__city">
+                        <div class="m-cartUserItem__small">Město/obec</div>
+                        <div class="m-cartUserItem__text">Praha 1</div>
+                      </div>
+                      <div class="m-cartUserItem__psc">
+                        <div class="m-cartUserItem__small">PSČ</div>
+                        <div class="m-cartUserItem__text">187 98 </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="o-form">
-            <div class="m-formGroup -checkbox">
-              <input class="m-formGroup__input" type="checkbox" name="cart_form_heureka" id="cart_form_heureka"><span class="m-formGroup__checkbox a-checkbox"></span>
-              <label class="m-formGroup__label -small" for="cart_form_heureka">Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.  </label>
-            </div>
-            <div class="m-formGroup -checkbox">
-              <input class="m-formGroup__input" type="checkbox" name="cart_form_termsa" id="cart_form_terms" required><span class="m-formGroup__checkbox a-checkbox"></span>
-              <label class="m-formGroup__label -small" for="cart_form_terms">Souhlasím s <a href="#">obchodními podmínkami</a> </label>
+          <div class="o-cartUsefInfo">
+            <div class="o-form o-cartUsefInfo__form">
+              <div class="m-formGroup -checkbox">
+                <input class="m-formGroup__input" type="checkbox" name="cart_form_heureka" id="cart_form_heureka"><span class="m-formGroup__checkbox a-checkbox"></span>
+                <label class="m-formGroup__label -small" for="cart_form_heureka">Nesouhlasím se zasláním dotazníku spokojenosti v rámci programu Ověřeno zákazníky, který pomáhá zlepšovat vaše služby.  </label>
+              </div>
+              <div class="m-formGroup -checkbox">
+                <input class="m-formGroup__input" type="checkbox" name="cart_form_termsa" id="cart_form_terms" required><span class="m-formGroup__checkbox a-checkbox"></span>
+                <label class="m-formGroup__label -small" for="cart_form_terms">Souhlasím s <a href="#">obchodními podmínkami</a> </label>
+              </div>
             </div>
           </div>
           <div class="m-cartButtons"><a class="btn -dark" href="#">Krok zpět</a>

@@ -50,8 +50,18 @@
 	flex-direction: column;	
 }
 .m-cartItemSingle__name{
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     @include f-16-primary-medium;
+}
+.m-cartItemSingle__tags{
+    margin-bottom: 1rem;
+	@include f-14-medium-medium;
+	
+	span:nth-child(2){
+		border-left: 1px solid $border-grey;
+		padding-left: 10px;
+		margin-left: 10px;
+	}
 }
 .m-cartItemSingle__stock{
 	color: $text-green;

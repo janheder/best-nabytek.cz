@@ -65,9 +65,24 @@
     }
 }
 
-@media (min-width: 576px){
+@media (min-width: 768px){
     .o-modal__dialog {
         max-width: 800px;
+    }
+    .o-modal.-wide .o-modal__dialog {
+        max-width: 1000px;
+        .m-cartItemSingle{
+            padding: 0;
+        }
+        .m-cartItemSingle__name-wrap{
+            width: 60%;
+        }
+        .m-cartItemSingle__inner{
+            width: 40%
+        }
+        .m-cartItemSingle__qty-wrap{
+            width: 20%;
+        }
     }
 }
 @media (max-width: 575px){

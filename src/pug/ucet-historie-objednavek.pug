@@ -5,7 +5,7 @@ html(lang=lang)
     body
         include partials/_navMain.pug
         include partials/_navProducts.pug
-
+        include partials/_modal-history.pug
         include partials/_breadcrumb.pug
         main
             .container
@@ -38,7 +38,8 @@ html(lang=lang)
                                     td.o-userHistory__price 16 999 Kč
                                     td
                                         .o-userHistory__status.-success Dokončeno
-                                    th.o-userHistory__info
+                                    td.o-userHistory__info
+                                        span.a-icon.-info(data-toggle="modal" data-target="#modal-history")
 
                                 tr.o-userHistory__tr
                                     td.o-userHistory__id 1598879
@@ -46,7 +47,8 @@ html(lang=lang)
                                     td.o-userHistory__price 16 999 Kč
                                     td
                                         .o-userHistory__status.-info Odesláno poštou
-                                    th.o-userHistory__info
+                                    td.o-userHistory__info
+                                        span.a-icon.-info(data-toggle="modal" data-target="#modal-history")
 
                                 tr.o-userHistory__tr
                                     td.o-userHistory__id 1598879
@@ -54,7 +56,9 @@ html(lang=lang)
                                     td.o-userHistory__price 16 999 Kč
                                     td
                                         .o-userHistory__status.-danger Vráceno
-                                    th.o-userHistory__info                        
+                                    td.o-userHistory__info
+                                        span.a-icon.-info(data-toggle="modal" data-target="#modal-history")                 
+
 
         include partials/_footer.pug
 
