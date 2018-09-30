@@ -203,16 +203,16 @@ $('#show_password_toggler').click(function() {
 // =============================================================================
 // FILTER PRICE RANGE
 // =============================================================================
-$("#filter-range-value-1").css("left", $("#filter-range-input-1").val() + "%");
-$("#filter-range-value-2").css("right", $("#filter-range-input-2").val() + "%");
+
 
 $(document).on('input change','#filter-range-input-1, #filter-range-input-2', function() {
     $("#filter-range-value-1").text($("#filter-range-input-1").val() + " Kč");
-    $("#filter-range-value-1").css("left", $("#filter-range-input-1").val() + "%");
+
 
 
 
     $("#filter-range-value-2").text($("#filter-range-input-2").val() + " Kč");
+
 });
 
 // =============================================================================

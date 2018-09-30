@@ -192,6 +192,7 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
             padding-left: 0;
             color: $text-primary;
             transition: 0s ease all;
+            flex-grow: 1;
 
             &:last-child{
                 text-align: right;
@@ -216,9 +217,13 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
     &.-small{
         font-size: 1.4rem;
         padding-top: 2px;
+        a{
+            @include f-14-primary-regular;
+            color: $text-brand;
+        }
     }
     a{
-        @include f-14-primary-regular;
+        @include f-16-primary-regular;
         color: $text-brand;
     }
 }
@@ -273,7 +278,7 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
 /*push up*/
 
 .m-formGroup__input:focus, .m-formGroup__input:not(:placeholder-shown){
-    padding: 1.1rem 2rem 0 2rem;
+    padding: 1.4rem 2rem 0 2rem;
 }
 .m-formGroup__input:focus + .m-formGroup__label, 
 .m-formGroup__input:not(:placeholder-shown) + .m-formGroup__label{
