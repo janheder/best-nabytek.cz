@@ -23,10 +23,10 @@ header.o-nav
 			.a-icon.-search.-white.m-navSearchToggler__icon
 			
 		//
-			a.o-navMain__user.m-navUser(href="#" data-toggle="modal" data-target="#modal-login")
-				.a-icon.-user.-white.m-navUser__icon
-				.m-navUser__info
-					span.m-navUser__title Přihlášení
+			<a class="o-navMain__user m-navUser" href="#" data-toggle="modal" data-target="#modal-login">
+				<div class="a-icon -user -white m-navUser__icon"></div>
+				<div class="m-navUser__info"><span class="m-navUser__title">Přihlášení</span></div>
+			</a>
 
 		.o-navMain__user.m-navUser(data-toggle="collapse" data-target="#collapseNavUser" aria-expanded="false" aria-controls="collapseNavUser")
 			.a-icon.-user.-white.m-navUser__icon
@@ -39,11 +39,12 @@ header.o-nav
 				a.m-navUser__collapseLink(href="#") Odhlásit
 
 		//
-			a.o-navMain__cart.m-navCart(href="#")
-				.m-navCart__iconWrap
-					.a-icon.-cart.-white.m-navCart__icon
-				.m-navCart__info
-					span.m-navCart__title Nákupní košík
+			<a class="o-navMain__cart m-navCart" href="#">
+				<div class="m-navCart__iconWrap">
+					<div class="a-icon -cart -white m-navCart__icon"></div>
+				</div>
+				<div class="m-navCart__info"><span class="m-navCart__title">Nákupní košík</span></div>
+			</a>
 
 		.o-navMain__cart.m-navCart.-active(data-toggle="collapse" data-target="#collapseNavCart" aria-expanded="false" aria-controls="collapseNavCart")
 			.m-navCart__iconWrap

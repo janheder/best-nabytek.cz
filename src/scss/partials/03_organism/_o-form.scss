@@ -77,6 +77,11 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
     @include f-14-dark-medium;
     text-align: center;
     margin-top: 2rem; 
+
+    &.-alt{
+        color: $text-brand;
+        margin: 2rem;
+    }
 }
 
 .o-form__divider{

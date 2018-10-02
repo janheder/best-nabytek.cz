@@ -62,27 +62,24 @@
     <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
   </head>
   <body>
-    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
+    <div class="modal fade o-modal" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+      <div class="modal-dialog o-modal__dialog" role="document">
+        <div class="modal-content o-modal__content">
+          <div class="modal-header o-modal__header">
+            <h5 class="modal-title o-modal__title" id="modal-login-heading">Přihlášení</h5>
+            <button class="o-modal__close close" type="button" data-dismiss="modal" aria-label="Close"><span class="a-icon -cross -red o-modal__closeIcon"></span></button>
           </div>
-          <div class="modal-body">
-            <form class="login-form page-message__login-form" method="post" action="" name="login_form">
-              <div class="form-group">
-                <label for="modal-login_form_username">Uživatelské jméno</label>
-                <input class="form-control" type="text" name="modal-login_form_username" id="modal-login_form_username" required autocomplete="username">
+          <div class="modal-body o-modal__body">
+            <form class="o-form" method="post" action="" name="login_form">
+              <div class="o-form__group m-formGroup">
+                <input class="m-formGroup__input" type="email" name="login_form_email" id="login_form_email" autocomplete="email" required placeholder=" ">
+                <label class="m-formGroup__label" for="login_form_email">Emailová adresa</label><span class="m-formGroup__error">Neplatný email</span><span class="m-formGroup__success"></span>
               </div>
-              <div class="form-group">
-                <label for="modal-login_form_password">Heslo</label>
-                <input class="form-control" type="password" name="modal-login_form_password" id="modal-login_form_password" required autocomplete="password">
+              <div class="o-form__group m-formGroup">
+                <input class="m-formGroup__input" type="password" name="login_form_pass" id="login_form_pass" autocomplete="password" required placeholder=" ">
+                <label class="m-formGroup__label" for="login_form_name">Heslo</label><span class="m-formGroup__error">Neplatné heslo</span><span class="m-formGroup__success"></span>
               </div>
-              <div class="form-group">
-                <button class="form-control btn" type="submit" name="modal-login_form_submit" id="modal-login_form_submit">Přihlásit se</button>
-              </div>
-              <div class="form-group"><a class="form-control btn btn-ghost" href="#">Vytvořit nový účet</a></div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+              <button class="btn -fullWidth" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit</button><a class="o-form__link -alt" href="#">Vytvořit účet</a><a class="o-form__link" href="#">Obnovit zapomenuté heslo</a>
             </form>
           </div>
         </div>
@@ -107,10 +104,10 @@
           <div class="a-icon -search -white m-navSearchToggler__icon"></div>
         </div>
         <!--
-        a.o-navMain__user.m-navUser(href="#" data-toggle="modal" data-target="#modal-login")
-        	.a-icon.-user.-white.m-navUser__icon
-        	.m-navUser__info
-        		span.m-navUser__title Přihlášení
+        <a class="o-navMain__user m-navUser" href="#" data-toggle="modal" data-target="#modal-login">
+        	<div class="a-icon -user -white m-navUser__icon"></div>
+        	<div class="m-navUser__info"><span class="m-navUser__title">Přihlášení</span></div>
+        </a>
         
         -->
         <div class="o-navMain__user m-navUser" data-toggle="collapse" data-target="#collapseNavUser" aria-expanded="false" aria-controls="collapseNavUser">
@@ -119,11 +116,12 @@
           <div class="collapse m-navUser__collapse" id="collapseNavUser" aria-labelledby="collapseNavUser"><a class="m-navUser__collapseLink" href="#">Změna osobních údajů</a><a class="m-navUser__collapseLink" href="#">Historie objednávek</a><a class="m-navUser__collapseLink" href="#">Odhlásit</a></div>
         </div>
         <!--
-        a.o-navMain__cart.m-navCart(href="#")
-        	.m-navCart__iconWrap
-        		.a-icon.-cart.-white.m-navCart__icon
-        	.m-navCart__info
-        		span.m-navCart__title Nákupní košík
+        <a class="o-navMain__cart m-navCart" href="#">
+        	<div class="m-navCart__iconWrap">
+        		<div class="a-icon -cart -white m-navCart__icon"></div>
+        	</div>
+        	<div class="m-navCart__info"><span class="m-navCart__title">Nákupní košík</span></div>
+        </a>
         
         -->
         <div class="o-navMain__cart m-navCart -active" data-toggle="collapse" data-target="#collapseNavCart" aria-expanded="false" aria-controls="collapseNavCart">
