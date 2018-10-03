@@ -1,6 +1,8 @@
 .m-cartUserItem{
     border-radius: $border-radius-primary;
     position: relative;
+    height: 100%;
+    background: $bg-white;
 
     &.-active .m-cartUserItem__top, &.-active .m-cartUserItem__iconWrap{
         background: $bg-brand;

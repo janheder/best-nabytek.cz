@@ -1,3 +1,15 @@
 .o-cartUserOverview{
     padding: 8rem 0 4rem 0;
 }
+.o-cartUserOverview__col{
+    margin: 10px 0;
+}
+
+@media screen and (max-width:768px){
+    .o-cartUserOverview__col{
+        margin: 10px 0 60px 0;
+        &:last-child{
+            margin: 10px 0;
+        }
+    }
+}
