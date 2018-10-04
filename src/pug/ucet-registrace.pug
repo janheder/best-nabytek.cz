@@ -244,6 +244,12 @@ html(lang=lang)
                                 span.m-formGroup__checkbox.a-checkbox
                                 label.m-formGroup__label.-small(for="register_form_legal") Souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem registrace .            
                 
+                            .o-form__group.m-formGroup
+                                input.m-formGroup__input(type="number" name="register_form_antispam" id="register_form_antispam" autocomplete="antispam" required placeholder=" ")
+                                label.m-formGroup__label(for="register_form_antispam") Kontrolní otázka: kolik je osm mínus čtyři (napište číslo)
+                                span.m-formGroup__error Neplatnné čislo
+                                span.m-formGroup__success
+
                             .m-cartButtons
                                 button.btn.-secondary.-fullWidth(type="submit" id="register_form_submit") Vytvořit účet
 
