@@ -86,3 +86,10 @@
         border-top: 2px solid $border-white;
     }
 }
+
+/* IE 10, 11 CSS */ 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+    .m-tabsNav__link{
+        height: 5.4rem;
+    }
+}

@@ -149,3 +149,10 @@
         }
     }
 }
+
+/* IE 10, 11 CSS */ 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+    .btn{
+        height: 5.4rem;
+    }
+}
