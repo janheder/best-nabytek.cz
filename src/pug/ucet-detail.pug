@@ -5,7 +5,7 @@ html(lang=lang)
     body
         include partials/_navMain.pug
         include partials/_navProducts.pug
-
+        include partials/_modal-question.pug
         include partials/_breadcrumb.pug
         main
             .container
@@ -257,7 +257,7 @@ html(lang=lang)
                                 button.btn.-secondary.-fullWidth(type="submit" id="register_form_submit") Potvrdit úpravy
 
                             .m-cartButtons
-                                button.btn.-remove.-transparent.-fullWidth(href="#") Smazat účet
+                                a.btn.-remove.-transparent.-fullWidth(href="#" data-toggle="modal" data-target="#modal-question") Smazat účet
 
         include partials/_footer.pug
 
