@@ -15,14 +15,6 @@ input{
     border-radius: $border-radius-primary;
     padding: 0 2rem;
 }
-textarea.m-formGroup__input{
-    display: flex;
-    height: auto;
-    padding: 2rem 2rem 0 2rem;
-}
-textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-shown){
-    padding: 2rem 2rem 0 2rem;
-}
 
 .o-form{
     background: $bg-white;
@@ -207,7 +199,20 @@ textarea.m-formGroup__input:focus, textarea.m-formGroup__input:not(:placeholder-
             }
         }
     }
-
+    &.-textarea{
+        .m-formGroup__label{
+            transform: none;
+            top: 14px;
+        }
+        .m-formGroup__input{
+            display: flex;
+            height: auto;
+            padding: 2.5rem 2rem 0 2rem;
+        }
+        & .m-formGroup__input:focus, & .m-formGroup__input:not(:placeholder-shown){
+            padding: 2.5rem 2rem 0 2rem;
+        }
+    }
     &.-noMargin{
         margin: 0;
     }
