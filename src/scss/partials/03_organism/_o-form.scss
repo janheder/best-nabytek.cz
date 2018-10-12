@@ -25,6 +25,14 @@ input{
     &.-noMargin{
         margin: 0;
     }
+    &.-disabled{
+        input, .m-formGroup.-radiobutton, .m-formGroup.-checkbox, .m-formGroup.-switch{
+            background: $bg-white;
+        }
+        .m-formGroup__success{
+            display: none;
+        }
+    }
 }
 .o-form__collapseToggler{
     width: 100%;
@@ -252,6 +260,10 @@ input{
     background: $bg-light;
     border-radius: $border-radius-primary;
     width: 100%;
+
+    &:disabled{
+        background: $bg-white;
+    }
 }
 .m-formGroup__error{
     position: absolute;

@@ -231,9 +231,9 @@
         <div class="a-cartResponsiveError">Prosím zadejte své osobní údaje nebo se přihlaste.</div>
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-8 register-form-col">
-            <form class="o-form" method="post" action="" name="register_form" id="register_form"><a class="o-form__collapseToggler" data-toggle="collapse" id="js-registerCollpaseToggler" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse">Bez registrace <span class="a-icon -cheveron o-form__collapseTogglerIcon"></span></a>
+            <form class="o-form -disabled" method="post" action="" name="register_form" id="register_form"><a class="o-form__collapseToggler" data-toggle="collapse" id="js-registerCollpaseToggler" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse">Bez registrace <span class="a-icon -cheveron o-form__collapseTogglerIcon"></span></a>
               <div class="collapse o-form__collapse show" id="register-collapse">
-                <h2 class="o-form__title">Bez registrace</h2>
+                <h2 class="o-form__title">Jste přihlášen jako: Petr Novák</h2>
                 <div class="o-form__divider m-formDivider">Osobní údaje</div>
                 <div class="row">
                   <div class="col-12 col-md-6">
@@ -393,25 +393,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="o-form__divider m-formDivider">Ostatní</div>
-                <div class="o-form__groupToggler" data-toggle="collapse" href="#formRegisterCollapse" aria-expanded="false" aria-controls="formRegisterCollapse">
-                  <div class="o-form__group m-formGroup -switch">
-                    <input class="m-formGroup__input" type="checkbox" name="register_form_register_toggler" id="register_form_register_toggler"><span class="m-formGroup__switch a-switch"></span>
-                    <label class="m-formGroup__label" for="register_form_register_toggler">Mám zájem o vytvoření účtu</label>
-                  </div>
-                </div>
-                <div class="collapse o-form__groupCollapse" id="formRegisterCollapse">
-                  <div class="o-form__group m-formGroup">
-                    <input class="m-formGroup__input" type="password" name="register_form_register_password" id="register_form_register_password" autocomplete="password" placeholder=" ">
-                    <label class="m-formGroup__label" for="register_form_register_password">Heslo</label><span class="m-formGroup__error">Neplatné heslo</span><span class="m-formGroup__success"></span>
-                  </div>
-                </div>
-                <div class="o-form__legal">Vložením údajů beru na vědomí <a href="#">zpracování osobních údajů</a></div>
-                <div class="o-form__group m-formGroup -checkbox">
-                  <input class="m-formGroup__input" type="checkbox" name="register_form_newsletter" id="register_form_newsletter"><span class="m-formGroup__checkbox a-checkbox"></span>
-                  <label class="m-formGroup__label -small" for="register_form_newsletter">Chci odebírat newsletter a souhlasím se <a href="#">zpracováním osobních údajů</a> za účelem zasílání informací o novinkách a slevách.            </label>
-                </div>
+                </div><a class="btn -remove -transparent" id="cartUserEdit">Upravit údaje</a>
                 <div class="m-cartButtons"><a class="btn -dark" href="#">Krok zpět</a>
                   <button class="btn -secondary" type="submit" id="register_form_submit">Osobní údaje <span class="a-btnIcon"><span class="a-icon -cheveron -white"></span></span>  </button>
                 </div>
@@ -419,19 +401,11 @@
             </form>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 login-form-col">
-            <form class="o-form login-form" method="post" action="" name="login_form"><a class="o-form__collapseToggler" data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse">Přihlášení <span class="a-icon -cheveron o-form__collapseTogglerIcon"></span></a>
+            <form class="o-form login-form" method="post" action="" name="login_form"><a class="o-form__collapseToggler" data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse">Změnit uživatele <span class="a-icon -cheveron o-form__collapseTogglerIcon"></span></a>
               <div class="collapse o-form__collapse show" id="login-collapse">
-                <h2 class="o-form__title">Přihlášení</h2>
-                <p class="o-form__text">Jako registrovaný uživatel získává slevu ve výši 1% na veškeré zboží, které není aktuálně ve slevě. </p>
-                <div class="o-form__group m-formGroup">
-                  <input class="m-formGroup__input" type="email" name="login_form_email" id="login_form_email" autocomplete="email" required placeholder=" ">
-                  <label class="m-formGroup__label" for="login_form_email">Emailová adresa</label><span class="m-formGroup__error">Neplatný email</span><span class="m-formGroup__success"></span>
-                </div>
-                <div class="o-form__group m-formGroup">
-                  <input class="m-formGroup__input" type="password" name="login_form_password" id="login_form_password" autocomplete="password" required placeholder=" ">
-                  <label class="m-formGroup__label" for="login_form_password">Heslo</label><span class="m-formGroup__error">Neplatné heslo</span><span class="m-formGroup__success"></span>
-                </div>
-                <button class="btn -secondary -fullWidth" type="submit" id="login_form_submit_cart">Přihlásit se</button><a class="o-form__link" href="#">Obnovit zapomenuté heslo</a>
+                <h2 class="o-form__title">Změnit uživatele</h2>
+                <p class="o-form__text">Chcete nakupit jako někdo jiný? </p>
+                <button class="btn -secondary -fullWidth" type="submit" id="login_form_submit_cart">Odhlásit se</button>
               </div>
             </form>
           </div>
