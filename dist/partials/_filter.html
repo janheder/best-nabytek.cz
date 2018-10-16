@@ -25,12 +25,12 @@
   </div>
   <div class="m-filterResponsive__filter" id="js-filterToggler">Filtr produktů</div>
 </section>
-<section class="o-filter" id="js-filter" method="post" name="filter-form" action="">
+<form class="o-filter" id="js-filter" method="post" name="filter-form" action="">
   <div class="o-filter__responsive" id="js-filterTogglerResponsive">
     <div class="o-filter__responsiveText">Filtr Produktů</div><span class="a-icon -cross -white o-filter__responsiveIcon"> </span>
   </div>
   <div class="container o-filter__container">
-    <form class="accordion o-filter__accordion" id="accordionFilter">
+    <div class="accordion o-filter__accordion" id="accordionFilter">
       <div class="o-filter__single">
         <div class="o-filter__link" id="headingFilter-1" data-toggle="collapse" data-target="#collapseFilter-1" aria-expanded="false" aria-controls="collapseFilter-1">Výrobce <span class="a-icon -cheveron o-filter__icon"></span></div>
         <div class="collapse o-filter__collapse" id="collapseFilter-1" aria-labelledby="headingFilter-1" data-parent="#accordionFilter">
@@ -166,7 +166,7 @@
           </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
   <div class="o-filter__responsiveBottom" id="js-filterTogglerResponsive2">Potvrdit filtr</div>
-</section>
+</form>

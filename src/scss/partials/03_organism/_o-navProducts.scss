@@ -51,7 +51,7 @@
 }
 .o-navProducts__linkDesktop{
     @include f-16-primary-medium;
-    padding: 0 3rem;
+    padding: 0 2rem;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -216,6 +216,7 @@
         flex-direction: row;
         padding: 5px 20px;
         border: 0;
+        min-height: 40px;
     }
     .o-navProducts__subCategoryText{
         padding: 0;
@@ -226,7 +227,7 @@
         align-items: center;
     }
     .o-navProducts__subCategoryImg{
-        height: 40px;
+        width: 36px
     }
 }
 

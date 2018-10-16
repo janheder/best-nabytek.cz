@@ -50,6 +50,22 @@
     padding: 0 2rem;
     @include f-16-primary-medium;
     cursor: pointer;
+    position: relative;
+
+    &[aria-expanded="true"]{
+        &::after{
+            content: "";
+            background: $bg-brand;
+            height: 2px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+        }
+        .o-filter__icon{
+            transform: rotate(-90deg); 
+        }
+    }
 }
 .o-filter__single:first-child .o-filter__link{
     border-left: 1px solid $border-grey;
@@ -58,6 +74,7 @@
     transform: rotate(90deg);
     height: 10px;
     margin-left: 10px;
+    transition: 0.3s ease all;
 }
 .o-filter__collapse{
     position: absolute;

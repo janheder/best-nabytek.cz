@@ -296,7 +296,7 @@ html(lang=lang)
 
                     .col-12.col-sm-12.col-md-12.col-lg-4.login-form-col
 
-                        form.o-form(method="post" action="" class="login-form" name="login_form")
+                        .o-form
                             
                             a.o-form__collapseToggler(data-toggle="collapse" href="#login-collapse" aria-expanded="true" aria-controls="login-collapse") Změnit uživatele #[span.a-icon.-cheveron.o-form__collapseTogglerIcon]
                             .collapse.o-form__collapse.show(id="login-collapse")
@@ -305,7 +305,7 @@ html(lang=lang)
                                 p.o-form__text Chcete nakupit jako někdo jiný? 
 
 
-                                button.btn.-secondary.-fullWidth(type="submit" id="login_form_submit_cart") Odhlásit se
+                                a.btn.-secondary.-fullWidth(href="#") Odhlásit se
 
 
 

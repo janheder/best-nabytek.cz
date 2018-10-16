@@ -151,6 +151,53 @@ $("#js-filterToggler, #js-filterTogglerResponsive, #js-filterTogglerResponsive2"
 });
 
 // =============================================================================
+// FILTER 
+// =============================================================================
+
+
+$(document).ready(function(){
+        $('#js-filter').change( function(e){
+            var c = '';
+            $('#js-filter input:checkbox:checked, #js-filter input[type="radio"]:checked').each(function(){
+                var name = ($(this).attr("name"));
+                var value = ($(this).attr("value"));
+                var data = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+                c += data + "&";
+            });
+   
+                e.preventDefault();
+                $.ajax({
+                      
+                        type: 'GET',
+                        data: $('#js-filter').serialize(),
+                        success: function(data){
+                          
+                                window.history.pushState("object or string", "Title", "?" + c);
+                                $(".o-productGrid").load("?" + c + " .o-productGrid", function() {
+                                    $(".o-productGrid > .o-productGrid").unwrap();
+                                    var myLazyLoad = new LazyLoad({
+                                        elements_selector: ".lazy"
+                                    });
+                                });
+                                $(".m-filterBadges").load("?" + c + " .m-filterBadges", function() {
+                                    $(".m-filterBadges > .m-filterBadges").unwrap();
+                                });
+                        },
+            error: function(data) { 
+                alert('Chyba při odesílání')
+            }
+                });
+        });
+});
+
+
+$(document).click(function(e) {
+	if (!$(e.target).is('.o-filter')) {
+    	$('.o-filter__collapse.collapse ').collapse('hide');	    
+    }
+});
+
+// =============================================================================
 // FORM VALIDATION AND REQUIRED SETUP
 // =============================================================================
 
@@ -367,6 +414,35 @@ $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="doprava"], .o-cartDelive
     
     $(".m-cartOverview__priceTitle").text((doprava+platba+cena) + " Kč") ;
 
+});
+
+
+// =============================================================================
+// CART FREE DELIVERY BAR
+// =============================================================================
+
+$("body").on('DOMSubtreeModified', ".m-cartPriceOverview__priceNumber", function(){
+    var valueNum = $(".m-cartPriceOverview__priceNumber").text();
+    var valueMax = $(".m-cartFreeShipping__progressBar").attr("aria-valuemax");
+    var valueFin = (valueNum / valueMax)*100;
+    if(valueFin <= 100){
+        $(".m-cartFreeShipping__progressBar").css("width", valueFin + "%");
+    }else{
+        $(".m-cartFreeShipping__progressBar").css("width", "100%"); 
+    }
+
+    $(".m-cartFreeShipping__price").text((valueMax - valueNum ) + " Kč");
+
+    
+    var cartPrice = valueMax - valueNum;
+    
+    if(cartPrice > 0){
+        
+        $(".m-cartFreeShipping__text").html("Nakupte ještě za <span class='m-cartFreeShipping__price'>" + (cartPrice)  + "</span> Kč a máte dopravu zdarma");
+
+    }else{
+        $(".m-cartFreeShipping__text").text("Máte dopravu zdarma");
+    }
 });
 
 // =============================================================================

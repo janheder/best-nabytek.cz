@@ -86,7 +86,8 @@
     left: 0;
     right: 0;
     padding: 20px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.4);
+    z-index: 5;
 }
 .m-heroCarousel__title{
     @include f-36-white-medium;
@@ -145,6 +146,9 @@
     left: 0;
     padding: 1.5rem 2rem;
     margin: 0;
+    margin: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
 }
 @media screen and (max-width: 768px){
     .m-heroCell{

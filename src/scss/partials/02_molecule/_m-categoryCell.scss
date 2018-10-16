@@ -2,7 +2,7 @@
     background: $bg-white;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: 0.3s ease all;
@@ -21,7 +21,8 @@
 .m-categoryCell__title{
     @include f-16-primary-medium;
     margin: 0;
-    margin-left: 1rem;
+    margin-left: 0;
+    margin-top: 1rem;
     flex-grow: 1;
     text-align: left;
 }
