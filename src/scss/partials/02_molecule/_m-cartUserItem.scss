@@ -76,13 +76,14 @@
     display: flex;
     flex-direction: row;
     padding-bottom: 20px;
-
-    div{
-        flex-grow: 1;   
-        padding-right: 10px;
-        width: 50%;
-    }
-    div:last-child{
-        padding-right: 0;
-    }
+}
+.m-cartUserItem__city{
+    flex-grow: 1;   
+    padding-right: 10px;
+    width: 50%;
+}
+.m-cartUserItem__psc{
+    flex-grow: 1;   
+    width: 50%;
+    padding-right: 0;
 }

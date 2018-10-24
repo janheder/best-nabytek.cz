@@ -158,9 +158,9 @@ $("#js-filterToggler, #js-filterTogglerResponsive, #js-filterTogglerResponsive2"
 $(document).ready(function(){
         $('#js-filter').change( function(e){
             var c = '';
-            $('#js-filter input:checkbox:checked, #js-filter input[type="radio"]:checked').each(function(){
+            $('#js-filter input:checkbox:checked, #js-filter input[type="radio"]:checked, #js-filter input[type="range"]').each(function(){
                 var name = ($(this).attr("name"));
-                var value = ($(this).attr("value"));
+                var value = ($(this).val());
                 var data = encodeURIComponent(name) + "=" + encodeURIComponent(value);
                 c += data + "&";
             });
@@ -191,11 +191,24 @@ $(document).ready(function(){
 });
 
 
-$(document).click(function(e) {
-	if (!$(e.target).is('.o-filter')) {
-    	$('.o-filter__collapse.collapse ').collapse('hide');	    
+$(document).click(function(e){
+	if (!$(e.target).is('.o-filter__single *')){
+    	$('.o-filter__collapse').collapse('hide');	    
     }
 });
+
+$(document).click(function(e){
+	if (!$(e.target).is('.m-navUser *')){
+    	$('.m-navUser__collapse').collapse('hide');	    
+    }
+});
+
+$(document).click(function(e){
+	if (!$(e.target).is('.m-navCart *')){
+    	$('.m-navCart__collapse').collapse('hide');	    
+    }
+});
+
 
 // =============================================================================
 // FORM VALIDATION AND REQUIRED SETUP
@@ -400,7 +413,7 @@ $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="platba"]').click(functio
 
 
 
-var cena = parseInt($(".m-cartOverview__priceTitle").text().replace(/[^0-9\.]/g, ''));
+var cena = parseInt($(".m-cartOverview__product").data("price"));
 $('.o-cartDeliveryForm .m-cartDeliveryItem__input[name="doprava"], .o-cartDeliveryForm .m-cartDeliveryItem__input[name="platba"]').click(function () { 
 
     var doprava = parseInt($('.m-cartOverview__shippingNumber').text().replace(/[^0-9\.]/g, ''));

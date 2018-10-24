@@ -330,7 +330,9 @@ input{
 .m-formGroup__input:not(:focus):invalid:not(:placeholder-shown):not([type="date"]) + .m-formGroup__label + .m-formGroup__error{
     display: block;
 }
-
+#filter-range-input-2{
+    right: 0;
+}
 /* IE Edge 16+ CSS */ 
 @supports (-ms-ime-align:auto){
     .m-formGroup{
@@ -347,6 +349,16 @@ input{
     }
     .m-formGroup__input{
         order: 1;
+    }
+    .m-formGroup__rangewWrap .m-formGroup__input{
+        height: 100%;
+        width: 100%;
+    }
+    .o-filter__single{
+        width: 25%;
+    }
+    .o-filter__single:nth-child(2){
+        display: none;
     }
 }
 /* IE 10, 11 CSS */ 
@@ -366,4 +378,11 @@ input{
     .m-formGroup__input{
         order: 1;
     }
+    .o-filter__single{
+        width: 25%;
+    }
+    .o-filter__single:nth-child(2){
+        display: none;
+    }
 }
+
