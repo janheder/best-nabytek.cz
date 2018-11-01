@@ -93,7 +93,7 @@
     }
 }
 .o-navProducts__subCategoryImg{
-
+    height: 60px;
 }
 .o-navProducts__subCategoryText{
     width: 100%;
@@ -227,7 +227,8 @@
         align-items: center;
     }
     .o-navProducts__subCategoryImg{
-        width: 36px
+        width: 36px;
+        height: auto;
     }
 }
 

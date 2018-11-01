@@ -456,6 +456,12 @@ $("body").on('DOMSubtreeModified', ".m-cartPriceOverview__priceNumber", function
     }else{
         $(".m-cartFreeShipping__text").text("Máte dopravu zdarma");
     }
+    $(".m-cartBarResponsive__price span").text(valueNum);
+});
+
+$("body").on('DOMSubtreeModified', ".m-cartOverview__priceTitle", function(){
+    var price2 = $(".m-cartOverview__priceTitle").text();
+    $(".m-cartBarResponsive__price span").text(price2);
 });
 
 // =============================================================================
