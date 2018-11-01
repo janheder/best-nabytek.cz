@@ -182,6 +182,9 @@ $(document).ready(function(){
                                 $(".m-filterBadges").load("?" + c + " .m-filterBadges", function() {
                                     $(".m-filterBadges > .m-filterBadges").unwrap();
                                 });
+                                $(".o-productPagination").load("?" + c + " .o-productPagination", function() {
+                                    $(".o-productPagination > .o-productPagination").unwrap();
+                                });
                         },
             error: function(data) { 
                 alert('Chyba při odesílání')
@@ -209,6 +212,10 @@ $(document).click(function(e){
     }
 });
 
+$(document).ready(function(){
+    var pricePhone = $(".m-productDetailMain__priceMain").text();
+    $(".productDetailResponsive__price").text(pricePhone);
+});
 
 // =============================================================================
 // FORM VALIDATION AND REQUIRED SETUP
