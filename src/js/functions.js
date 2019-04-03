@@ -88,21 +88,30 @@ $(document).ready(function(){
 // OBJECT FIT FALLBACK
 // =============================================================================
 
-var styletotest = "object-fit";
-if (styletotest in document.body.style){
-    /*alert("The " + styletotest + " property is supported");*/
-}
-else {
-    $('.b-bgCover__wrap').each(function () {
-        var $container = $(this),
-        imgUrl = $container.find('img').attr('src');
-        if (imgUrl) {
-            $(this).css('backgroundImage', 'url(' + imgUrl + ')');
-            $('.b-bgCover__img').css('display','none');
-            $(this).css('background-size','cover');
-        }  
-    });
-}
+$(document).ready(function(){
+    var styletotest = "object-fit";
+    if (styletotest in document.body.style){
+        /*alert("The " + styletotest + " property is supported");*/
+    }
+    else {
+        $('.b-bgCover__wrap').each(function () {
+            $('.b-bgCover__img').each(function () {
+                var $container = $(this),
+                imgUrl = $container.find('img.b-bgCover__img').attr('src');
+
+                if(imgUrl==undefined){imgUrl = $container.find('img.b-bgCover__img').attr('srcset');}
+
+                if (imgUrl) {
+                    $(this).css('backgroundImage', 'url(' + imgUrl + ')');
+                    $('.b-bgCover__img').css('display','none');
+                    $(this).css('background-size','cover');
+                    $(this).css('background-position','center center');
+                }  
+            });
+        });
+    }
+});
+
 
 // =============================================================================
 // HERO CAROUSEL CONTROL
